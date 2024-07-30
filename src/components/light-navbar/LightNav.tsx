@@ -3,7 +3,7 @@
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import {
   DropdownMenu,
@@ -37,12 +37,6 @@ const navbarLinks: NavbarLinksProperties[] = [
 
 const LightNav = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
-
-  useEffect(() => {
-    // Check if the user is signed in
-    const userSignedIn = false;
-    setIsSignedIn(userSignedIn);
-  }, []);
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 w-screen">
@@ -83,11 +77,11 @@ const LightNav = () => {
         </div>
         <div className="flex space-x-2">
           {isSignedIn ? (
-            <div className="flex h-full w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[10px] py-1">
+            <div className="flex h-full w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] p-1">
               <Image
                 src="/logo/profile.svg"
                 alt="profile-icon"
-                width={45}
+                width={35}
                 height={22}
               />
               <Image

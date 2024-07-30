@@ -11,6 +11,8 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import QuestPreviewCard from "~/components/quest/questPreviewCard";
+import QuestWraper from "~/components/quest/questWraper";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -753,6 +755,50 @@ const StyleGuide: FC = () => {
       {/* CheckBox */}
       <h2 className="text-2xl font-semibold">Checkbox</h2>
       <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
+
+      <QuestWraper>
+        <div className="grid grid-cols-4 gap-3">
+          <QuestPreviewCard
+            cardImage="/images/_Hero_Image_2.png"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/_Hero_Image_2.png"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/_Hero_Image_2.png"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/_Hero_Image_2.png"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+        </div>
+      </QuestWraper>
     </main>
   );
 };
