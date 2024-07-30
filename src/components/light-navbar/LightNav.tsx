@@ -81,7 +81,7 @@ const LightNav = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <div className="flex space-x-6">
+        <div className="flex space-x-2">
           {isSignedIn ? (
             <div className="flex h-full w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[10px] py-1">
               <Image
@@ -99,10 +99,10 @@ const LightNav = () => {
             </div>
           ) : (
             <>
-              <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-[#2A2A2A] text-white">
+              <button className="rounded-[59px] border border-[#1B1B1B] bg-[#2A2A2A] px-8 py-3 text-sm text-white">
                 Sign Up
               </button>
-              <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-white text-[#2A2A2A]">
+              <button className="rounded-[59px] border border-[#1B1B1B] bg-white px-8 py-3 text-sm text-[#2A2A2A]">
                 Sign In
               </button>
             </>

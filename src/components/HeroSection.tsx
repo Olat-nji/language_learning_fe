@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div className="flex h-full basis-1/2 flex-col justify-center">
         <div className="ml-auto w-full px-3 md:px-0 md:pl-5 lg:max-w-md lg:pl-0 xl:max-w-[630px]">
           <h1
-            className={`font-fira text-center text-4xl font-semibold text-black md:text-left md:text-5xl lg:text-6xl lg:leading-[75px] xl:text-7xl ${lilitaOne.className}`}
+            className={`font-fira text-black text-center text-4xl md:text-left md:text-5xl lg:text-6xl lg:leading-[75px] xl:text-7xl ${lilitaOne.className}`}
           >
             Learning Made Fun With Gaming
           </h1>
@@ -17,14 +17,14 @@ const HeroSection = () => {
           </p>
 
           <div className="mx-auto w-fit md:mx-0">
-            <button className="mt-4 rounded-full bg-primary-100 px-6 py-3 font-inter text-sm capitalize text-white outline-none">
+            <button className="font-fira mt-4 rounded-full bg-primary-100 px-6 py-3 text-sm capitalize text-white outline-none">
               Explore questes
             </button>
           </div>
         </div>
       </div>
 
-      <div className="grid h-full basis-1/2 bg-card bg-cover bg-center bg-no-repeat"></div>
+      <div className="bg-card grid h-full basis-1/2 bg-cover bg-center bg-no-repeat"></div>
     </section>
   );
 };
