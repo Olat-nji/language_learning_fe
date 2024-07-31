@@ -50,7 +50,7 @@ const SignUp = () => {
                 label="Email address"
                 inputType="text"
                 name="email"
-                // value={form.email}
+              // value={form.email}
               />
               <CustomInput
                 placeholder="Enter Your Password"
@@ -60,7 +60,7 @@ const SignUp = () => {
                 label="Password"
                 inputType="password"
                 name="password"
-                // value={form.password}
+              // value={form.password}
               />
             </div>
             <div className="flex flex-row items-center justify-between bg-white p-[30px] pt-0">
