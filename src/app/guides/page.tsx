@@ -3,11 +3,13 @@
 import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
+import Check from "~/components/check";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
+import Correct from "~/components/correct";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import LearningGoalModal from "~/components/modals/LearningGoalModal";
@@ -24,8 +26,10 @@ import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
+import Speakers from "~/components/speakers";
 import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
+import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -731,7 +735,6 @@ const StyleGuide: FC = () => {
         </div>
       </div>
 
-      {/* Preview Buttons */}
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Preview Buttons</h2>
         <div>
@@ -762,12 +765,10 @@ const StyleGuide: FC = () => {
           <Toasts variant="default" textDescription="An alert goes here" />
         </div>
       </div>
-      {/* Dropdowns */}
       <h2 className="text-2xl font-semibold">Dropdowns</h2>
       <div className="pl-[20%]">
         <LanguageSelector />
       </div>
-      {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
       <MissionBriefModal />
@@ -789,7 +790,6 @@ const StyleGuide: FC = () => {
         alwaysActive={true}
         defaultOpen={true}
       />
-      {/* CheckBox */}
       <h2 className="text-2xl font-semibold">Checkbox</h2>
       <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
 
@@ -858,7 +858,6 @@ const StyleGuide: FC = () => {
         />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/* CheckBox */}
         <h2 className="text-2xl font-semibold">Custom Checkbox</h2>
         <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
       </div>
@@ -883,12 +882,10 @@ const StyleGuide: FC = () => {
         <DifficultLevel />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/* Volume bar */}
         <h2 className="text-2xl font-semibold">Volume bar</h2>
         <VolumeBar />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/*All Quest Page components */}
         <h2 className="text-2xl font-semibold">All Quest Page components</h2>
         <QuestSceneCard
           title="Sample Quest Title"
@@ -903,11 +900,33 @@ const StyleGuide: FC = () => {
         <ToggleSwitch variant="default" />
       </div>
 
-      {/* Search Bar */}
       <h2 className="text-2xl font-semibold">Search Icon</h2>
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Speaker Components</h2>
+        <div className="flex gap-3 bg-black p-5">
+          <Speakers type="Default" />
+          <Speakers type="Loud" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Check Components</h2>
+        <div className="flex gap-3 bg-gray-400 p-5">
+          <Check type="Default" />
+          <Check type="Active" />
+          <Check type="Correct" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">TryAgain</h2>
+        <TryAgain />
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Correct</h2>
+        <Correct />
+      </div>
     </main>
   );
 };
