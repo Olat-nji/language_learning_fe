@@ -5,6 +5,7 @@ import { FC, useState } from "react";
 
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import VolumeBar from "~/components/miscellaneous/Volume";
@@ -758,6 +759,11 @@ const StyleGuide: FC = () => {
         <div className="">
           <Toasts variant="default" textDescription="An alert goes here" />
         </div>
+      </div>
+      <div className="my-6 flex flex-col">
+        {/* Dropdowns */}
+        <h2 className="text-2xl font-semibold">Dropdowns</h2>
+        <LanguageSelector />
       </div>
       {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
