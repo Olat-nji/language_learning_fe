@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import CustomButton from "../common/common-button/common-button";
 // import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
@@ -100,12 +101,16 @@ const LightNav = () => {
               </div>
             ) : (
               <>
-                <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-[#2A2A2A] text-white">
+                <CustomButton href="/signup" variant="secondary">
                   Sign Up
-                </button>
-                <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-white text-[#2A2A2A]">
+                </CustomButton>
+                <CustomButton
+                  className="border border-black"
+                  href="/signin"
+                  variant="default"
+                >
                   Sign In
-                </button>
+                </CustomButton>
               </>
             )}
           </div>

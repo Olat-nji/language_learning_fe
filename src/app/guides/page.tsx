@@ -839,10 +839,6 @@ const StyleGuide: FC = () => {
         </div>
       </QuestWraper>
       <div className="flex flex-col gap-3 py-5">
-        <h2 className="text-2xl font-semibold">Custom Modals</h2>
-        <Cookies />
-      </div>
-      <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Accordion</h2>
         <Accordion
           title="Accordion Heading"
@@ -899,7 +895,6 @@ const StyleGuide: FC = () => {
         <h2 className="text-2xl font-semibold">Toggle Component</h2>
         <ToggleSwitch variant="default" />
       </div>
-
       <h2 className="text-2xl font-semibold">Search Icon</h2>
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>

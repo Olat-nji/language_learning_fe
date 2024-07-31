@@ -174,6 +174,7 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
+        abel: ["Abel"],
         inter: ["Inter"],
         lilita: ["Lilita-One"],
         axiformaSemiBold: ["Axiforma-SemiBold", "sans-serif"],
