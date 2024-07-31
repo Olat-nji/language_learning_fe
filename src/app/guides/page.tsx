@@ -7,9 +7,15 @@ import SignIn from "~/components/auth/SignIn";
 import SignUp from "~/components/auth/SignUp";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
+import SearchBar from "~/components/common/searchbar/Searchbar";
+import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import CustomInput from "~/components/input/CustomInput";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
+import LearningGoalModal from "~/components/modals/LearningGoalModal";
+import Modal from "~/components/modals/LevelSuccessModal";
+import MissionBriefModal from "~/components/modals/MissionBriefModal";
 import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
@@ -757,11 +763,21 @@ const StyleGuide: FC = () => {
           <Toasts variant="default" textDescription="An alert goes here" />
         </div>
       </div>
+      {/* Dropdowns */}
+      <h2 className="text-2xl font-semibold">Dropdowns</h2>
+      <div className="pl-[20%]">
+        <LanguageSelector />
+      </div>
       {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
-      <h2 className="text-2xl font-semibold">Notifications Alerts</h2>
-      <Notification />
+      <MissionBriefModal />
+      <LearningGoalModal />
+      <Modal
+        onClose={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
       <Accordion
         title="Accordion Heading"
         content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
@@ -778,6 +794,8 @@ const StyleGuide: FC = () => {
       <h2 className="text-2xl font-semibold">Checkbox</h2>
       <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
 
+      <h2 className="text-2xl font-semibold">Notifications Alerts</h2>
+      <Notification />
       <QuestWraper>
         <div className="grid grid-cols-4 gap-3">
           <QuestPreviewCard
@@ -963,6 +981,11 @@ const StyleGuide: FC = () => {
         <SignIn />
         <SignUp />
       </div>
+      {/* Search Bar */}
+      <h2 className="text-2xl font-semibold">Search Icon</h2>
+      <SearchIcon />
+      <h2 className="text-2xl font-semibold">Search bar</h2>
+      <SearchBar />
     </main>
   );
 };
