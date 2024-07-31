@@ -2,8 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 
-import QuestSceneCard from ".";
-import { vi } from "vitest";
+import QuestSceneCard from "~/components/quest/questSceneCard";
 
 const setScreenSize = (width: number) => {
   window.innerWidth = width;

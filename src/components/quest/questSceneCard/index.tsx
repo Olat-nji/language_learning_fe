@@ -28,10 +28,10 @@ const QuestSceneCard = ({
           {title}
         </h3>
         <p className="mb-[10px] font-bold text-white">
-          <span className="text-primary-100">{points}</span>Points
+          <span className="text-primary-100">{points}</span> Points
         </p>
         <p
-          className={`mb-[15px] text-[14px] font-thin text-[#ECECEC] text-white md:text-[16px]`}
+          className={`mb-[15px] text-[14px] font-thin text-white md:text-[16px]`}
         >
           {description}
         </p>
