@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
+import { Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
 import Check from "~/components/check";
@@ -10,11 +10,13 @@ import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
+import LightNav from "~/components/light-navbar/LightNav";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import LearningGoalModal from "~/components/modals/LearningGoalModal";
 import Modal from "~/components/modals/LevelSuccessModal";
 import MissionBriefModal from "~/components/modals/MissionBriefModal";
+import NavTabs from "~/components/Nav-tab/Navtab";
 import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
@@ -41,10 +43,11 @@ const StyleGuide: FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
-      <CustomButton href="/" variant="primary">
-        <ArrowBigLeft />
-        Home
-      </CustomButton>
+      <LightNav />
+      <div className="w-4/5 space-y-2 py-5">
+        <h2 className="text-2xl font-semibold">Navigation Tab</h2>
+        <NavTabs />
+      </div>
       <h2 className="text-2xl font-semibold">Color Guides</h2>
       <div
         className="grid w-full items-start gap-4"
@@ -899,6 +902,7 @@ const StyleGuide: FC = () => {
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
+
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold">Speaker Components</h2>
         <div className="flex gap-3 bg-black p-5">
