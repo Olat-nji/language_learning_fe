@@ -5,6 +5,7 @@ import { FC } from "react";
 
 import CustomButton from "~/components/common/common-button/common-button";
 import { Cookies } from "~/components/modals/cookies";
+import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
@@ -731,6 +732,7 @@ const StyleGuide: FC = () => {
       {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
+      <Notification />
     </main>
   );
 };
