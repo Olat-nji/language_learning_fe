@@ -1,4 +1,3 @@
-// components/IconPanel.tsx
 import { AudioLines, Mic } from "lucide-react";
 import React from "react";
 
