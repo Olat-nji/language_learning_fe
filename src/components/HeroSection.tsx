@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div className="flex h-full flex-col justify-center">
         <div className="ml-auto w-full px-3 md:px-0 md:pl-5 lg:max-w-md lg:pl-0 xl:max-w-[630px]">
           <h1
-            className={`font-fira text-black text-center text-4xl md:text-left md:text-5xl lg:text-6xl lg:leading-[75px] xl:text-7xl ${lilitaOne.className}`}
+            className={`font-fira text-center text-4xl text-black md:text-left md:text-5xl lg:text-6xl lg:leading-[75px] xl:text-7xl ${lilitaOne.className}`}
           >
             Learning Made Fun With Gaming
           </h1>
@@ -24,7 +24,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="bg-card grid h-full basis-1/2 bg-cover bg-center bg-no-repeat"></div>
+      <div className="grid h-full basis-1/2 bg-card bg-cover bg-center bg-no-repeat"></div>
     </section>
   );
 };
