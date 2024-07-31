@@ -743,7 +743,6 @@ const StyleGuide: FC = () => {
           <ConnectedPreButton />
         </div>
       </div>
-
       <div className="flex flex-col gap-[20px]">
         <h2 className="text-2xl font-semibold">Alerts</h2>
 
