@@ -3,10 +3,9 @@
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import CustomButton from "../common/common-button/common-button";
-import Sidebar from "../sidebar/sideBar";
+// import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -71,46 +70,46 @@ const LightNav = () => {
               >
                 <div>About</div>
 
-              <ChevronDown size={16} />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-[200px] rounded-xl border border-blue-200 bg-white shadow-sm">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+                <ChevronDown size={16} />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[200px] rounded-xl border border-blue-200 bg-white shadow-sm">
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
+                <DropdownMenuItem>Team</DropdownMenuItem>
+                <DropdownMenuItem>Subscription</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          <div className="flex space-x-6">
+            {isSignedIn ? (
+              <div className="flex h-full w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[10px] py-1">
+                <Image
+                  src="/logo/profile.svg"
+                  alt="profile-icon"
+                  width={45}
+                  height={22}
+                />
+                <Image
+                  src="/logo/about-down.svg"
+                  alt="profile-arrow"
+                  width={16}
+                  height={16}
+                />
+              </div>
+            ) : (
+              <>
+                <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-[#2A2A2A] text-white">
+                  Sign Up
+                </button>
+                <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-white text-[#2A2A2A]">
+                  Sign In
+                </button>
+              </>
+            )}
+          </div>
         </div>
-        <div className="flex space-x-6">
-          {isSignedIn ? (
-            <div className="flex h-full w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[10px] py-1">
-              <Image
-                src="/logo/profile.svg"
-                alt="profile-icon"
-                width={45}
-                height={22}
-              />
-              <Image
-                src="/logo/about-down.svg"
-                alt="profile-arrow"
-                width={16}
-                height={16}
-              />
-            </div>
-          ) : (
-            <>
-              <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-[#2A2A2A] text-white">
-                Sign Up
-              </button>
-              <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-white text-[#2A2A2A]">
-                Sign In
-              </button>
-            </>
-          )}
-        </div>
-      </div>
 
         {/* Mobile Navigation */}
         <div className="mx-auto my-4 flex h-[64px] w-full max-w-[351px] items-center justify-between rounded-[60px] border border-neutral-30 bg-white p-3 shadow-sm md:hidden">
@@ -141,7 +140,7 @@ const LightNav = () => {
                   Sign Up
                 </button>
                 <button
-                  onClick={toggleSidebar}
+                  // onClick={toggleSidebar}
                   className="flex h-10 w-10 items-center justify-center rounded-[49px] border border-[#C7D3E1] bg-white p-[10px]"
                 >
                   <Image
@@ -156,13 +155,13 @@ const LightNav = () => {
           </div>
         </div>
       </nav>
-      <div
+      {/* <div
         className={`fixed bottom-0 left-0 top-20 z-50 flex h-screen w-full transform flex-col justify-start border-r bg-[#FDFDFD] md:w-[220px] lg:w-[252px] ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
         {isSidebarOpen && <Sidebar />}
-      </div>
+      </div> */}
     </>
   );
 };

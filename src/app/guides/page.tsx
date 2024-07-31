@@ -12,15 +12,12 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
-<<<<<<< HEAD
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
-import QuestWraper from "~/components/quest/questWraper";
-=======
 import QuestSceneCard from "~/components/quest/questSceneCard";
+import QuestWraper from "~/components/quest/questWraper";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Toasts from "~/components/toasts/Toasts";
->>>>>>> 525f9c42b4218a00f4a70bd6f74166a6a72d1f53
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -757,7 +754,6 @@ const StyleGuide: FC = () => {
         </div>
       </div>
       {/* Modals */}
-<<<<<<< HEAD
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
       <Accordion
@@ -779,7 +775,7 @@ const StyleGuide: FC = () => {
       <QuestWraper>
         <div className="grid grid-cols-4 gap-3">
           <QuestPreviewCard
-            cardImage="/images/_Hero_Image_2.png"
+            cardImage="/images/hero-image.svg"
             id={1}
             level={200}
             path="/"
@@ -789,7 +785,7 @@ const StyleGuide: FC = () => {
           />
 
           <QuestPreviewCard
-            cardImage="/images/_Hero_Image_2.png"
+            cardImage="/images/hero-image.svg"
             id={1}
             level={200}
             path="/"
@@ -799,7 +795,7 @@ const StyleGuide: FC = () => {
           />
 
           <QuestPreviewCard
-            cardImage="/images/_Hero_Image_2.png"
+            cardImage="/images/hero-image.svg"
             id={1}
             level={200}
             path="/"
@@ -809,7 +805,7 @@ const StyleGuide: FC = () => {
           />
 
           <QuestPreviewCard
-            cardImage="/images/_Hero_Image_2.png"
+            cardImage="/images/hero-image.svg"
             id={1}
             level={200}
             path="/"
@@ -819,7 +815,6 @@ const StyleGuide: FC = () => {
           />
         </div>
       </QuestWraper>
-=======
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Modals</h2>
         <Cookies />
@@ -880,7 +875,6 @@ const StyleGuide: FC = () => {
           levels={4}
         />
       </div>
->>>>>>> 525f9c42b4218a00f4a70bd6f74166a6a72d1f53
     </main>
   );
 };
