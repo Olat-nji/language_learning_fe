@@ -30,7 +30,7 @@ export function Cookies() {
   return (
     <Dialog /* open={isVisible} onOpenChange={setIsVisible} */>
       <DialogTrigger asChild>
-        <CustomButton variant="neutral">Cookies Modal</CustomButton>
+        <CustomButton variant="primary-two">View Cookies</CustomButton>
       </DialogTrigger>
       <DialogContent className="max-w-sm gap-2 bg-neutral-10 p-0 outline-none transition-all sm:max-w-[702px] sm:rounded-3xl">
         <DialogHeader className="space-y-0 border bg-white p-6 sm:gap-3 sm:space-y-0 sm:rounded-t-3xl sm:px-9 sm:py-8">

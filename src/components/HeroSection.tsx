@@ -2,11 +2,15 @@ import { lilitaOne } from "~/app/layout";
 
 const HeroSection = () => {
   return (
-    <section className="mt-20 flex h-screen w-screen flex-col md:mt-0 md:flex-row">
-      <div className="flex h-full basis-1/2 flex-col justify-center">
+    <section className="mt-20 flex h-screen w-full flex-col justify-between pl-0 md:mt-0 md:flex-row lg:pl-10">
+      <div className="flex h-full flex-col justify-center">
         <div className="ml-auto w-full px-3 md:px-0 md:pl-5 lg:max-w-md lg:pl-0 xl:max-w-[630px]">
           <h1
+<<<<<<< HEAD
             className={`font-fira text-black text-center text-4xl md:text-left md:text-5xl lg:text-6xl lg:leading-[75px] xl:text-7xl ${lilitaOne.className}`}
+=======
+            className={`font-fira text-center text-4xl font-normal text-black md:text-left md:text-5xl lg:text-6xl lg:leading-[75px] xl:text-7xl ${lilitaOne.className}`}
+>>>>>>> 525f9c42b4218a00f4a70bd6f74166a6a72d1f53
           >
             Learning Made Fun With Gaming
           </h1>
