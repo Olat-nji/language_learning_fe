@@ -3,8 +3,8 @@ import { useState } from "react";
 const VolumeBar = () => {
   const [value, setValue] = useState(20);
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(Number.parseInt(event.target.value, 10));
   };
   return (
     <div className="relative flex h-[26px] w-[269] items-center justify-center">

@@ -5,6 +5,7 @@ import { FC, useState } from "react";
 
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
@@ -15,7 +16,6 @@ import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Toasts from "~/components/toasts/Toasts";
 import Accordion from "~/components/ui/CustomAccordion";
-import VolumeBar from "~/components/ui/Volume";
 
 const StyleGuide: FC = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -795,8 +795,11 @@ const StyleGuide: FC = () => {
         </div>
         <DifficultLevel />
       </div>
-
-      <VolumeBar />
+      <div className="flex flex-col gap-3 py-5">
+        {/* Volume bar */}
+        <h2 className="text-2xl font-semibold">Volume bar</h2>
+        <VolumeBar />
+      </div>
     </main>
   );
 };
