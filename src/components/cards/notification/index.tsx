@@ -15,7 +15,7 @@ type PropertyType = {
 export default function NotificationCard(properties: PropertyType) {
   return (
     <div
-      className={`shadow flex w-full flex-col gap-2 p-6 py-4 ${properties.className || "w-96"}`}
+      className={`flex w-full flex-col gap-2 p-6 py-4 shadow ${properties.className || "w-96"}`}
     >
       <div className="flex w-full items-center justify-between gap-4">
         <Image
@@ -25,12 +25,10 @@ export default function NotificationCard(properties: PropertyType) {
           src={properties.image}
           className="h-8 w-8 rounded-full object-contain"
         />
-
         <p className="flex-auto text-xs">{properties.message}</p>
-
         <div className="flex items-center gap-1">
           <span className="whitespace-nowrap text-xs">
-            {new Date(properties.createdAt).toLocaleDateString("us-en", {
+            {new Date(properties.createdAt).toLocaleDateString("en-US", {
               month: "short",
               day: "2-digit",
             })}
@@ -38,7 +36,6 @@ export default function NotificationCard(properties: PropertyType) {
           <span className="h-1.5 w-1.5 flex-none rounded-full bg-orange-400" />
         </div>
       </div>
-
       {properties.links && (
         <div className="flex w-full items-center justify-start gap-3 text-xs text-blue-800">
           {properties.links.map((link) => (

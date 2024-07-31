@@ -1,6 +1,5 @@
 import NotificationCard from ".";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
 
 describe("notification card", () => {
   const mockProperties = {
