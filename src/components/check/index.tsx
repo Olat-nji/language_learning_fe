@@ -21,12 +21,16 @@ const Check = ({ type }: { type?: "Default" | "Active" | "Correct" }) => {
   }
 
   return (
-    <div className={`rounded-full border-4 ${borderColor} p-1`}>
+    <div
+      className={`rounded-full border-4 ${borderColor} p-1`}
+      data-testid="check-component"
+    >
       <CheckIcon
         size={24}
         strokeWidth={4}
         className={iconColor}
         absoluteStrokeWidth={true}
+        data-testid="check-icon"
       />
     </div>
   );
