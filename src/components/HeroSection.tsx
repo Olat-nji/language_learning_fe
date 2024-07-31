@@ -1,55 +1,30 @@
-import Image from "next/image";
-
-import { fira_sans } from "~/app/layout";
-import { Button } from "./ui/button";
+import { lilitaOne } from "~/app/layout";
 
 const HeroSection = () => {
   return (
-    <section className="grid grid-cols-1 px-4 md:grid-cols-2 md:pr-0">
-      <div className="flex flex-col items-center justify-center md:ml-[80px] md:mr-[180px] md:items-start">
-        <h1
-          className={`${fira_sans.className} mt-[130px] text-center text-4xl font-bold leading-relaxed text-[#2A2A2A] md:text-left md:text-5xl md:leading-relaxed`}
-        >
-          Learning Made Fun With Gaming
-        </h1>
-        <p className="text-center text-lg text-[#5D7590] md:text-left">
-          Experience language learning like never before with thrilling quests
-          and real-life challenges that keep you at your toes.
-        </p>
-        <Button className="my-6 w-fit rounded-full bg-orange-500 text-white md:my-[20px] md:px-[32px] md:py-[21.5]">
-          Explore Quests
-        </Button>
+    <section className="mt-20 flex h-screen w-full flex-col justify-between pl-0 md:mt-0 md:flex-row lg:pl-10">
+      <div className="flex h-full flex-col justify-center">
+        <div className="ml-auto w-full px-3 md:px-0 md:pl-5 lg:max-w-md lg:pl-0 xl:max-w-[630px]">
+          <h1
+            className={`font-fira text-center text-4xl font-normal text-black md:text-left md:text-5xl lg:text-6xl lg:leading-[75px] xl:text-7xl ${lilitaOne.className}`}
+          >
+            Learning Made Fun With Gaming
+          </h1>
+
+          <p className="mt-5 text-center font-inter text-sm font-normal leading-6 text-neutral-110 md:text-left md:text-base lg:text-lg">
+            Experience language learning like never <br /> before with thrilling
+            quests and real-life <br /> challenges that keep you at your toes.
+          </p>
+
+          <div className="mx-auto w-fit md:mx-0">
+            <button className="mt-4 rounded-full bg-primary-100 px-6 py-3 font-inter text-sm capitalize text-white outline-none">
+              Explore questes
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="mt-4 grid grid-cols-2 gap-1 bg-[#FFE0BC] p-1 md:mt-0">
-        <Image
-          width={396}
-          height={550.5}
-          src="/images/landing/hero_image1.jpg"
-          alt="Save the baby"
-          className="h-full w-full object-cover"
-        />
-        <Image
-          width={396}
-          height={550.5}
-          src="/images/landing/hero_image2.jpg"
-          alt="Get off the island"
-          className="h-full w-full object-cover"
-        />
-        <Image
-          width={396}
-          height={550.5}
-          src="/images/landing/hero_image3.jpg"
-          alt="Save the cyclist"
-          className="h-full w-full object-cover"
-        />
-        <Image
-          width={396}
-          height={550.5}
-          src="/images/landing/hero_image4.jpg"
-          alt="Catch the flight"
-          className="h-full w-full object-cover"
-        />
-      </div>
+
+      <div className="grid h-full basis-1/2 bg-card bg-cover bg-center bg-no-repeat"></div>
     </section>
   );
 };

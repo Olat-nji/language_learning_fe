@@ -7,7 +7,7 @@ interface ModalProperties {
 
 const Modal: FC<ModalProperties> = ({ onClose }) => {
   return (
-    <div className="bg-black fixed inset-0 flex items-center justify-center bg-opacity-50 p-4">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
       <div className="relative w-full max-w-[600px] rounded-[4px] bg-[#E9EEF3] p-6 sm:p-8 md:p-[41px_75px_27px_75px]">
         <button
           className="absolute -right-4 -top-4 h-8 w-8 cursor-pointer"

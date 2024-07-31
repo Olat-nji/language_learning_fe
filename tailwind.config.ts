@@ -20,9 +20,7 @@ const config = {
     },
     extend: {
       colors: {
-        black: {
-          140: "rgb(var(--black-140))",
-        },
+        black: "rgb(var(--secondary-120))",
         neutral: {
           10: "rgb(var(--neutral-10))",
           20: "rgb(var(--neutral-20))",
@@ -177,10 +175,37 @@ const config = {
       },
       fontFamily: {
         inter: ["Inter"],
-        lilita: ["Lilita One"],
+        lilita: ["Lilita-One"],
+        axiformaSemiBold: ["Axiforma-SemiBold", "sans-serif"],
+        axiformaThin: ["Axiforma-Thin", "sans-serif"],
+        axiforma: ["Axiforma", "sans-serif"],
+        axiformaMediumItalic: ["Axiforma-MediumItalic", "sans-serif"],
+        axiformaBlack: ["Axiforma-Black", "sans-serif"],
+        axiformaBlackItalic: ["Axiforma-BlackItalic", "sans-serif"],
+        axiformaHeavy: ["Axiforma-Heavy", "sans-serif"],
+        axiformaMedium: ["Axiforma-Medium", "sans-serif"],
+        axiformaBoldItalic: ["Axiforma-BoldItalic", "sans-serif"],
+        axiformaExtraBoldItalic: ["Axiforma-ExtraBoldItalic", "sans-serif"],
+        axiformaBook: ["Axiforma-Book", "sans-serif"],
+        axiformaLight: ["Axiforma-Light", "sans-serif"],
+        axiformaThinItalic: ["Axiforma-ThinItalic", "sans-serif"],
+        axiformaBold: ["Axiforma-Bold", "sans-serif"],
+        axiformaLightItalic: ["Axiforma-LightItalic", "sans-serif"],
+        axiformaSemiBoldItalic: ["Axiforma-SemiBoldItalic", "sans-serif"],
+        axiformaItalic: ["Axiforma-Italic", "sans-serif"],
+        axiformaBookItalic: ["Axiforma-BookItalic", "sans-serif"],
+        axiformaExtraBold: ["Axiforma-ExtraBold", "sans-serif"],
+        axiformaHeavyItalic: ["Axiforma-HeavyItalic", "sans-serif"],
       },
       boxShadow: {
         spread: "0px 1px 18px 0px #0A39B01F",
+      },
+      backgroundImage: {
+        heroImageOne: "url('/images/_Hero_Image.png')",
+        heroImageTwo: "url('/images/_Hero_Image_2.png')",
+        heroImageThree: "url('/images/_Hero_Image_3.png')",
+        heroImageFour: "url('/images/_Hero_Image_4.png')",
+        card: "url('/images/Cards.png')",
       },
       keyframes: {
         "accordion-down": {

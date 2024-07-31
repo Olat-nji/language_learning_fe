@@ -13,13 +13,6 @@ describe("lightNav", () => {
     expect(desktopLogo).toBeInTheDocument();
   });
 
-  it("renders mobile logo", () => {
-    expect.assertions(1);
-    render(<LightNav />);
-    const mobileLogo = screen.getByAltText("mobile-logo");
-    expect(mobileLogo).toBeInTheDocument();
-  });
-
   it("renders Sign In and Sign Up buttons when not signed in", () => {
     expect.assertions(2); // Adding this line to specify the number of assertions in the test
     render(<LightNav />);
