@@ -42,8 +42,8 @@ jobs:
             cd /var/www/html/delve_fe/dev
             eval $(ssh-agent)
             ssh-add ~/.ssh/id_ecdsa
-            git reset --hard origin/the_branch_name
+            git reset --hard origin/dev
             git pull origin dev
             pnpm install
             pnpm run build
-            systemctl restart delve.staging
+            systemctl restart start delve-dev
