@@ -1,10 +1,8 @@
 "use client";
 
-import { ArrowBigLeft, Mail, Orbit, PlusIcon } from "lucide-react";
+import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
-import SignIn from "~/components/auth/SignIn";
-import SignUp from "~/components/auth/SignUp";
 import Check from "~/components/check";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
@@ -12,7 +10,6 @@ import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
-import CustomInput from "~/components/input/CustomInput";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import LearningGoalModal from "~/components/modals/LearningGoalModal";
