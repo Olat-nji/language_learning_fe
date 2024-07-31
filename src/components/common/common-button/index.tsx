@@ -33,7 +33,7 @@ const buttonVariants = cva(
         sm: "h-[1.9rem] w-[6rem] rounded-md px-3 text-xs rounded-full",
         lg: "h-[3rem] w-[9.5rem] rounded-md px-8 py-[2%] px-[2.7%] rounded-full",
         link: "h-9 px-0 py-2 rounded-full",
-        icon: "py-[1%] px-[1%] h-[2rem] w-[2rem] rounded-full",
+        icon: "py-[1%] px-[1%] h-[2.2rem] w-[2.2rem] rounded-full",
         circle: "px-3 py-3 rounded-full",
       },
     },

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Fira_Sans_Condensed, Inter } from "next/font/google";
+import { Abel, Inter, Lilita_One } from "next/font/google";
+
+import { ToastProvider } from "~/components/ui/toast";
 
 import "./globals.css";
 
@@ -13,10 +15,15 @@ export const metadata: Metadata = {
   description:
     "Explore 3D worlds, solve puzzles, and learn new languages with AI-driven gameplay in Delve!",
 };
-export const fira_sans = Fira_Sans_Condensed({
+export const lilitaOne = Lilita_One({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800"],
+  weight: ["400"],
 });
+export const abel = Abel({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,9 +33,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <div className="mx-auto w-full max-w-[1440px]">
-          <Progress_bar />
-          {children}
-          <Toaster />
+          <ToastProvider>
+            <Progress_bar />
+            {children}
+            <Toaster />
+          </ToastProvider>
         </div>
       </body>
     </html>

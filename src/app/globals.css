@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 
 @layer base {
   :root {
     --black-140: 0, 0, 0;
-    
+
     --neutral-10: 248, 250, 251;
     --neutral-20: 246, 248, 250;
     --neutral-30: 244, 246, 249;
@@ -23,7 +23,7 @@
     --neutral-130: 42, 66, 93;
     --neutral-140: 16, 40, 67;
     --neutral-150: 0, 15, 42;
-    
+
     --primary-10: 255, 242, 229;
     --primary-20: 255, 229, 204;
     --primary-30: 255, 216, 178;
@@ -39,7 +39,7 @@
     --primary-130: 178, 47, 0;
     --primary-140: 153, 22, 0;
     --primary-150: 128, 0, 0;
-  
+
     --pink-10: 252, 236, 241;
     --pink-20: 249, 217, 227;
     --pink-30: 247, 198, 213;
@@ -54,7 +54,7 @@
     --pink-120: 176, 15, 63;
     --pink-130: 112, 0, 12;
     --pink-140: 74, 0, 0;
-  
+
     --purple-10: 244, 229, 255;
     --purple-20: 233, 204, 255;
     --purple-30: 222, 178, 255;
@@ -69,7 +69,7 @@
     --purple-120: 93, 0, 204;
     --purple-130: 67, 0, 178;
     --purple-140: 42, 0, 153;
-  
+
     --secondary-10: 241, 241, 241;
     --secondary-20: 236, 236, 236;
     --secondary-30: 231, 231, 231;
@@ -82,7 +82,7 @@
     --secondary-100: 65, 65, 65;
     --secondary-110: 42, 42, 42;
     --secondary-120: 27, 27, 27;
-  
+
     --success-10: 249, 253, 251;
     --success-20: 247, 253, 250;
     --success-30: 245, 252, 249;
@@ -98,7 +98,7 @@
     --success-140: 31, 98, 63;
     --success-150: 6, 73, 38;
     --success-160: 0, 47, 12;
-  
+
     --critical-10: 254, 246, 246;
     --critical-20: 254, 242, 241;
     --critical-30: 253, 236, 235;
@@ -114,7 +114,7 @@
     --critical-130: 135, 0, 0;
     --critical-150: 84, 0, 0;
     --critical-160: 58, 0, 0;
-  
+
     --transparent-black-10: 33, 33, 33, 0.1;
     --transparent-black-15: 33, 33, 33, 0.15;
     --transparent-black-20: 33, 33, 33, 0.2;
@@ -130,7 +130,7 @@
     --transparent-black-65: 33, 33, 33, 0.65;
     --transparent-black-70: 33, 33, 33, 0.7;
     --transparent-black-75: 33, 33, 33, 0.75;
-  
+
     --transparent-white-10: 255, 255, 255, 0.1;
     --transparent-white-15: 255, 255, 255, 0.15;
     --transparent-white-20: 255, 255, 255, 0.2;
@@ -145,12 +145,275 @@
     --transparent-white-65: 255, 255, 255, 0.65;
     --transparent-white-70: 255, 255, 255, 0.7;
 
-    --font-lilita-one: "Lilita One", sans-serif;;
-
+    --font-lilita-one: "Lilita One", sans-serif;
   }
 }
 
+@font-face {
+  font-family: "Abel";
+  src: url("../fonts/Abel-Regular.ttf");
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Lilita-One";
+  src: url("../fonts/LilitaOne-Regular.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-SemiBold";
+  src: url("../fonts/Axiforma-SemiBold.eot");
+  src:
+    local("Axiforma SemiBold"),
+    local("Axiforma-SemiBold"),
+    url("../fonts/Axiforma-SemiBold.woff2") format("woff2"),
+    url("../fonts/Axiforma-SemiBold.woff") format("woff"),
+    url("../fonts/Axiforma-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-Thin";
+  src: url("../fonts/Axiforma-Thin.eot");
+  src:
+    local("Axiforma Thin"),
+    local("Axiforma-Thin"),
+    url("../fonts/Axiforma-Thin.woff2") format("woff2"),
+    url("../fonts/Axiforma-Thin.woff") format("woff"),
+    url("../fonts/Axiforma-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url("../fonts/Axiforma-Regular.eot");
+  src:
+    local("Axiforma Regular"),
+    local("Axiforma-Regular"),
+    url("../fonts/Axiforma-Regular.woff2") format("woff2"),
+    url("../fonts/Axiforma-Regular.woff") format("woff"),
+    url("../fonts/Axiforma-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-MediumItalic";
+  src: url("../fonts/Axiforma-MediumItalic.eot");
+  src:
+    local("Axiforma Medium Italic"),
+    local("Axiforma-MediumItalic"),
+    url("../fonts/Axiforma-MediumItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-MediumItalic.woff") format("woff"),
+    url("../fonts/Axiforma-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-Black";
+  src:
+    local("Axiforma Black"),
+    local("Axiforma-Black"),
+    url("../fonts/Axiforma-Black.woff2") format("woff2"),
+    url("../fonts/Axiforma-Black.woff") format("woff"),
+    url("../fonts/Axiforma-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-BlackItalic";
+  src: url("../fonts/Axiforma-BlackItalic.eot");
+  src:
+    local("Axiforma Black Italic"),
+    local("Axiforma-BlackItalic"),
+    url("../fonts/Axiforma-BlackItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-BlackItalic.woff") format("woff"),
+    url("../fonts/Axiforma-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-Heavy";
+  src: url("../fonts/Axiforma-Heavy.eot");
+  src:
+    local("Axiforma Heavy"),
+    local("Axiforma-Heavy"),
+    url("../fonts/Axiforma-Heavy.woff2") format("woff2"),
+    url("../fonts/Axiforma-Heavy.woff") format("woff"),
+    url("../fonts/Axiforma-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-Medium";
+  src:
+    local("Axiforma Medium"),
+    local("Axiforma-Medium"),
+    url("../fonts/Axiforma-Medium.woff2") format("woff2"),
+    url("../fonts/Axiforma-Medium.woff") format("woff"),
+    url("../fonts/Axiforma-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-BoldItalic";
+  src: url("../fonts/Axiforma-BoldItalic.eot");
+  src:
+    local("Axiforma Bold Italic"),
+    local("Axiforma-BoldItalic"),
+    url("../fonts/Axiforma-BoldItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-BoldItalic.woff") format("woff"),
+    url("../fonts/Axiforma-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-ExtraBoldItalic";
+  src: url("../fonts/Axiforma-ExtraBoldItalic.eot");
+  src:
+    local("Axiforma ExtraBold Italic"),
+    local("Axiforma-ExtraBoldItalic"),
+    url("../fonts/Axiforma-ExtraBoldItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-ExtraBoldItalic.woff") format("woff"),
+    url("../fonts/Axiforma-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-Book";
+  src: url("../fonts/Axiforma-Book.eot");
+  src:
+    local("Axiforma Book"),
+    local("Axiforma-Book"),
+    url("../fonts/Axiforma-Book.woff2") format("woff2"),
+    url("../fonts/Axiforma-Book.woff") format("woff"),
+    url("../fonts/Axiforma-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-Light";
+  src: url("../fonts/Axiforma-Light.eot");
+  src:
+    local("Axiforma Light"),
+    local("Axiforma-Light"),
+    url("../fonts/Axiforma-Light.woff2") format("woff2"),
+    url("../fonts/Axiforma-Light.woff") format("woff"),
+    url("../fonts/Axiforma-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-ThinItalic";
+  src:
+    local("Axiforma Thin Italic"),
+    local("Axiforma-ThinItalic"),
+    url("../fonts/Axiforma-ThinItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-ThinItalic.woff") format("woff"),
+    url("../fonts/Axiforma-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-Bold";
+  src: url("../fonts/Axiforma-Bold.eot");
+  src:
+    local("Axiforma Bold"),
+    local("Axiforma-Bold"),
+    url("../fonts/Axiforma-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Axiforma-Bold.woff2") format("woff2"),
+    url("../fonts/Axiforma-Bold.woff") format("woff"),
+    url("../fonts/Axiforma-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-LightItalic";
+  src: url("../fonts/Axiforma-LightItalic.eot");
+  src:
+    local("Axiforma Light Italic"),
+    local("Axiforma-LightItalic"),
+    url("../fonts/Axiforma-LightItalic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Axiforma-LightItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-LightItalic.woff") format("woff"),
+    url("../fonts/Axiforma-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-SemiBoldItalic";
+  src:
+    local("Axiforma SemiBold Italic"),
+    local("Axiforma-SemiBoldItalic"),
+    url("../fonts/Axiforma-SemiBoldItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-SemiBoldItalic.woff") format("woff"),
+    url("../fonts/Axiforma-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-Italic";
+  src:
+    local("Axiforma Italic"),
+    local("Axiforma-Italic"),
+    url("../fonts/Axiforma-Italic.woff2") format("woff2"),
+    url("../fonts/Axiforma-Italic.woff") format("woff"),
+    url("../fonts/Axiforma-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-BookItalic";
+  src:
+    local("Axiforma Book Italic"),
+    local("Axiforma-BookItalic"),
+    url("../fonts/Axiforma-BookItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-BookItalic.woff") format("woff"),
+    url("../fonts/Axiforma-BookItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Axiforma-ExtraBold";
+  src:
+    local("Axiforma ExtraBold"),
+    local("Axiforma-ExtraBold"),
+    url("../fonts/Axiforma-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Axiforma-ExtraBold.woff") format("woff"),
+    url("../fonts/Axiforma-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma-HeavyItalic";
+  src:
+    local("Axiforma Heavy Italic"),
+    local("Axiforma-HeavyItalic"),
+    url("../fonts/Axiforma-HeavyItalic.woff2") format("woff2"),
+    url("../fonts/Axiforma-HeavyItalic.woff") format("woff"),
+    url("../fonts/Axiforma-HeavyItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
 
 #nprogress .bar {
   background: linear-gradient(90deg, #fff0bf, #f85318) !important;
@@ -189,35 +452,43 @@
   0% {
     transform: translateX(-120%);
   }
+
   50% {
     transform: translateX(-120%);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
+
 .spinner_V8m1 {
   transform-origin: center;
   animation: spinner_zKoa 2s linear infinite;
 }
+
 .spinner_V8m1 circle {
   stroke-linecap: round;
   animation: spinner_YpZS 1.5s ease-in-out infinite;
 }
+
 @keyframes spinner_zKoa {
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes spinner_YpZS {
   0% {
     stroke-dasharray: 0 150;
     stroke-dashoffset: 0;
   }
+
   47.5% {
     stroke-dasharray: 42 150;
     stroke-dashoffset: -16;
   }
+
   95%,
   100% {
     stroke-dasharray: 42 150;
@@ -228,17 +499,21 @@
 .show_scrollbar::-webkit-scrollbar {
   height: 8px;
 }
+
 .show_scrollbar ::-webkit-scrollbar-thumb {
   border-radius: 12px;
 }
+
 .hide_scrollbar::-webkit-scrollbar {
   height: 0.1px;
   width: 0.1px;
 }
+
 /* Custom Scrollbar Styling */
 /* For Webkit Browsers */
 ::-webkit-scrollbar {
-  width: 14px; /* Width of the scrollbar */
+  width: 14px;
+  /* Width of the scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -254,17 +529,37 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsla(0, 0%, 0%, 0.06); /* Color of the track */
-  border-radius: 10px; /* Rounded corners of the track */
+  background: hsla(0, 0%, 0%, 0.06);
+  /* Color of the track */
+  border-radius: 10px;
+  /* Rounded corners of the track */
 }
 
 /* For Firefox */
 .html {
   @apply bg-primary-100;
-  scrollbar-width: thin; /* Options are 'auto', 'thin', 'none' */
+  scrollbar-width: thin;
+  /* Options are 'auto', 'thin', 'none' */
 }
 
 /* For Internet Explorer and Legacy Edge */
 body {
-  -ms-overflow-style: scrollbar; /* Standard scrollbar */
+  -ms-overflow-style: scrollbar;
+  /* Standard scrollbar */
+}
+
+/* Gradient color */
+.gradient-text {
+  background-image: linear-gradient(
+    271.34deg,
+    rgba(169, 109, 246, 0.8) -0.38%,
+    #d06d27 100.78%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 48px;
+  line-height: 48px;
+  text-transform: capitalize;
 }
