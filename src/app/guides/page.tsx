@@ -143,7 +143,7 @@ const StyleGuide: FC = () => {
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-140 px-4 py-4 text-white shadow">
           bg-primary-140, text-white
         </div>
-        <div className="shadow flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-150 px-4 py-4 text-white">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-150 px-4 py-4 text-white shadow">
           bg-primary-150, text-white
         </div>
         {/* Pink Colors */}
