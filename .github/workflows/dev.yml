@@ -1,4 +1,4 @@
-name: Test and Deploy
+name: DEV CICD
 
 on:
   push:
@@ -42,9 +42,8 @@ jobs:
             cd /var/www/html/delve_fe/dev
             eval $(ssh-agent)
             ssh-add ~/.ssh/id_ecdsa
+            git reset --hard origin/the_branch_name
             git pull origin dev
-            sudo fuser -k 3111/tcp
             pnpm install
             pnpm run build
             systemctl restart delve.staging
-            pnpm start -H 0.0.0.0 -p 3111
