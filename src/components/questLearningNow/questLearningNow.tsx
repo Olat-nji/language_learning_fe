@@ -10,6 +10,7 @@ interface theQuestProperties {
   noOfPoints: string | number;
   noOfLevels: string;
 }
+
 interface NextUpOrCompletedQuestLearningNowProperties {
   theQuest: theQuestProperties[];
   isCompleted: boolean;
