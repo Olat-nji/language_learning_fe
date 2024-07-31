@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 
 interface Notification {
-  icon: string;
+  icon: JSX.Element;
   message: string;
   date: string;
   isNew: boolean;

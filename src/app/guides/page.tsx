@@ -757,6 +757,7 @@ const StyleGuide: FC = () => {
       {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
+      <h2 className="text-2xl font-semibold">Notifications Alerts</h2>
       <Notification />
       <Accordion
         title="Accordion Heading"
