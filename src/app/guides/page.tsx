@@ -15,6 +15,7 @@ import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Toasts from "~/components/toasts/Toasts";
 import Accordion from "~/components/ui/CustomAccordion";
+import VolumeBar from "~/components/ui/Volume";
 
 const StyleGuide: FC = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -742,7 +743,6 @@ const StyleGuide: FC = () => {
           <ConnectedPreButton />
         </div>
       </div>
-
       <div className="flex flex-col gap-[20px]">
         <h2 className="text-2xl font-semibold">Alerts</h2>
 
@@ -795,6 +795,8 @@ const StyleGuide: FC = () => {
         </div>
         <DifficultLevel />
       </div>
+
+      <VolumeBar />
     </main>
   );
 };
