@@ -29,6 +29,7 @@ import QuestWraper from "~/components/quest/questWraper";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Speakers from "~/components/speakers";
+import IconPanel from "~/components/speakingStates/audio";
 import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import TryAgain from "~/components/TryAgain";
@@ -902,6 +903,8 @@ const StyleGuide: FC = () => {
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
+      <h2 className="text-2xl font-semibold">Speaking States</h2>
+      <IconPanel />
 
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold">Speaker Components</h2>
