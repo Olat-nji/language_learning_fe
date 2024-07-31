@@ -9,6 +9,7 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import VolumeBar from "~/components/ui/Volume";
 
 const StyleGuide: FC = () => {
   return (
@@ -726,6 +727,8 @@ const StyleGuide: FC = () => {
           <ConnectedPreButton />
         </div>
       </div>
+
+      <VolumeBar />
     </main>
   );
 };
