@@ -223,6 +223,11 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    boxShadow: {
+      "inner-custom-1": "inset 0 2px 10px 0 rgba(214, 192, 255, 0.25)",
+      "inner-custom-2": "inset 0 2px 10px 0 #1F0451",
+      "custom-drop": "0 6px 4px 0 rgba(0, 0, 0, 0.25)",
+    },
   },
 
   plugins: [
