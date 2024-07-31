@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import CustomButton from "../common/common-button/common-button";
-import Sidebar from "../sidebar/sideBar";
+// import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,14 +40,10 @@ const LightNav = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   useEffect(() => {
+    // Check if the user is signed in
     const userSignedIn = false;
     setIsSignedIn(userSignedIn);
   }, []);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
 
   return (
     <>
@@ -105,16 +100,12 @@ const LightNav = () => {
               </div>
             ) : (
               <>
-                <CustomButton href="/signup" variant="secondary">
+                <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-[#2A2A2A] text-white">
                   Sign Up
-                </CustomButton>
-                <CustomButton
-                  href="/signin"
-                  className="border border-black"
-                  variant="default"
-                >
+                </button>
+                <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-white text-[#2A2A2A]">
                   Sign In
-                </CustomButton>
+                </button>
               </>
             )}
           </div>
@@ -149,7 +140,7 @@ const LightNav = () => {
                   Sign Up
                 </button>
                 <button
-                  onClick={toggleSidebar}
+                  // onClick={toggleSidebar}
                   className="flex h-10 w-10 items-center justify-center rounded-[49px] border border-[#C7D3E1] bg-white p-[10px]"
                 >
                   <Image
@@ -164,13 +155,13 @@ const LightNav = () => {
           </div>
         </div>
       </nav>
-      <div
+      {/* <div
         className={`fixed bottom-0 left-0 top-20 z-50 flex h-screen w-full transform flex-col justify-start border-r bg-[#FDFDFD] md:w-[220px] lg:w-[252px] ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
         {isSidebarOpen && <Sidebar />}
-      </div>
+      </div> */}
     </>
   );
 };

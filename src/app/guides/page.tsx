@@ -12,7 +12,9 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import QuestPreviewCard from "~/components/quest/questPreviewCard";
 import QuestSceneCard from "~/components/quest/questSceneCard";
+import QuestWraper from "~/components/quest/questWraper";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Toasts from "~/components/toasts/Toasts";
@@ -752,6 +754,67 @@ const StyleGuide: FC = () => {
         </div>
       </div>
       {/* Modals */}
+      <h2 className="text-2xl font-semibold">Modals</h2>
+      <Cookies />
+      <Accordion
+        title="Accordion Heading"
+        content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+        alwaysActive={false}
+        defaultOpen={false}
+      />
+      <Accordion
+        title="Accordion Heading"
+        content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+        alwaysActive={true}
+        defaultOpen={true}
+      />
+      {/* CheckBox */}
+      <h2 className="text-2xl font-semibold">Checkbox</h2>
+      <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
+
+      <QuestWraper>
+        <div className="grid grid-cols-4 gap-3">
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+        </div>
+      </QuestWraper>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Modals</h2>
         <Cookies />
