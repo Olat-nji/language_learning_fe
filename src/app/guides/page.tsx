@@ -7,6 +7,7 @@ import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
+import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
@@ -756,6 +757,7 @@ const StyleGuide: FC = () => {
       {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
+      <Notification />
       <Accordion
         title="Accordion Heading"
         content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
