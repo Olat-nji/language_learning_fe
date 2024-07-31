@@ -760,9 +760,9 @@ const StyleGuide: FC = () => {
           <Toasts variant="default" textDescription="An alert goes here" />
         </div>
       </div>
-      <div className="my-6 flex flex-col">
-        {/* Dropdowns */}
-        <h2 className="text-2xl font-semibold">Dropdowns</h2>
+      {/* Dropdowns */}
+      <h2 className="text-2xl font-semibold">Dropdowns</h2>
+      <div className="pl-[20%]">
         <LanguageSelector />
       </div>
       {/* Modals */}
