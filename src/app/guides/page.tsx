@@ -12,6 +12,7 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import QuestSceneCard from "~/components/quest/questSceneCard";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Toasts from "~/components/toasts/Toasts";
@@ -799,6 +800,17 @@ const StyleGuide: FC = () => {
         {/* Volume bar */}
         <h2 className="text-2xl font-semibold">Volume bar</h2>
         <VolumeBar />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        {/*All Quest Page components */}
+        <h2 className="text-2xl font-semibold">All Quest Page components</h2>
+        <QuestSceneCard
+          title="Sample Quest Title"
+          points={500}
+          description="This is a sample description for the quest."
+          stage={1}
+          levels={4}
+        />
       </div>
     </main>
   );
