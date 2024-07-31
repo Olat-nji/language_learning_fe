@@ -9,7 +9,7 @@ import CustomInput from "../input/CustomInput";
 const SignUp = () => {
   return (
     <>
-      <div className="font-abel min-w-[500px] overflow-hidden rounded-[20px] bg-neutral-10 shadow-md">
+      <div className="min-w-[500px] overflow-hidden rounded-[20px] bg-neutral-10 font-abel shadow-md">
         <div className="flex flex-col items-center gap-[10px] bg-white py-[20px]">
           <h1 className="text-[40px] font-bold text-secondary-110">Sign Up</h1>
           <p className="text-[15px] text-neutral-130">
@@ -50,7 +50,7 @@ const SignUp = () => {
                 label="Email address"
                 inputType="text"
                 name="email"
-              // value={form.email}
+                // value={form.email}
               />
               <CustomInput
                 placeholder="Enter Your Password"
@@ -60,7 +60,7 @@ const SignUp = () => {
                 label="Password"
                 inputType="password"
                 name="password"
-              // value={form.password}
+                // value={form.password}
               />
             </div>
             <div className="flex flex-row items-center justify-between bg-white p-[30px] pt-0">
