@@ -6,6 +6,7 @@ import { FC, useState } from "react";
 import Check from "~/components/check";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
@@ -28,6 +29,7 @@ import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Speakers from "~/components/speakers";
 import Toasts from "~/components/toasts/Toasts";
 import TryAgain from "~/components/TryAgain";
+import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -36,6 +38,7 @@ const StyleGuide: FC = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
       <CustomButton href="/" variant="primary">
@@ -763,6 +766,11 @@ const StyleGuide: FC = () => {
           <Toasts variant="default" textDescription="An alert goes here" />
         </div>
       </div>
+      {/* Dropdowns */}
+      <h2 className="text-2xl font-semibold">Dropdowns</h2>
+      <div className="pl-[20%]">
+        <LanguageSelector />
+      </div>
       {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
@@ -893,6 +901,10 @@ const StyleGuide: FC = () => {
           stage={1}
           levels={4}
         />
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold">Toggle Component</h2>
+        <ToggleSwitch variant="default" />
       </div>
 
       {/* Search Bar */}
