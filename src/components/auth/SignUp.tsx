@@ -9,7 +9,7 @@ import CustomInput from "../input/CustomInput";
 const SignUp = () => {
   return (
     <>
-      <div className="min-w-[300px] overflow-hidden rounded-[20px] bg-neutral-10 font-abel shadow-md lg:min-w-[500px]">
+      <div className="shadow-md min-w-[300px] overflow-hidden rounded-[20px] bg-neutral-10 font-abel lg:min-w-[500px]">
         <div className="flex flex-col items-center gap-[10px] bg-white py-[20px]">
           <h1 className="text-[40px] font-bold text-secondary-110">Sign Up</h1>
           <p className="text-[15px] text-neutral-130">
