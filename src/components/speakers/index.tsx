@@ -1,6 +1,6 @@
 import { Volume2, VolumeX } from "lucide-react";
 
-const Speaker = ({ type }: { type: "Default" | "Loud" }) => {
+const Speakers = ({ type }: { type: "Default" | "Loud" }) => {
   return (
     <div>
       {type === "Loud" && <Volume2 size={40} className="text-white" />}
@@ -9,4 +9,4 @@ const Speaker = ({ type }: { type: "Default" | "Loud" }) => {
   );
 };
 
-export default Speaker;
+export default Speakers;

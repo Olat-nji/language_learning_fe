@@ -3,10 +3,12 @@
 import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
+import Check from "~/components/check";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
+import Correct from "~/components/correct";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import LearningGoalModal from "~/components/modals/LearningGoalModal";
@@ -23,7 +25,9 @@ import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
+import Speakers from "~/components/speakers";
 import Toasts from "~/components/toasts/Toasts";
+import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -896,6 +900,33 @@ const StyleGuide: FC = () => {
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
+      <div className="flex flex-col gap-3">
+        {/* Speaker */}
+        <h2 className="text-2xl font-semibold">Speaker</h2>
+        <div className="flex gap-3 bg-black p-5">
+          <Speakers type="Default" />
+          <Speakers type="Loud" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        {/* Check */}
+        <h2 className="text-2xl font-semibold">Check</h2>
+        <div className="flex gap-3 bg-gray-400 p-5">
+          <Check type="Default" />
+          <Check type="Active" />
+          <Check type="Correct" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        {/* TryAgain */}
+        <h2 className="text-2xl font-semibold">TryAgain</h2>
+        <TryAgain />
+      </div>
+      <div className="flex flex-col gap-3">
+        {/* Correct */}
+        <h2 className="text-2xl font-semibold">Correct</h2>
+        <Correct />
+      </div>
     </main>
   );
 };
