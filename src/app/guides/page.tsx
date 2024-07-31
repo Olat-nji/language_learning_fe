@@ -5,6 +5,7 @@ import { FC, useState } from "react";
 
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
@@ -742,7 +743,6 @@ const StyleGuide: FC = () => {
           <ConnectedPreButton />
         </div>
       </div>
-
       <div className="flex flex-col gap-[20px]">
         <h2 className="text-2xl font-semibold">Alerts</h2>
 
@@ -794,6 +794,11 @@ const StyleGuide: FC = () => {
           />
         </div>
         <DifficultLevel />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        {/* Volume bar */}
+        <h2 className="text-2xl font-semibold">Volume bar</h2>
+        <VolumeBar />
       </div>
     </main>
   );
