@@ -150,6 +150,12 @@
 }
 
 @font-face {
+  font-family: "Abel";
+  src: url("../fonts/Abel-Regular.ttf");
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Lilita-One";
   src: url("../fonts/LilitaOne-Regular.ttf");
   font-style: normal;
