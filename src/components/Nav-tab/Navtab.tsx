@@ -1,20 +1,23 @@
 "use client";
 
-import { useState } from "react";
 import clsx from "clsx";
+import { useState } from "react";
 
 export default function NavTabs() {
   const [selectedTab, setSelectedTab] = useState("profile");
 
   return (
-    <div className="m-[50px] h-[50px] bg-neutral-30 border border-neutral-40 rounded-[10px] ">
-    <div className="flex gap-1 p-[1px] h-full">
+    <div className="m-[50px] h-[50px] rounded-[10px] border border-neutral-40 bg-neutral-30">
+      <div className="flex h-full gap-1 p-[1px]">
         <button
           onClick={() => setSelectedTab("profile")}
           className={clsx(
-            "flex-1 py-2 px-4 text-sm rounded-l-[10px] font-normal text-secondary-110 transition-colors",
+            "flex-1 rounded-l-[10px] px-4 py-2 text-sm font-normal text-secondary-110 transition-colors",
             "focus:outline-none",
-            { "bg-secondary-110 text-white border-l-4 border-black ": selectedTab === "profile" }
+            {
+              "border-l-4 border-black bg-secondary-110 text-white":
+                selectedTab === "profile",
+            },
           )}
         >
           Profile
@@ -22,9 +25,12 @@ export default function NavTabs() {
         <button
           onClick={() => setSelectedTab("language")}
           className={clsx(
-            "flex-1 py-2 px-4 text-sm  font-normal text-secondary-110 border-r-2 transition-colors",
+            "flex-1 border-r-2 px-4 py-2 text-sm font-normal text-secondary-110 transition-colors",
             "focus:outline-none",
-            { "bg-secondary-110 text-white border-l-4 border-black": selectedTab === "language" }
+            {
+              "border-l-4 border-black bg-secondary-110 text-white":
+                selectedTab === "language",
+            },
           )}
         >
           Language
@@ -32,9 +38,12 @@ export default function NavTabs() {
         <button
           onClick={() => setSelectedTab("notifications")}
           className={clsx(
-            "flex-1 py-2 px-4 text-sm font-normal text-secondary-110 border-r-2 transition-colors",
+            "flex-1 border-r-2 px-4 py-2 text-sm font-normal text-secondary-110 transition-colors",
             "focus:outline-none",
-            { "bg-secondary-110 text-white border-l-4 border-black": selectedTab === "notifications" }
+            {
+              "border-l-4 border-black bg-secondary-110 text-white":
+                selectedTab === "notifications",
+            },
           )}
         >
           Notifications
@@ -42,9 +51,12 @@ export default function NavTabs() {
         <button
           onClick={() => setSelectedTab("invitelink")}
           className={clsx(
-            "flex-1 py-2 px-4 text-sm  font-normal text-secondary-110 border-r-2 transition-colors",
-            "focus:outline-none text-nowrap ",
-            { "bg-secondary-110 text-white text-nowrap border-l-4 border-black": selectedTab === "invitelink" }
+            "flex-1 border-r-2 px-4 py-2 text-sm font-normal text-secondary-110 transition-colors",
+            "text-nowrap focus:outline-none",
+            {
+              "text-nowrap border-l-4 border-black bg-secondary-110 text-white":
+                selectedTab === "invitelink",
+            },
           )}
         >
           Invite Link
@@ -52,14 +64,14 @@ export default function NavTabs() {
         <button
           onClick={() => setSelectedTab("security")}
           className={clsx(
-            "flex-1 py-2 px-4 text-sm rounded-r-[10px] font-normal text-secondary-110  transition-colors",
+            "flex-1 rounded-r-[10px] px-4 py-2 text-sm font-normal text-secondary-110 transition-colors",
             "focus:outline-none",
-            { "bg-secondary-110 text-white ": selectedTab === "security" }
+            { "bg-secondary-110 text-white": selectedTab === "security" },
           )}
         >
           Security
         </button>
-    </div>
+      </div>
     </div>
   );
 }
