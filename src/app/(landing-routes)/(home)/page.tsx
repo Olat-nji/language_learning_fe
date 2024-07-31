@@ -8,7 +8,7 @@ function page() {
   return (
     <div className="relative flex h-full w-full flex-col overflow-x-hidden">
       <HeroSection />
-      <div className="mt-10 flex flex-col gap-4 py-5" id="temporary">
+      <div className="mt-10 flex flex-col gap-4 px-10 py-5" id="temporary">
         <Link href={"/waitlist"}>
           <CustomButton variant="primary-two">Waitlist Page</CustomButton>
         </Link>

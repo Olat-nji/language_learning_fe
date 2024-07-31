@@ -3,14 +3,33 @@
 import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
+import Check from "~/components/check";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
+import SearchBar from "~/components/common/searchbar/Searchbar";
+import SearchIcon from "~/components/common/searchbar/SearchIcon";
+import Correct from "~/components/correct";
+import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
+import LearningGoalModal from "~/components/modals/LearningGoalModal";
+import Modal from "~/components/modals/LevelSuccessModal";
+import MissionBriefModal from "~/components/modals/MissionBriefModal";
+import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import QuestPreviewCard from "~/components/quest/questPreviewCard";
+import QuestSceneCard from "~/components/quest/questSceneCard";
+import QuestWraper from "~/components/quest/questWraper";
+import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
+import LevelProgress from "~/components/range/Levels/LevelProgress";
+import Speakers from "~/components/speakers";
+import Toasts from "~/components/toasts/Toasts";
+import ToggleSwitch from "~/components/toggle/ToggleSwitch";
+import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -19,6 +38,7 @@ const StyleGuide: FC = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
       <CustomButton href="/" variant="primary">
@@ -31,31 +51,31 @@ const StyleGuide: FC = () => {
         style={{ gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))" }}
       >
         {/* Neutral Colors */}
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-10 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-10 px-4 py-4 text-black shadow">
           bg-neutral-10, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-20 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-20 px-4 py-4 text-black shadow">
           bg-neutral-20, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-30 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-30 px-4 py-4 text-black shadow">
           bg-neutral-30, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-40 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-40 px-4 py-4 text-black shadow">
           bg-neutral-40, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-50 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-50 px-4 py-4 text-black shadow">
           bg-neutral-50, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-60 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-60 px-4 py-4 text-black shadow">
           bg-neutral-60, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-70 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-70 px-4 py-4 text-black shadow">
           bg-neutral-70, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-80 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-80 px-4 py-4 text-black shadow">
           bg-neutral-80, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-90 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-90 px-4 py-4 text-black shadow">
           bg-neutral-90, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-100 px-4 py-4 text-white shadow">
@@ -78,31 +98,31 @@ const StyleGuide: FC = () => {
         </div>
         {/* Primary Colors */}
 
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-10 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-10 px-4 py-4 text-black shadow">
           bg-primary-10, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-20 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-20 px-4 py-4 text-black shadow">
           bg-primary-20, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-30 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-30 px-4 py-4 text-black shadow">
           bg-primary-30, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-40 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-40 px-4 py-4 text-black shadow">
           bg-primary-40, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-50 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-50 px-4 py-4 text-black shadow">
           bg-primary-50, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-60 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-60 px-4 py-4 text-black shadow">
           bg-primary-60, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-70 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-70 px-4 py-4 text-black shadow">
           bg-primary-70, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-80 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-80 px-4 py-4 text-black shadow">
           bg-primary-80, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-90 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-90 px-4 py-4 text-black shadow">
           bg-primary-90, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary-100 px-4 py-4 text-white shadow">
@@ -125,31 +145,31 @@ const StyleGuide: FC = () => {
         </div>
         {/* Pink Colors */}
 
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-10 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-10 px-4 py-4 text-black shadow">
           bg-pink-10, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-20 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-20 px-4 py-4 text-black shadow">
           bg-pink-20, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-30 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-30 px-4 py-4 text-black shadow">
           bg-pink-30, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-40 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-40 px-4 py-4 text-black shadow">
           bg-pink-40, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-50 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-50 px-4 py-4 text-black shadow">
           bg-pink-50, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-60 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-60 px-4 py-4 text-black shadow">
           bg-pink-60, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-70 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-70 px-4 py-4 text-black shadow">
           bg-pink-70, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-80 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-80 px-4 py-4 text-black shadow">
           bg-pink-80, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-90 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-90 px-4 py-4 text-black shadow">
           bg-pink-90, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-pink-100 px-4 py-4 text-white shadow">
@@ -169,31 +189,31 @@ const StyleGuide: FC = () => {
         </div>
         {/* Purple Colors */}
 
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-10 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-10 px-4 py-4 text-black shadow">
           bg-purple-10, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-20 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-20 px-4 py-4 text-black shadow">
           bg-purple-20, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-30 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-30 px-4 py-4 text-black shadow">
           bg-purple-30, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-40 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-40 px-4 py-4 text-black shadow">
           bg-purple-40, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-50 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-50 px-4 py-4 text-black shadow">
           bg-purple-50, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-60 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-60 px-4 py-4 text-black shadow">
           bg-purple-60, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-70 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-70 px-4 py-4 text-black shadow">
           bg-purple-70, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-80 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-80 px-4 py-4 text-black shadow">
           bg-purple-80, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-90 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-90 px-4 py-4 text-black shadow">
           bg-purple-90, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-purple-100 px-4 py-4 text-white shadow">
@@ -213,31 +233,31 @@ const StyleGuide: FC = () => {
         </div>
         {/* Secondary Colors */}
 
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-10 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-10 px-4 py-4 text-black shadow">
           bg-secondary-10, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-20 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-20 px-4 py-4 text-black shadow">
           bg-secondary-20, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-30 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-30 px-4 py-4 text-black shadow">
           bg-secondary-30, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-40 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-40 px-4 py-4 text-black shadow">
           bg-secondary-40, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-50 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-50 px-4 py-4 text-black shadow">
           bg-secondary-50, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-60 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-60 px-4 py-4 text-black shadow">
           bg-secondary-60, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-70 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-70 px-4 py-4 text-black shadow">
           bg-secondary-70, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-80 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-80 px-4 py-4 text-black shadow">
           bg-secondary-80, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-90 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-90 px-4 py-4 text-black shadow">
           bg-secondary-90, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary-100 px-4 py-4 text-white shadow">
@@ -251,31 +271,31 @@ const StyleGuide: FC = () => {
         </div>
         {/* Success Colors */}
 
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-10 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-10 px-4 py-4 text-black shadow">
           bg-success-10, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-20 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-20 px-4 py-4 text-black shadow">
           bg-success-20, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-30 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-30 px-4 py-4 text-black shadow">
           bg-success-30, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-40 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-40 px-4 py-4 text-black shadow">
           bg-success-40, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-50 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-50 px-4 py-4 text-black shadow">
           bg-success-50, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-60 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-60 px-4 py-4 text-black shadow">
           bg-success-60, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-70 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-70 px-4 py-4 text-black shadow">
           bg-success-70, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-80 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-80 px-4 py-4 text-black shadow">
           bg-success-80, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-90 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-90 px-4 py-4 text-black shadow">
           bg-success-90, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-success-100 px-4 py-4 text-white shadow">
@@ -298,31 +318,31 @@ const StyleGuide: FC = () => {
         </div>
         {/* Critical Colors */}
 
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-10 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-10 px-4 py-4 text-black shadow">
           bg-critical-10, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-20 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-20 px-4 py-4 text-black shadow">
           bg-critical-20, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-30 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-30 px-4 py-4 text-black shadow">
           bg-critical-30, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-40 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-40 px-4 py-4 text-black shadow">
           bg-critical-40, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-50 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-50 px-4 py-4 text-black shadow">
           bg-critical-50, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-60 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-60 px-4 py-4 text-black shadow">
           bg-critical-60, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-70 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-70 px-4 py-4 text-black shadow">
           bg-critical-70, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-80 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-80 px-4 py-4 text-black shadow">
           bg-critical-80, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-90 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-90 px-4 py-4 text-black shadow">
           bg-critical-90, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-critical-100 px-4 py-4 text-white shadow">
@@ -345,43 +365,43 @@ const StyleGuide: FC = () => {
         </div>
         {/* Transparent Black Colors */}
 
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-5 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-5 px-4 py-4 text-black shadow">
           bg-transparent-black-5, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-10 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-10 px-4 py-4 text-black shadow">
           bg-transparent-black-10, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-15 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-15 px-4 py-4 text-black shadow">
           bg-transparent-black-15, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-20 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-20 px-4 py-4 text-black shadow">
           bg-transparent-black-20, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-25 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-25 px-4 py-4 text-black shadow">
           bg-transparent-black-25, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-30 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-30 px-4 py-4 text-black shadow">
           bg-transparent-black-30, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-35 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-35 px-4 py-4 text-black shadow">
           bg-transparent-black-35, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-40 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-40 px-4 py-4 text-black shadow">
           bg-transparent-black-40, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-45 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-45 px-4 py-4 text-black shadow">
           bg-transparent-black-45, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-50 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-50 px-4 py-4 text-black shadow">
           bg-transparent-black-50, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-55 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-55 px-4 py-4 text-black shadow">
           bg-transparent-black-55, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-60 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-60 px-4 py-4 text-black shadow">
           bg-transparent-black-60, text-black
         </div>
-        <div className="text-black flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-65 px-4 py-4 shadow">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-65 px-4 py-4 text-black shadow">
           bg-transparent-black-65, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-transparent-black-70 px-4 py-4 text-white shadow">
@@ -715,7 +735,6 @@ const StyleGuide: FC = () => {
         </div>
       </div>
 
-      {/* Preview Buttons */}
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Preview Buttons</h2>
         <div>
@@ -739,8 +758,86 @@ const StyleGuide: FC = () => {
           <ConnectedPreButton />
         </div>
       </div>
+      <div className="flex flex-col gap-[20px]">
+        <h2 className="text-2xl font-semibold">Alerts</h2>
 
-      {/* Modals */}
+        <div className="">
+          <Toasts variant="default" textDescription="An alert goes here" />
+        </div>
+      </div>
+      <h2 className="text-2xl font-semibold">Dropdowns</h2>
+      <div className="pl-[20%]">
+        <LanguageSelector />
+      </div>
+      <h2 className="text-2xl font-semibold">Modals</h2>
+      <Cookies />
+      <MissionBriefModal />
+      <LearningGoalModal />
+      <Modal
+        onClose={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
+      <Accordion
+        title="Accordion Heading"
+        content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+        alwaysActive={false}
+        defaultOpen={false}
+      />
+      <Accordion
+        title="Accordion Heading"
+        content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+        alwaysActive={true}
+        defaultOpen={true}
+      />
+      <h2 className="text-2xl font-semibold">Checkbox</h2>
+      <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
+
+      <h2 className="text-2xl font-semibold">Notifications Alerts</h2>
+      <Notification />
+      <QuestWraper>
+        <div className="grid grid-cols-4 gap-3">
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+        </div>
+      </QuestWraper>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Modals</h2>
         <Cookies />
@@ -761,9 +858,74 @@ const StyleGuide: FC = () => {
         />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/* CheckBox */}
         <h2 className="text-2xl font-semibold">Custom Checkbox</h2>
         <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Progress Bar</h2>
+        <div className="flex flex-col gap-4 lg:flex-row">
+          <LevelProgress
+            starCount={1}
+            percent={20}
+            strokeWidth={5}
+            strokeColor="#00AA00"
+            starWidth={24}
+          />
+          <LevelProgress
+            starCount={2}
+            percent={40}
+            strokeWidth={5}
+            strokeColor="#FE5900"
+            starWidth={24}
+          />
+        </div>
+        <DifficultLevel />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Volume bar</h2>
+        <VolumeBar />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">All Quest Page components</h2>
+        <QuestSceneCard
+          title="Sample Quest Title"
+          points={500}
+          description="This is a sample description for the quest."
+          stage={1}
+          levels={4}
+        />
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold">Toggle Component</h2>
+        <ToggleSwitch variant="default" />
+      </div>
+
+      <h2 className="text-2xl font-semibold">Search Icon</h2>
+      <SearchIcon />
+      <h2 className="text-2xl font-semibold">Search bar</h2>
+      <SearchBar />
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Speaker Components</h2>
+        <div className="flex gap-3 bg-black p-5">
+          <Speakers type="Default" />
+          <Speakers type="Loud" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Check Components</h2>
+        <div className="flex gap-3 bg-gray-400 p-5">
+          <Check type="Default" />
+          <Check type="Active" />
+          <Check type="Correct" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">TryAgain</h2>
+        <TryAgain />
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Correct</h2>
+        <Correct />
       </div>
     </main>
   );
