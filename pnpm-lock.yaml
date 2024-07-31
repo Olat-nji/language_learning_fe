@@ -32,6 +32,9 @@ importers:
       '@radix-ui/react-toast':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-visually-hidden':
+        specifier: ^1.1.0
+        version: 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-email/components':
         specifier: 0.0.21
         version: 0.0.21(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -126,6 +129,9 @@ importers:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.3.0
         version: 4.3.1(prettier@3.3.3)
+      '@iconify/react':
+        specifier: ^5.0.2
+        version: 5.0.2(react@18.3.1)
       '@mertasan/tailwindcss-variables':
         specifier: ^2.7.0
         version: 2.7.0(autoprefixer@10.4.14(postcss@8.4.40))(postcss@8.4.40)
@@ -717,6 +723,14 @@ packages:
     peerDependenciesMeta:
       '@vue/compiler-sfc':
         optional: true
+
+  '@iconify/react@5.0.2':
+    resolution: {integrity: sha512-wtmstbYlEbo4NDxFxBJkhkf9gJBDqMGr7FaqLrAUMneRV3Z+fVHLJjOhWbkAF8xDQNFC/wcTYdrWo1lnRhmagQ==}
+    peerDependencies:
+      react: '>=16'
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -5540,6 +5554,13 @@ snapshots:
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
+
+  '@iconify/react@5.0.2(react@18.3.1)':
+    dependencies:
+      '@iconify/types': 2.0.0
+      react: 18.3.1
+
+  '@iconify/types@2.0.0': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:
