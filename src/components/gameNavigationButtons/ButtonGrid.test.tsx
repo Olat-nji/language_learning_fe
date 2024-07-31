@@ -1,12 +1,16 @@
 // ButtonGrid.test.tsx
 
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import ButtonGrid from './ButtonGrid'; // Adjust the import path as necessary
+import { render, screen } from "@testing-library/react";
 
-test('renders ButtonGrid component without crashing', () => {
-  render(<ButtonGrid />);
-  // Check if one of the buttons is in the document
-  const buttonElement = screen.getByTestId('button-1'); // Check for the first button
-  expect(buttonElement).toBeInTheDocument();
+import "@testing-library/jest-dom";
+
+import ButtonGrid from "./ButtonGrid"; // Adjust the import path as necessary
+
+describe("buttonGrid component", () => {
+  it("renders ButtonGrid component without crashing", () => {
+    expect.assertions(1);
+    render(<ButtonGrid />);
+    const buttonElement = screen.getByTestId("button-1"); // Check for the first button
+    expect(buttonElement).toBeInTheDocument();
+  });
 });

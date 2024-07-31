@@ -16,7 +16,7 @@ const LanguageSelector = () => {
         <button
           type="button"
           onClick={toggleDropdown}
-          className="border-neutral inline-flex w-full justify-between rounded-xl border bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-lg hover:bg-neutral-50 focus:outline-none"
+          className="border-neutral shadow-lg inline-flex w-full justify-between rounded-xl border bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-neutral-50 focus:outline-none"
         >
           Language
           {isOpen ? (
@@ -27,7 +27,7 @@ const LanguageSelector = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="absolute right-0 z-10 mt-2 w-60 rounded-xl border border-gray-200 bg-white shadow-lg">
+        <div className="shadow-lg absolute right-0 z-10 mt-2 w-60 rounded-xl border border-gray-200 bg-white">
           <div className="p-2">
             {languages.map((lang, index) => (
               <div key={index} className="flex cursor-pointer items-center p-2">

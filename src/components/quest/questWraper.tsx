@@ -3,7 +3,7 @@ import React from "react";
 const QuestWraper = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="mx-auto w-full max-w-6xl rounded-2xl bg-white p-10 shadow-md">
+      <div className="shadow-md mx-auto w-full max-w-6xl rounded-2xl bg-white p-10">
         <h1 className="text-center font-lilita text-4xl uppercase leading-[50px]">
           quests
         </h1>

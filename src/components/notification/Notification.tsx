@@ -2,7 +2,7 @@ import { notifications } from "./data";
 
 const Notification: React.FC = () => {
   return (
-    <div className="mx-auto w-full max-w-sm overflow-hidden rounded-b-xl bg-white shadow-lg">
+    <div className="shadow-lg mx-auto w-full max-w-sm overflow-hidden rounded-b-xl bg-white">
       <div className="flex items-center justify-between rounded-t-xl bg-secondary-110 px-5 py-6">
         <h1 className="font-semibold text-white">Notifications</h1>
         <a

@@ -18,7 +18,7 @@ export default function Home() {
           Don&apos;t miss out, join the queue and get to know first
         </h1>
       </div>
-      <div className="relative mx-auto mt-5 w-full max-w-xl rounded-xl bg-white px-7 pb-10 shadow-lg shadow-neutral-70 backdrop-blur-sm">
+      <div className="shadow-lg relative mx-auto mt-5 w-full max-w-xl rounded-xl bg-white px-7 pb-10 shadow-neutral-70 backdrop-blur-sm">
         <div className="flex w-full flex-col pt-10 text-left">
           <h3 className={`font-lilita text-3xl font-light`}>
             Join the waitlist
