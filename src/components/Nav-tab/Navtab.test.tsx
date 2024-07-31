@@ -5,7 +5,7 @@ import NavTabs from "./Navtab";
 
 import "@testing-library/jest-dom";
 
-describe("NavTabs", () => {
+describe("navTabs", () => {
   it("renders desktop logo", () => {
     expect.assertions(5);
     render(<NavTabs />);

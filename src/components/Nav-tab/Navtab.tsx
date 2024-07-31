@@ -7,7 +7,7 @@ export default function NavTabs() {
   const [selectedTab, setSelectedTab] = useState("profile");
 
   return (
-    <div className="m-[50px] h-[50px] rounded-[10px] border border-neutral-40 bg-neutral-30">
+    <div className="h-[50px] w-full rounded-[10px] border border-neutral-40 bg-neutral-30">
       <div className="flex h-full gap-1 p-[1px]">
         <button
           onClick={() => setSelectedTab("profile")}
