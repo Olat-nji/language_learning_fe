@@ -5,7 +5,7 @@ const MissionBriefModal = () => {
     <div className="fixed inset-0 flex items-center justify-center p-4">
       <div className="w-full max-w-[896px]">
         <div className="relative">
-          <div className="absolute left-0 right-0 bg-black-140 bg-opacity-50 text-center">
+          <div className="bg-black-140 absolute left-0 right-0 bg-opacity-50 text-center">
             <Image
               src="/images/modal-images/Frame 13.png"
               alt="Mission Brief"
@@ -14,8 +14,8 @@ const MissionBriefModal = () => {
               className="inline-block"
             />
           </div>
-          <div className="overflow-hidden rounded-lg bg-black-140 bg-opacity-50">
-            <div className="bg-black mt-16 rounded-lg border border-[#E27C40] bg-opacity-80 p-6 text-center text-white sm:p-8 md:p-12 lg:px-[100px] lg:pb-12 lg:pt-16">
+          <div className="bg-black-140 overflow-hidden rounded-lg bg-opacity-50">
+            <div className="mt-16 rounded-lg border border-[#E27C40] bg-black bg-opacity-80 p-6 text-center text-white sm:p-8 md:p-12 lg:px-[100px] lg:pb-12 lg:pt-16">
               <div className="mb-6 space-y-4">
                 <p className="font-inter text-lg font-medium leading-normal tracking-[1.28px] text-[#BEBEBE] sm:text-2xl sm:leading-relaxed md:text-[28px] md:leading-[1.4] lg:text-[32px] lg:leading-[48px]">
                   Welcome, Alex! A fire has broken out in an apartment building

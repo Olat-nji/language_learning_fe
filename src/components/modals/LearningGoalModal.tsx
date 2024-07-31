@@ -17,8 +17,8 @@ const LearningGoalModal = () => {
   };
 
   return (
-    <div className="bg-black flex min-h-screen items-center justify-center p-4 sm:p-6 md:p-8">
-      <div className="flex w-full max-w-[719px] flex-col items-center justify-center gap-2 rounded-[18px] border-[1.8px] border-[#E27C40] bg-black-140 p-6 sm:p-10 md:p-12 lg:p-16">
+    <div className="flex min-h-screen items-center justify-center bg-black p-4 sm:p-6 md:p-8">
+      <div className="bg-black-140 flex w-full max-w-[719px] flex-col items-center justify-center gap-2 rounded-[18px] border-[1.8px] border-[#E27C40] p-6 sm:p-10 md:p-12 lg:p-16">
         <div className="mb-8 h-12 w-full max-w-[639px] sm:mb-12 md:mb-16">
           <h1 className="bg-gradient-to-r from-[rgba(169,109,246,0.80)] to-[#D06D27] bg-clip-text text-center font-lilita text-3xl font-normal leading-none text-transparent sm:text-4xl md:text-5xl">
             Set Learning Goal
