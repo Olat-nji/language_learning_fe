@@ -1,16 +1,26 @@
 "use client";
 
-import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
+import { ArrowBigLeft, Mail, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
+import SignIn from "~/components/auth/SignIn";
+import SignUp from "~/components/auth/SignUp";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import CustomInput from "~/components/input/CustomInput";
+import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
+import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import QuestPreviewCard from "~/components/quest/questPreviewCard";
+import QuestSceneCard from "~/components/quest/questSceneCard";
+import QuestWraper from "~/components/quest/questWraper";
+import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
+import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Toasts from "~/components/toasts/Toasts";
 import Accordion from "~/components/ui/CustomAccordion";
 
@@ -740,7 +750,6 @@ const StyleGuide: FC = () => {
           <ConnectedPreButton />
         </div>
       </div>
-
       <div className="flex flex-col gap-[20px]">
         <h2 className="text-2xl font-semibold">Alerts</h2>
 
@@ -749,6 +758,69 @@ const StyleGuide: FC = () => {
         </div>
       </div>
       {/* Modals */}
+      <h2 className="text-2xl font-semibold">Modals</h2>
+      <Cookies />
+      <h2 className="text-2xl font-semibold">Notifications Alerts</h2>
+      <Notification />
+      <Accordion
+        title="Accordion Heading"
+        content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+        alwaysActive={false}
+        defaultOpen={false}
+      />
+      <Accordion
+        title="Accordion Heading"
+        content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+        alwaysActive={true}
+        defaultOpen={true}
+      />
+      {/* CheckBox */}
+      <h2 className="text-2xl font-semibold">Checkbox</h2>
+      <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
+
+      <QuestWraper>
+        <div className="grid grid-cols-4 gap-3">
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+        </div>
+      </QuestWraper>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Modals</h2>
         <Cookies />
@@ -772,6 +844,124 @@ const StyleGuide: FC = () => {
         {/* CheckBox */}
         <h2 className="text-2xl font-semibold">Custom Checkbox</h2>
         <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Progress Bar</h2>
+        <div className="flex flex-col gap-4 lg:flex-row">
+          <LevelProgress
+            starCount={1}
+            percent={20}
+            strokeWidth={5}
+            strokeColor="#00AA00"
+            starWidth={24}
+          />
+          <LevelProgress
+            starCount={2}
+            percent={40}
+            strokeWidth={5}
+            strokeColor="#FE5900"
+            starWidth={24}
+          />
+        </div>
+        <DifficultLevel />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        {/* Volume bar */}
+        <h2 className="text-2xl font-semibold">Volume bar</h2>
+        <VolumeBar />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        {/*All Quest Page components */}
+        <h2 className="text-2xl font-semibold">All Quest Page components</h2>
+        <QuestSceneCard
+          title="Sample Quest Title"
+          points={500}
+          description="This is a sample description for the quest."
+          stage={1}
+          levels={4}
+        />
+      </div>
+
+      <div className="">
+        <h1 className="mb-4 text-2xl font-bold">Custom Input</h1>
+        <CustomInput
+          placeholder="Enter Your Email"
+          Icon={Mail}
+          // onChange={handleChange}
+          // error={emailError}
+          label="Email address"
+          inputType="text"
+          name="email"
+          className=""
+          // value={form.email}
+        />
+        <h1 className="my-[20px] text-[20px] font-bold">
+          Usage Instructions for <code>&lt;CustomInput /&gt;</code>
+        </h1>
+        <p className="mb-2">
+          The <code>&lt;InputField /&gt;</code> component is a customizable
+          input field designed to handle various input types and display errors.
+          Below are the props that can be passed to the component:
+        </p>
+        <ul className="mb-4 list-disc pl-6">
+          <li className="mb-2">
+            <code>placeholder</code>: <span className="italic">string</span> -
+            The placeholder text for the input field.
+          </li>
+          <li className="mb-2">
+            <code>Icon</code>: <span className="italic">React.Component</span> -
+            (Optional) An icon component to display within the input field.
+          </li>
+          <li className="mb-2">
+            <code>onChange</code>:{" "}
+            <span className="italic">
+              (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; void
+            </span>{" "}
+            - (Optional) A function to handle input changes.
+          </li>
+          <li className="mb-2">
+            <code>error</code>: <span className="italic">string</span> -
+            (Optional) An error message to display below the input field.
+          </li>
+          <li className="mb-2">
+            <code>label</code>: <span className="italic">string</span> - The
+            label text to display above the input field.
+          </li>
+          <li className="mb-2">
+            <code>inputType</code>: <span className="italic">string</span> - The
+            type of input (e.g., &rdquo;text&rdquo;, &rdquo;email&rdquo;,
+            &rdquo;password&rdquo;).
+          </li>
+          <li className="mb-2">
+            <code>name</code>: <span className="italic">string</span> - The name
+            attribute for the input field.
+          </li>
+          <li className="mb-2">
+            <code>value</code>: <span className="italic">string</span> -
+            (Optional) The value of the input field.
+          </li>
+        </ul>
+
+        <h1 className="mb-2 text-xl font-semibold">Example Usage</h1>
+        <pre className="mb-4 rounded bg-gray-100 p-4">
+          <code>
+            {`<CustomInput
+  placeholder="Enter Your Email"
+  Icon={Email}
+  onChange={handleChange}
+  error={emailError}
+  label="Email address"
+  inputType="text"
+  name="email"
+  value={form.email}
+/>`}
+          </code>
+        </pre>
+      </div>
+
+      <div className="flex flex-col gap-[30px]">
+        <SignIn />
+        <SignUp />
       </div>
     </main>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Lilita_One } from "next/font/google";
+import { Abel, Inter, Lilita_One } from "next/font/google";
 
 import { ToastProvider } from "~/components/ui/toast";
 
@@ -19,6 +19,11 @@ export const lilitaOne = Lilita_One({
   subsets: ["latin"],
   weight: ["400"],
 });
+export const abel = Abel({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
