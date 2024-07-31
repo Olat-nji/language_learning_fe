@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { fira_sans } from "~/app/layout";
 import CustomButton from "~/components/common/common-button/common-button";
 import {
   ellipse1,
@@ -14,16 +13,14 @@ import {
 export default function Home() {
   return (
     <div className="flex h-screen flex-col items-center px-[5%] pt-[30%] text-center lg:min-h-screen lg:px-0 lg:pt-[10%]">
-      <div className="mx-auto w-full max-w-2xl px-10 py-4">
-        <h1
-          className={`text-3xl font-extrabold lg:text-5xl ${fira_sans.className}`}
-        >
+      <div className="mx-auto mt-5 w-full max-w-2xl px-10 py-4">
+        <h1 className={`font-lilita text-3xl font-normal lg:text-5xl`}>
           Don&apos;t miss out, join the queue and get to know first
         </h1>
       </div>
-      <div className="relative mx-auto w-full max-w-xl rounded-xl bg-white px-7 pb-10 shadow-lg shadow-neutral-70 backdrop-blur-sm">
+      <div className="relative mx-auto mt-5 w-full max-w-xl rounded-xl bg-white px-7 pb-10 shadow-lg shadow-neutral-70 backdrop-blur-sm">
         <div className="flex w-full flex-col pt-10 text-left">
-          <h3 className={`${fira_sans.className} text-3xl font-bold`}>
+          <h3 className={`font-lilita text-3xl font-light`}>
             Join the waitlist
           </h3>
           <p className="mt-4 text-lg text-neutral-100 lg:w-2/3">
@@ -78,10 +75,10 @@ export default function Home() {
         </div>
       </div>
       <div className="absolute bottom-0 left-0 mb-4 ml-4 hidden lg:flex">
-        <Image src={left} alt="Left Character" width={250} height={200} />
+        <Image src={left} alt="Left Character" width={200} height={200} />
       </div>
       <div className="absolute bottom-0 right-0 mb-4 mr-4 hidden lg:flex">
-        <Image src={right} alt="Right Character" width={250} height={200} />
+        <Image src={right} alt="Right Character" width={200} height={200} />
       </div>
     </div>
   );

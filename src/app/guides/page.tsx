@@ -1,9 +1,11 @@
 "use client";
 
-import { Orbit, PlusIcon } from "lucide-react";
-import { FC } from "react";
+import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
+import { FC, useState } from "react";
 
+import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
@@ -11,10 +13,26 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import QuestPreviewCard from "~/components/quest/questPreviewCard";
+import QuestSceneCard from "~/components/quest/questSceneCard";
+import QuestWraper from "~/components/quest/questWraper";
+import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
+import LevelProgress from "~/components/range/Levels/LevelProgress";
+import Toasts from "~/components/toasts/Toasts";
+import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
+      <CustomButton href="/" variant="primary">
+        <ArrowBigLeft />
+        Home
+      </CustomButton>
       <h2 className="text-2xl font-semibold">Color Guides</h2>
       <div
         className="grid w-full items-start gap-4"
@@ -706,7 +724,8 @@ const StyleGuide: FC = () => {
       </div>
 
       {/* Preview Buttons */}
-      <div>
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Preview Buttons</h2>
         <div>
           <div>
             <div className="text-[24px]">Default Button</div>
@@ -728,11 +747,136 @@ const StyleGuide: FC = () => {
           <ConnectedPreButton />
         </div>
       </div>
+      <div className="flex flex-col gap-[20px]">
+        <h2 className="text-2xl font-semibold">Alerts</h2>
 
+        <div className="">
+          <Toasts variant="default" textDescription="An alert goes here" />
+        </div>
+      </div>
       {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
       <Notification />
+      <Accordion
+        title="Accordion Heading"
+        content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+        alwaysActive={false}
+        defaultOpen={false}
+      />
+      <Accordion
+        title="Accordion Heading"
+        content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+        alwaysActive={true}
+        defaultOpen={true}
+      />
+      {/* CheckBox */}
+      <h2 className="text-2xl font-semibold">Checkbox</h2>
+      <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
+
+      <QuestWraper>
+        <div className="grid grid-cols-4 gap-3">
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+
+          <QuestPreviewCard
+            cardImage="/images/hero-image.svg"
+            id={1}
+            level={200}
+            path="/"
+            points={3}
+            stage={3}
+            title="Card title"
+          />
+        </div>
+      </QuestWraper>
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Custom Modals</h2>
+        <Cookies />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Custom Accordion</h2>
+        <Accordion
+          title="Accordion Heading"
+          content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+          alwaysActive={false}
+          defaultOpen={false}
+        />
+        <Accordion
+          title="Accordion Heading"
+          content="These cookies are crucial for the website's basic functionality and cannot be disabled. They ensure that the website operates correctly and securely."
+          alwaysActive={true}
+          defaultOpen={true}
+        />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        {/* CheckBox */}
+        <h2 className="text-2xl font-semibold">Custom Checkbox</h2>
+        <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Progress Bar</h2>
+        <div className="flex flex-col gap-4 lg:flex-row">
+          <LevelProgress
+            starCount={1}
+            percent={20}
+            strokeWidth={5}
+            strokeColor="#00AA00"
+            starWidth={24}
+          />
+          <LevelProgress
+            starCount={2}
+            percent={40}
+            strokeWidth={5}
+            strokeColor="#FE5900"
+            starWidth={24}
+          />
+        </div>
+        <DifficultLevel />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        {/* Volume bar */}
+        <h2 className="text-2xl font-semibold">Volume bar</h2>
+        <VolumeBar />
+      </div>
+      <div className="flex flex-col gap-3 py-5">
+        {/*All Quest Page components */}
+        <h2 className="text-2xl font-semibold">All Quest Page components</h2>
+        <QuestSceneCard
+          title="Sample Quest Title"
+          points={500}
+          description="This is a sample description for the quest."
+          stage={1}
+          levels={4}
+        />
+      </div>
     </main>
   );
 };

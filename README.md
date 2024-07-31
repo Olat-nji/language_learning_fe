@@ -54,12 +54,27 @@ Open ``` http://localhost:3000/guides ``` to see the components and style guides
 Once the development server is running, you can start exploring the game and developing new features. The main entry point of the application is ``` (landing-routes)/(home)/pages.tsx ```.
 
 ### Project Structure
-- ``` pages/ ```: Contains the Next.js pages.
-- ``` components/ ```: Contains React components used throughout the application.
+- ```app/ ```: Contains the Next.js pages.
+    - auth-routes/
+    - landing-routes/
+      - legal/
+    - guides/
+    - dashboard/
+      - products/
+      - settings/
+    - admin/
+    - game/
+- ```components/ ```: Contains React components used throughout the application.
+    - common/
+    - game/
+    - admin/
+    - landing/
+    - forms/
 - ``` styles/ ```: Contains the CSS and styling files.
-- ``` public/ ```: Contains static assets like images and icons.
-- ``` store/ ```: Contains Zustand store for state management.
+- ```fonts/ ```
+- ```hooks/ ```
 - ``` utils/ ```: Contains utility functions and helpers.
+- ``` test/ ```
 
 ### Scripts
 - ```pnpm dev```: Runs the development server.

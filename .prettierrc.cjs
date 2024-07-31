@@ -12,6 +12,7 @@ module.exports = {
   trailingComma: "all",
   arrowParens: "always",
   endOfLine: "auto",
+  quoteProps: "preserve",
 
   plugins: [
     "@ianvs/prettier-plugin-sort-imports",
