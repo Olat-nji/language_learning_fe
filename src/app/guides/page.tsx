@@ -5,6 +5,8 @@ import { FC, useState } from "react";
 
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import SearchBar from "~/components/common/searchbar/Searchbar";
+import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import Notification from "~/components/notification/Notification";
@@ -878,6 +880,12 @@ const StyleGuide: FC = () => {
           levels={4}
         />
       </div>
+
+      {/* Search Bar */}
+      <h2 className="text-2xl font-semibold">Search Icon</h2>
+      <SearchIcon />
+      <h2 className="text-2xl font-semibold">Search bar</h2>
+      <SearchBar />
     </main>
   );
 };
