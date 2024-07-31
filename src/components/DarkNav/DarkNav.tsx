@@ -15,7 +15,7 @@ const DarkNav = () => {
 
   return (
     <nav className="z-50 h-16 px-3 text-black md:h-20 md:p-0">
-      <div className="mx-auto mt-14 flex max-w-[1136px] items-center justify-between rounded-[60px] border border-[#DEE5ED] border-transparent-white-15 bg-transparent-black-55 px-5 py-4 shadow md:mt-9">
+      <div className="shadow mx-auto mt-14 flex max-w-[1136px] items-center justify-between rounded-[60px] border border-[#DEE5ED] border-transparent-white-15 bg-transparent-black-55 px-5 py-4 md:mt-9">
         {/* Desktop Navigation */}
         <div className="hidden w-full items-center justify-between md:flex">
           <div className="flex items-center">

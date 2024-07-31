@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import CustomButton from "../common/common-button/common-button";
 // import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
@@ -48,7 +49,7 @@ const LightNav = () => {
   return (
     <>
       <nav className="fixed left-0 right-0 top-0 z-50 w-screen">
-        <div className="md:max-w-4/5 lg:max-w-4/5 mx-auto my-4 hidden w-3/5 flex-row items-center rounded-full bg-white p-2.5 pl-5 shadow-md ring-1 ring-gray-200 md:flex md:justify-between md:shadow md:ring-primary-20">
+        <div className="md:max-w-4/5 lg:max-w-4/5 shadow-md md:shadow mx-auto my-4 hidden w-3/5 flex-row items-center rounded-full bg-white p-2.5 pl-5 ring-1 ring-gray-200 md:flex md:justify-between md:ring-primary-20">
           <Logo />
           <div className="hidden items-center gap-5 md:flex lg:gap-7">
             {navbarLinks.map((links, index) => {
@@ -72,7 +73,7 @@ const LightNav = () => {
 
                 <ChevronDown size={16} />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[200px] rounded-xl border border-blue-200 bg-white shadow-sm">
+              <DropdownMenuContent className="shadow-sm w-[200px] rounded-xl border border-blue-200 bg-white">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>Profile</DropdownMenuItem>
@@ -100,19 +101,23 @@ const LightNav = () => {
               </div>
             ) : (
               <>
-                <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-[#2A2A2A] text-white">
+                <CustomButton href="/signup" variant="secondary">
                   Sign Up
-                </button>
-                <button className="h-12 w-[132px] rounded-[59px] border border-[#1B1B1B] bg-white text-[#2A2A2A]">
+                </CustomButton>
+                <CustomButton
+                  className="border border-black"
+                  href="/signin"
+                  variant="default"
+                >
                   Sign In
-                </button>
+                </CustomButton>
               </>
             )}
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        <div className="mx-auto my-4 flex h-[64px] w-full max-w-[351px] items-center justify-between rounded-[60px] border border-neutral-30 bg-white p-3 shadow-sm md:hidden">
+        <div className="shadow-sm mx-auto my-4 flex h-[64px] w-full max-w-[351px] items-center justify-between rounded-[60px] border border-neutral-30 bg-white p-3 md:hidden">
           <div className="flex items-center">
             <Link href={"/"}>
               <Image

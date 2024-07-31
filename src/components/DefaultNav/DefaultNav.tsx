@@ -5,7 +5,7 @@ import Image from "next/image";
 const DefaultNav = () => {
   return (
     <nav className="z-50 h-16 px-3 text-black md:h-[100px] md:p-0">
-      <div className="mx-auto mt-14 flex max-w-[1728px] items-center justify-between border-b border-b-neutral-40 bg-white px-5 py-4 shadow md:mt-9">
+      <div className="shadow mx-auto mt-14 flex max-w-[1728px] items-center justify-between border-b border-b-neutral-40 bg-white px-5 py-4 md:mt-9">
         {/* Desktop Navigation */}
         <div className="hidden w-full items-center justify-between md:flex">
           <div className="flex items-center">
