@@ -9,6 +9,7 @@ import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
+import NavTabs from "~/components/Nav-tab/Navtab";
 import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
@@ -886,6 +887,12 @@ const StyleGuide: FC = () => {
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
+
+
+      {/* NAV-TAB  */}
+
+      <NavTabs />
+
     </main>
   );
 };
