@@ -3,9 +3,12 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogOverlay,
+  DialogTitle,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -31,6 +34,12 @@ const LearningGoalModal = () => {
       </DialogTrigger>
       <DialogOverlay className="fixed inset-0" />
       <DialogContent className="max-w-sm gap-2 bg-neutral-10 p-0 outline-none transition-all sm:max-w-[702px] sm:rounded-3xl">
+        <VisuallyHidden>
+          <DialogTitle>Set Learning Goal</DialogTitle>
+          <DialogDescription>
+            Choose a learning goal from the available options.
+          </DialogDescription>
+        </VisuallyHidden>
         <div className="flex w-full max-w-[719px] flex-col items-center justify-center gap-2 rounded-[18px] border-[1.8px] border-[#E27C40] bg-black p-6 sm:p-10 md:p-12 lg:p-16">
           <div className="mb-8 h-12 w-full max-w-[639px] sm:mb-12 md:mb-16">
             <h1 className="bg-gradient-to-r from-[rgba(169,109,246,0.80)] to-[#D06D27] bg-clip-text text-center font-lilita text-3xl font-normal leading-none text-transparent sm:text-4xl md:text-5xl">

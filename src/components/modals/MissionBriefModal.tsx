@@ -3,7 +3,9 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogOverlay,
+  DialogTitle,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
 import Image from "next/image";
@@ -18,6 +20,10 @@ const MissionBriefModal = () => {
       </DialogTrigger>
       <DialogOverlay className="fixed inset-0" />
       <DialogContent className="max-w-sm gap-2 bg-neutral-10 p-0 outline-none transition-all sm:max-w-[702px] sm:rounded-3xl">
+        <DialogTitle className="sr-only">Mission Brief</DialogTitle>
+        <DialogDescription className="sr-only">
+          Detailed mission briefing and instructions.
+        </DialogDescription>
         <div className="w-full max-w-[896px]">
           <div className="relative">
             <div className="bg-black-140 absolute left-0 right-0 bg-opacity-50 text-center">
