@@ -842,10 +842,6 @@ const StyleGuide: FC = () => {
         </div>
       </QuestWraper>
       <div className="flex flex-col gap-3 py-5">
-        <h2 className="text-2xl font-semibold">Custom Modals</h2>
-        <Cookies />
-      </div>
-      <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Accordion</h2>
         <Accordion
           title="Accordion Heading"
@@ -901,88 +897,6 @@ const StyleGuide: FC = () => {
       <div>
         <h2 className="text-2xl font-semibold">Toggle Component</h2>
         <ToggleSwitch variant="default" />
-      </div>
-
-      <div className="">
-        <h1 className="mb-4 text-2xl font-bold">Custom Input</h1>
-        <CustomInput
-          placeholder="Enter Your Email"
-          Icon={Mail}
-          // onChange={handleChange}
-          // error={emailError}
-          label="Email address"
-          inputType="text"
-          name="email"
-          className=""
-          // value={form.email}
-        />
-        <h1 className="my-[20px] text-[20px] font-bold">
-          Usage Instructions for <code>&lt;CustomInput /&gt;</code>
-        </h1>
-        <p className="mb-2">
-          The <code>&lt;InputField /&gt;</code> component is a customizable
-          input field designed to handle various input types and display errors.
-          Below are the props that can be passed to the component:
-        </p>
-        <ul className="mb-4 list-disc pl-6">
-          <li className="mb-2">
-            <code>placeholder</code>: <span className="italic">string</span> -
-            The placeholder text for the input field.
-          </li>
-          <li className="mb-2">
-            <code>Icon</code>: <span className="italic">React.Component</span> -
-            (Optional) An icon component to display within the input field.
-          </li>
-          <li className="mb-2">
-            <code>onChange</code>:{" "}
-            <span className="italic">
-              (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; void
-            </span>{" "}
-            - (Optional) A function to handle input changes.
-          </li>
-          <li className="mb-2">
-            <code>error</code>: <span className="italic">string</span> -
-            (Optional) An error message to display below the input field.
-          </li>
-          <li className="mb-2">
-            <code>label</code>: <span className="italic">string</span> - The
-            label text to display above the input field.
-          </li>
-          <li className="mb-2">
-            <code>inputType</code>: <span className="italic">string</span> - The
-            type of input (e.g., &rdquo;text&rdquo;, &rdquo;email&rdquo;,
-            &rdquo;password&rdquo;).
-          </li>
-          <li className="mb-2">
-            <code>name</code>: <span className="italic">string</span> - The name
-            attribute for the input field.
-          </li>
-          <li className="mb-2">
-            <code>value</code>: <span className="italic">string</span> -
-            (Optional) The value of the input field.
-          </li>
-        </ul>
-
-        <h1 className="mb-2 text-xl font-semibold">Example Usage</h1>
-        <pre className="mb-4 rounded bg-gray-100 p-4">
-          <code>
-            {`<CustomInput
-  placeholder="Enter Your Email"
-  Icon={Email}
-  onChange={handleChange}
-  error={emailError}
-  label="Email address"
-  inputType="text"
-  name="email"
-  value={form.email}
-/>`}
-          </code>
-        </pre>
-      </div>
-
-      <div className="flex flex-col gap-[30px]">
-        <SignIn />
-        <SignUp />
       </div>
       <h2 className="text-2xl font-semibold">Search Icon</h2>
       <SearchIcon />

@@ -9,7 +9,7 @@ import CustomInput from "../input/CustomInput";
 const SignUp = () => {
   return (
     <>
-      <div className="min-w-[500px] overflow-hidden rounded-[20px] bg-neutral-10 font-abel shadow-md">
+      <div className="font-abel min-w-[300px] overflow-hidden rounded-[20px] bg-neutral-10 shadow-md lg:min-w-[500px]">
         <div className="flex flex-col items-center gap-[10px] bg-white py-[20px]">
           <h1 className="text-[40px] font-bold text-secondary-110">Sign Up</h1>
           <p className="text-[15px] text-neutral-130">
@@ -79,8 +79,8 @@ const SignUp = () => {
               Sign Up
             </CustomButton>
             <p className="">
-              Already have an account?{" "}
-              <a href="" className="text-[12px] text-primary-100">
+              Already have an account?
+              <a href="/signin" className="text-[12px] text-primary-100">
                 Sign In
               </a>
             </p>
