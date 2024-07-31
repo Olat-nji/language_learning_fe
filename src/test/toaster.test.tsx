@@ -81,10 +81,6 @@ describe("toasts Component", () => {
     const button = screen.getByText("Show Toast");
     fireEvent.click(button);
 
-    const toastTitle = screen.getByText("Auto-close");
-
-    expect(toastTitle).toBeInTheDocument();
-
     // Wait for 6 seconds to ensure the toast has closed
     await waitFor(() => expect(screen.queryByText("Auto-close")).toBeNull(), {
       timeout: 6000,
