@@ -23,6 +23,7 @@ import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
+import IconPanel from "~/components/speakingStates/audio";
 import Toasts from "~/components/toasts/Toasts";
 import Accordion from "~/components/ui/CustomAccordion";
 
@@ -896,6 +897,9 @@ const StyleGuide: FC = () => {
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
+      {/* Speaking States */}
+      <h2 className="text-2xl font-semibold">Speaking States</h2>
+      <IconPanel />
     </main>
   );
 };
