@@ -15,7 +15,7 @@ type PropertyType = {
 export default function NotificationCard(properties: PropertyType) {
   return (
     <div
-      className={`flex w-full flex-col gap-2 p-6 py-4 shadow ${properties.className || "w-96"}`}
+      className={`shadow·flex·w-full·flex-col·gap-2·p-6·py-4 ${properties.className || "w-96"}`}
     >
       <div className="flex w-full items-center justify-between gap-4">
         <Image
