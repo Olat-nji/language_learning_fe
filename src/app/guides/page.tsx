@@ -1,6 +1,6 @@
 "use client";
 
-import { Orbit, PlusIcon } from "lucide-react";
+import { Check, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
 import CheckboxList from "~/components/checkbox/checkbox";
@@ -8,6 +8,7 @@ import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
+import Correct from "~/components/correct";
 import LightNav from "~/components/light-navbar/LightNav";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
@@ -26,9 +27,11 @@ import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
+import Speakers from "~/components/speakers";
 import IconPanel from "~/components/speakingStates/audio";
 import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
+import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -899,9 +902,31 @@ const StyleGuide: FC = () => {
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
-      {/* Speaking States */}
       <h2 className="text-2xl font-semibold">Speaking States</h2>
       <IconPanel />
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Speaker Components</h2>
+        <div className="flex gap-3 bg-black p-5">
+          <Speakers type="Default" />
+          <Speakers type="Loud" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Check Components</h2>
+        <div className="flex gap-3 bg-gray-400 p-5">
+          <Check type="Default" />
+          <Check type="Active" />
+          <Check type="Correct" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">TryAgain</h2>
+        <TryAgain />
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Correct</h2>
+        <Correct />
+      </div>
     </main>
   );
 };
