@@ -28,6 +28,7 @@ import QuestWraper from "~/components/quest/questWraper";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Toasts from "~/components/toasts/Toasts";
+import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -36,6 +37,7 @@ const StyleGuide: FC = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
       <CustomButton href="/" variant="primary">
@@ -898,6 +900,10 @@ const StyleGuide: FC = () => {
           stage={1}
           levels={4}
         />
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold">Toggle Component</h2>
+        <ToggleSwitch variant="default" />
       </div>
 
       <div className="">
