@@ -8,7 +8,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -26,12 +25,7 @@ const Modal: FC<ModalProperties> = ({ onClose }) => {
       </DialogTrigger>
       <DialogOverlay className="fixed inset-0 w-fit bg-black bg-opacity-15" />
       <DialogContent className="max-w-sm gap-2 bg-neutral-10 p-0 outline-none transition-all sm:max-w-[702px] sm:rounded-3xl">
-        <VisuallyHidden>
-          <DialogTitle>Level Success</DialogTitle>
-          <DialogDescription>
-            Congratulations on completing Level 3.
-          </DialogDescription>
-        </VisuallyHidden>
+        <DialogTitle>Level Success</DialogTitle>
         <div className="relative w-full max-w-[600px] rounded-[4px] bg-[#E9EEF3] p-6 sm:p-8 md:p-[41px_75px_27px_75px]">
           <button
             className="absolute -right-4 -top-4 h-8 w-8 cursor-pointer"
@@ -45,11 +39,11 @@ const Modal: FC<ModalProperties> = ({ onClose }) => {
             />
           </button>
           <div className="flex flex-col items-center gap-8">
-            <h2 className="text-center font-lilita text-xl font-normal leading-[120%] tracking-[1.12px] text-[#595959] sm:text-2xl md:text-[28px]">
+            <DialogDescription className="text-center font-lilita text-xl font-normal leading-[120%] tracking-[1.12px] text-[#595959] sm:text-2xl md:text-[28px]">
               Congratulations, Lingo Guru
               <br />
               You just completed Level 3
-            </h2>
+            </DialogDescription>
             <div className="relative aspect-square w-full max-w-[200px]">
               <Image
                 src="/images/modal-images/Badges.png"

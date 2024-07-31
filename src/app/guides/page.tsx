@@ -1,17 +1,20 @@
 "use client";
 
-import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
+import { Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
+import LightNav from "~/components/light-navbar/LightNav";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import LearningGoalModal from "~/components/modals/LearningGoalModal";
 import Modal from "~/components/modals/LevelSuccessModal";
 import MissionBriefModal from "~/components/modals/MissionBriefModal";
+import NavTabs from "~/components/Nav-tab/Navtab";
 import Notification from "~/components/notification/Notification";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
@@ -25,6 +28,7 @@ import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import IconPanel from "~/components/speakingStates/audio";
 import Toasts from "~/components/toasts/Toasts";
+import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -33,12 +37,14 @@ const StyleGuide: FC = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
-      <CustomButton href="/" variant="primary">
-        <ArrowBigLeft />
-        Home
-      </CustomButton>
+      <LightNav />
+      <div className="w-4/5 space-y-2 py-5">
+        <h2 className="text-2xl font-semibold">Navigation Tab</h2>
+        <NavTabs />
+      </div>
       <h2 className="text-2xl font-semibold">Color Guides</h2>
       <div
         className="grid w-full items-start gap-4"
@@ -729,7 +735,6 @@ const StyleGuide: FC = () => {
         </div>
       </div>
 
-      {/* Preview Buttons */}
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Preview Buttons</h2>
         <div>
@@ -760,7 +765,10 @@ const StyleGuide: FC = () => {
           <Toasts variant="default" textDescription="An alert goes here" />
         </div>
       </div>
-      {/* Modals */}
+      <h2 className="text-2xl font-semibold">Dropdowns</h2>
+      <div className="pl-[20%]">
+        <LanguageSelector />
+      </div>
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
       <MissionBriefModal />
@@ -782,7 +790,6 @@ const StyleGuide: FC = () => {
         alwaysActive={true}
         defaultOpen={true}
       />
-      {/* CheckBox */}
       <h2 className="text-2xl font-semibold">Checkbox</h2>
       <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
 
@@ -832,10 +839,6 @@ const StyleGuide: FC = () => {
         </div>
       </QuestWraper>
       <div className="flex flex-col gap-3 py-5">
-        <h2 className="text-2xl font-semibold">Custom Modals</h2>
-        <Cookies />
-      </div>
-      <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Accordion</h2>
         <Accordion
           title="Accordion Heading"
@@ -851,7 +854,6 @@ const StyleGuide: FC = () => {
         />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/* CheckBox */}
         <h2 className="text-2xl font-semibold">Custom Checkbox</h2>
         <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
       </div>
@@ -876,12 +878,10 @@ const StyleGuide: FC = () => {
         <DifficultLevel />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/* Volume bar */}
         <h2 className="text-2xl font-semibold">Volume bar</h2>
         <VolumeBar />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/*All Quest Page components */}
         <h2 className="text-2xl font-semibold">All Quest Page components</h2>
         <QuestSceneCard
           title="Sample Quest Title"
@@ -891,8 +891,10 @@ const StyleGuide: FC = () => {
           levels={4}
         />
       </div>
-
-      {/* Search Bar */}
+      <div>
+        <h2 className="text-2xl font-semibold">Toggle Component</h2>
+        <ToggleSwitch variant="default" />
+      </div>
       <h2 className="text-2xl font-semibold">Search Icon</h2>
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>

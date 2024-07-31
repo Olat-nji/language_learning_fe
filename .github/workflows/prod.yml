@@ -1,0 +1,48 @@
+name: PROD CICD
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Run Tests
+        run: pnpm run test:ci -- --max-warnings 0
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            echo "About to Deploy"
+            cd /var/www/html/delve_fe/production
+            eval $(ssh-agent)
+            ssh-add ~/.ssh/id_ecdsa
+            git reset --hard origin/production
+            pnpm install
+            pnpm run build
+            sudo systemctl restart delve
