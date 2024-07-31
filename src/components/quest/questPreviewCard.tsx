@@ -17,8 +17,8 @@ const QuestPreviewCard = ({
         <div className="h-64 w-full overflow-hidden rounded-t-md bg-gray-100">
           <Image
             src={cardImage}
-            className="h-full w-full"
-            height={300}
+            className="h-full w-full object-cover"
+            height={100}
             width={100}
             alt={title}
           />
