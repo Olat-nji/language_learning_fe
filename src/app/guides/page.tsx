@@ -10,6 +10,7 @@ import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
+import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
 import LightNav from "~/components/light-navbar/LightNav";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
@@ -24,6 +25,7 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import ProgressContainer from "~/components/Progress-box/ProgressContainer/ProgressContainer";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
 import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
@@ -905,7 +907,7 @@ const StyleGuide: FC = () => {
       </div>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Volume bar</h2>
-        <VolumeBar />
+        <VolumeBar value={20} />
       </div>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">All Quest Page components</h2>
@@ -950,6 +952,12 @@ const StyleGuide: FC = () => {
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold">Correct</h2>
         <Correct />
+
+        <h2 className="mt-2 text-2xl font-semibold">Progress Container</h2>
+        <ProgressContainer />
+      </div>
+      <div className="mx-auto flex items-center justify-center">
+        <ButtonGrid />
       </div>
       <div>
         <h2 className="text-2xl font-semibold">Password Criteria </h2>
