@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MouseEventHandler } from "react";
 
 import circle from "../../../public/quest learning now/circle.svg";
+import CustomButton from "../common/common-button/common-button";
 
 export interface theQuestProperties {
   image: string;
@@ -74,12 +75,13 @@ const QuestLearningNow = ({
                 <div className="h-[0.625rem] w-full rounded-[1.25rem] bg-purple-100"></div>
               )}
               <div>
-                <button
+                <CustomButton
                   onClick={onClick}
-                  className="flex w-full items-center justify-center rounded-[3.6875rem] border-secondary-30 bg-[#FFF2E5] px-[0.625rem] py-[1rem] text-center font-inter text-[1.125rem] font-semibold leading-[1.75rem] text-[#FF7C00]"
+                  className="w-full"
+                  variant="primary-two"
                 >
                   {isCompleted ? "Continue Quest" : "Preview  Quest"}
-                </button>
+                </CustomButton>
               </div>
             </div>
           </div>

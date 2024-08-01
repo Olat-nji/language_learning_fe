@@ -865,6 +865,10 @@ const StyleGuide: FC = () => {
           />
         </div>
       </QuestWraper>
+      <div className="flex flex-col gap-3">
+        <QuestLearningNow theQuest={theQuestArray} isCompleted={true} />
+        <QuestLearningNow theQuest={theQuestArray} isCompleted={false} />
+      </div>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Accordion</h2>
         <Accordion
@@ -946,27 +950,23 @@ const StyleGuide: FC = () => {
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold">TryAgain</h2>
         <TryAgain />
+        <h2 className="text-2xl font-semibold">Correct</h2>
+        <Correct />
       </div>
       ,
       <div className="flex flex-col gap-3">
-        <h2 className="text-2xl font-semibold">Correct</h2>
-        <Correct />
-
         <h2 className="mt-2 text-2xl font-semibold">Progress Container</h2>
         <ProgressContainer />
       </div>
-      <div className="mx-auto flex items-center justify-center">
+      <div className="flex flex-col gap-4 py-5">
+        <h2 className="mt-2 text-2xl font-semibold">Game Navigation Tab</h2>
         <ButtonGrid />
       </div>
       <div>
         <h2 className="text-2xl font-semibold">Password Criteria </h2>
         <PasswordCriteria password="Hng1$" />
       </div>
-      <div>
-        <h2 className="text-2xl font-semibold">Quest Learning Now</h2>
-        <QuestLearningNow theQuest={theQuestArray} isCompleted={true} />
-        <QuestLearningNow theQuest={theQuestArray} isCompleted={false} />
-      </div>
+      <div></div>
     </main>
   );
 };

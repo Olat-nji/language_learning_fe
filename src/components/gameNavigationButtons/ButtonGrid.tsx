@@ -185,7 +185,7 @@ const ButtonGrid: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-[#444444]">
+    <div className="flex h-fit bg-[#444444]">
       <div className="mx-auto flex flex-col items-center justify-center">
         <div
           className={`mx-auto grid grid-cols-6 items-center justify-center gap-10 rounded-lg p-4`}
