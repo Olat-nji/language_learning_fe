@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Run Lint Fix
+        run: pnpm lint:fix
+
       - name: Build
         run: pnpm run build
 
@@ -42,7 +45,8 @@ jobs:
             cd /var/www/html/delve_fe/dev
             eval $(ssh-agent)
             ssh-add ~/.ssh/id_ecdsa
-            git pull origin dev
+            git reset --hard origin/dev
             pnpm install
+            rm -rf.next
             pnpm run build
             sudo systemctl restart delve-dev
