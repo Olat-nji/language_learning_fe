@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-interface VolumeBarProps {
+interface VolumeBarProperties {
   value: number;
 }
 
-const VolumeBar = ({ value }: VolumeBarProps) => {
-const [internalValue, setInternalValue] = useState(value);
+const VolumeBar = ({ value }: VolumeBarProperties) => {
+  const [internalValue, setInternalValue] = useState(value);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInternalValue(Number.parseInt(event.target.value, 10));

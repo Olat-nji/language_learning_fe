@@ -1,21 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+
 import VolumeBar from "../miscellaneous/Volume";
 
-interface ProgressBoxProps {
+interface ProgressBoxProperties {
   level: number;
   progressStarted: boolean;
   progress: number;
 }
 
-
-export default function ProgressBox({ level, progressStarted, progress }: ProgressBoxProps) {
-
+export default function ProgressBox({
+  level,
+  progressStarted,
+  progress,
+}: ProgressBoxProperties) {
   return (
-    <div className="mt-4 flex h-[127px] w-[417px] flex-col items-center rounded-l-[86px] rounded-r-[40px] border-[10px] border-primary-100 bg-primary-60 ">
-      <div className="flex w-full items-center py-2 px-2 gap-4">
+    <div className="mt-4 flex h-[127px] w-[417px] flex-col items-center rounded-l-[86px] rounded-r-[40px] border-[10px] border-primary-100 bg-primary-60">
+      <div className="flex w-full items-center gap-4 px-2 py-2">
         <Image
           src="/logo/profile.svg"
           alt="profile icon"
@@ -25,14 +27,16 @@ export default function ProgressBox({ level, progressStarted, progress }: Progre
         />
         <div className="flex flex-col gap-2">
           <p className="text-2xl font-bold leading-9 text-primary-130">
-          The Burning building
+            The Burning building
           </p>
           {progressStarted && (
             <>
-            <div className="flex flex-col gap-1">
-              <p className="text-base text-transparent-black-60 font-bold ">Lvl {level}</p>
-              <VolumeBar value={progress}  />
-            </div>
+              <div className="flex flex-col gap-1">
+                <p className="text-base font-bold text-transparent-black-60">
+                  Lvl {level}
+                </p>
+                <VolumeBar value={progress} />
+              </div>
             </>
           )}
         </div>

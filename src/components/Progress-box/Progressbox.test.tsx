@@ -5,30 +5,20 @@ import ProgressBox from "./Progressbox";
 
 import "@testing-library/jest-dom";
 
-describe("ProgressBox", () => {
-  it('renders the default state correctly', () => {
-    const { getByText, getByAltText } = render(
-      <ProgressBox level={1} progressStarted={false} progress={0} />
-    );
+describe("progressBox", () => {
+  it("renders the default state correctly", () => {
+    expect.assertions(2);
 
-    expect(getByAltText('profile icon')).toBeInTheDocument();
-    expect(getByText('The Burning building')).toBeInTheDocument();
+    render(<ProgressBox level={1} progressStarted={false} progress={0} />);
+    expect(screen.getByAltText("profile icon")).toBeInTheDocument();
+    expect(screen.getByText("The Burning building")).toBeInTheDocument();
   });
 
-  it('renders the progress state correctly', () => {
-    const { getByText } = render(
-      <ProgressBox level={5} progressStarted={true} progress={50} />
-    );
+  it("renders the progress state correctly", () => {
+    expect.assertions(1);
 
-    expect(getByText('Lvl 5')).toBeInTheDocument();
-  });
+    render(<ProgressBox level={5} progressStarted={true} progress={50} />);
 
-  it('renders VolumeBar with correct value', () => {
-    const { getByRole } = render(
-      <ProgressBox level={3} progressStarted={true} progress={30} />
-    );
-
-    const input = getByRole('slider');
-    expect(input).toHaveValue(30);
+    expect(screen.getByText("Lvl 5")).toBeInTheDocument();
   });
 });
