@@ -75,7 +75,7 @@ const MicrophoneComponent = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="min-h-90vh flex items-center justify-center">
       {renderContent()}
     </div>
   );
