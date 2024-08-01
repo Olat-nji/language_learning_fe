@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import VolumeBar from "../miscellaneous/Volume";
-import LevelProgress from "../range/Levels/LevelProgress";
 
 interface ProgressBoxProps {
   level: number;
@@ -12,11 +11,7 @@ interface ProgressBoxProps {
 }
 
 
-// export default function ProgressBox({ level, progressStarted }) {
 export default function ProgressBox({ level, progressStarted, progress }: ProgressBoxProps) {
-  // const [progressStarted, setProgressStarted] = useState(0);
-  // const [level, setLevel] = useState(1);
-  // const [progress, setProgress] = useState(0);
 
   return (
     <div className="mt-4 flex h-[127px] w-[417px] flex-col items-center rounded-l-[86px] rounded-r-[40px] border-[10px] border-primary-100 bg-primary-60 ">
