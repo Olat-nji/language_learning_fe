@@ -37,7 +37,7 @@ const QuestLoadingPage: React.FC<QuestLoadingPageProperties> = ({
           <LoadingCircles />
           <MicrophoneComponent />
         </div>
-        <div className="h-16" /> {/* Bottom spacer */}
+        <div className="h-16" />
       </DialogContent>
     </Dialog>
   );

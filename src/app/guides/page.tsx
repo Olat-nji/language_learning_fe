@@ -979,7 +979,7 @@ const StyleGuide: FC = () => {
         <PasswordCriteria password="Hng1$" />
       </div>
       <div></div>
-      {/* Add this section for Quest Loading */}
+      {/* Quest Loading */}
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Quest Loading</h2>
         <div className="flex flex-col items-start gap-4 rounded-lg bg-black p-6">
