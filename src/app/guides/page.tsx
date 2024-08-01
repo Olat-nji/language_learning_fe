@@ -10,6 +10,7 @@ import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
+import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
 import LightNav from "~/components/light-navbar/LightNav";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
@@ -932,6 +933,9 @@ const StyleGuide: FC = () => {
 
         <h2 className="mt-2 text-2xl font-semibold">Progress Container</h2>
         <ProgressContainer />
+      </div>
+      <div className="mx-auto flex items-center justify-center">
+        <ButtonGrid />
       </div>
     </main>
   );
