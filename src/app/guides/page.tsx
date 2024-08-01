@@ -23,6 +23,8 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import ProgressBox from "~/components/Progress-box/Progressbox";
+import ProgressContainer from "~/components/Progress-box/ProgressContainer/ProgressContainer";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
 import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
@@ -882,7 +884,7 @@ const StyleGuide: FC = () => {
       </div>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Volume bar</h2>
-        <VolumeBar />
+        <VolumeBar value={20} />
       </div>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">All Quest Page components</h2>
@@ -925,6 +927,9 @@ const StyleGuide: FC = () => {
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold">Correct</h2>
         <Correct />
+
+        <h2 className="text-2xl font-semibold mt-2">Progress Container</h2>
+        <ProgressContainer />
       </div>
     </main>
   );
