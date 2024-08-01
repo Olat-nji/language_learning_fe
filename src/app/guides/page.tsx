@@ -18,6 +18,7 @@ import Modal from "~/components/modals/LevelSuccessModal";
 import MissionBriefModal from "~/components/modals/MissionBriefModal";
 import NavTabs from "~/components/Nav-tab/Navtab";
 import Notification from "~/components/notification/Notification";
+import PasswordCriteria from "~/components/password/passwordCriteria";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
@@ -27,6 +28,9 @@ import ProgressContainer from "~/components/Progress-box/ProgressContainer/Progr
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
 import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
+import QuestLearningNow, {
+  theQuestProperties,
+} from "~/components/questLearningNow/questLearningNow";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Speakers from "~/components/speakers";
@@ -42,7 +46,29 @@ const StyleGuide: FC = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-
+  const theQuestArray: theQuestProperties[] = [
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+  ];
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
       <LightNav />
@@ -457,7 +483,6 @@ const StyleGuide: FC = () => {
           bg-transparent-white-70, text-white
         </div>
       </div>
-
       <h2 className="text-2xl font-semibold">Button Variants</h2>
       <div
         className="grid w-full grid-cols-5 items-start gap-4"
@@ -604,7 +629,6 @@ const StyleGuide: FC = () => {
           </div>
         </div>
       </div>
-
       <h2 className="text-2xl font-semibold">Usage</h2>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
@@ -739,7 +763,6 @@ const StyleGuide: FC = () => {
           </div>
         </div>
       </div>
-
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Preview Buttons</h2>
         <div>
@@ -797,7 +820,6 @@ const StyleGuide: FC = () => {
       />
       <h2 className="text-2xl font-semibold">Checkbox</h2>
       <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
-
       <h2 className="text-2xl font-semibold">Notifications Alerts</h2>
       <Notification />
       <QuestWraper>
@@ -925,6 +947,7 @@ const StyleGuide: FC = () => {
         <h2 className="text-2xl font-semibold">TryAgain</h2>
         <TryAgain />
       </div>
+      ,
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold">Correct</h2>
         <Correct />
@@ -934,6 +957,15 @@ const StyleGuide: FC = () => {
       </div>
       <div className="mx-auto flex items-center justify-center">
         <ButtonGrid />
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold">Password Criteria </h2>
+        <PasswordCriteria password="Hng1$" />
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold">Quest Learning Now</h2>
+        <QuestLearningNow theQuest={theQuestArray} isCompleted={true} />
+        <QuestLearningNow theQuest={theQuestArray} isCompleted={false} />
       </div>
     </main>
   );
