@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowBigLeft, Orbit, PlusIcon } from "lucide-react";
+import { Check, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
 import CheckboxList from "~/components/checkbox/checkbox";
@@ -8,27 +8,39 @@ import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
+import Correct from "~/components/correct";
+import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
+import LightNav from "~/components/light-navbar/LightNav";
 import MicrophoneComponent from "~/components/microphone/MicrophoneComponent";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import LearningGoalModal from "~/components/modals/LearningGoalModal";
 import Modal from "~/components/modals/LevelSuccessModal";
 import MissionBriefModal from "~/components/modals/MissionBriefModal";
+import NavTabs from "~/components/Nav-tab/Navtab";
 import Notification from "~/components/notification/Notification";
+import PasswordCriteria from "~/components/password/passwordCriteria";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import ProgressContainer from "~/components/Progress-box/ProgressContainer/ProgressContainer";
 import LoadingCircles from "~/components/quest-loading/LoadingCircles";
 import QuestLoadingPage from "~/components/quest-loading/QuestLoadingPage";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
 import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
+import QuestLearningNow, {
+  theQuestProperties,
+} from "~/components/questLearningNow/questLearningNow";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
+import Speakers from "~/components/speakers";
+import IconPanel from "~/components/speakingStates/audio";
 import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
+import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
@@ -38,7 +50,29 @@ const StyleGuide: FC = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-
+  const theQuestArray: theQuestProperties[] = [
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+  ];
   const handleShowQuestLoading = () => {
     setShowQuestLoading(true);
   };
@@ -49,10 +83,11 @@ const StyleGuide: FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
-      <CustomButton href="/" variant="primary">
-        <ArrowBigLeft />
-        Home
-      </CustomButton>
+      <LightNav />
+      <div className="w-4/5 space-y-2 py-5">
+        <h2 className="text-2xl font-semibold">Navigation Tab</h2>
+        <NavTabs />
+      </div>
       <h2 className="text-2xl font-semibold">Color Guides</h2>
       <div
         className="grid w-full items-start gap-4"
@@ -460,7 +495,6 @@ const StyleGuide: FC = () => {
           bg-transparent-white-70, text-white
         </div>
       </div>
-
       <h2 className="text-2xl font-semibold">Button Variants</h2>
       <div
         className="grid w-full grid-cols-5 items-start gap-4"
@@ -607,7 +641,6 @@ const StyleGuide: FC = () => {
           </div>
         </div>
       </div>
-
       <h2 className="text-2xl font-semibold">Usage</h2>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
@@ -742,8 +775,6 @@ const StyleGuide: FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Preview Buttons */}
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Preview Buttons</h2>
         <div>
@@ -774,12 +805,10 @@ const StyleGuide: FC = () => {
           <Toasts variant="default" textDescription="An alert goes here" />
         </div>
       </div>
-      {/* Dropdowns */}
       <h2 className="text-2xl font-semibold">Dropdowns</h2>
       <div className="pl-[20%]">
         <LanguageSelector />
       </div>
-      {/* Modals */}
       <h2 className="text-2xl font-semibold">Modals</h2>
       <Cookies />
       <MissionBriefModal />
@@ -801,10 +830,8 @@ const StyleGuide: FC = () => {
         alwaysActive={true}
         defaultOpen={true}
       />
-      {/* CheckBox */}
       <h2 className="text-2xl font-semibold">Checkbox</h2>
       <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
-
       <h2 className="text-2xl font-semibold">Notifications Alerts</h2>
       <Notification />
       <QuestWraper>
@@ -850,9 +877,9 @@ const StyleGuide: FC = () => {
           />
         </div>
       </QuestWraper>
-      <div className="flex flex-col gap-3 py-5">
-        <h2 className="text-2xl font-semibold">Custom Modals</h2>
-        <Cookies />
+      <div className="flex flex-col gap-3">
+        <QuestLearningNow theQuest={theQuestArray} isCompleted={true} />
+        <QuestLearningNow theQuest={theQuestArray} isCompleted={false} />
       </div>
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Custom Accordion</h2>
@@ -870,7 +897,6 @@ const StyleGuide: FC = () => {
         />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/* CheckBox */}
         <h2 className="text-2xl font-semibold">Custom Checkbox</h2>
         <CheckboxList onChange={handleCheckboxChange} checked={isChecked} />
       </div>
@@ -895,12 +921,10 @@ const StyleGuide: FC = () => {
         <DifficultLevel />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/* Volume bar */}
         <h2 className="text-2xl font-semibold">Volume bar</h2>
-        <VolumeBar />
+        <VolumeBar value={20} />
       </div>
       <div className="flex flex-col gap-3 py-5">
-        {/*All Quest Page components */}
         <h2 className="text-2xl font-semibold">All Quest Page components</h2>
         <QuestSceneCard
           title="Sample Quest Title"
@@ -914,13 +938,47 @@ const StyleGuide: FC = () => {
         <h2 className="text-2xl font-semibold">Toggle Component</h2>
         <ToggleSwitch variant="default" />
       </div>
-
-      {/* Search Bar */}
       <h2 className="text-2xl font-semibold">Search Icon</h2>
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
-
+      <h2 className="text-2xl font-semibold">Speaking States</h2>
+      <IconPanel />
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Speaker Components</h2>
+        <div className="flex gap-3 bg-black p-5">
+          <Speakers type="Default" />
+          <Speakers type="Loud" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">Check Components</h2>
+        <div className="flex gap-3 bg-gray-400 p-5">
+          <Check type="Default" />
+          <Check type="Active" />
+          <Check type="Correct" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl font-semibold">TryAgain</h2>
+        <TryAgain />
+        <h2 className="text-2xl font-semibold">Correct</h2>
+        <Correct />
+      </div>
+      ,
+      <div className="flex flex-col gap-3">
+        <h2 className="mt-2 text-2xl font-semibold">Progress Container</h2>
+        <ProgressContainer />
+      </div>
+      <div className="flex flex-col gap-4 py-5">
+        <h2 className="mt-2 text-2xl font-semibold">Game Navigation Tab</h2>
+        <ButtonGrid />
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold">Password Criteria </h2>
+        <PasswordCriteria password="Hng1$" />
+      </div>
+      <div></div>
       {/* Add this section for Quest Loading */}
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Quest Loading</h2>
@@ -933,7 +991,6 @@ const StyleGuide: FC = () => {
           <MicrophoneComponent />
         </div>
       </div>
-
       {/* New Quest Page section */}
       <div className="flex flex-col gap-3 py-5">
         <h2 className="text-2xl font-semibold">Quest Page</h2>
@@ -941,7 +998,6 @@ const StyleGuide: FC = () => {
           Quest Page
         </CustomButton>
       </div>
-
       {/* Conditional rendering of QuestLoadingPage */}
       {showQuestLoading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">

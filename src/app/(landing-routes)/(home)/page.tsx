@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import CustomButton from "~/components/common/common-button/common-button";
 import HeroSection from "~/components/HeroSection";
-import LearningGoalModal from "~/components/modals/LearningGoalModal";
 
 function page() {
   return (
@@ -15,9 +14,6 @@ function page() {
         <Link href={"/guides"}>
           <CustomButton variant="primary-two">Components</CustomButton>
         </Link>
-      </div>
-      <div id="#modal">
-        <LearningGoalModal />
       </div>
     </div>
   );

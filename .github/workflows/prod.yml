@@ -42,7 +42,8 @@ jobs:
             cd /var/www/html/delve_fe/production
             eval $(ssh-agent)
             ssh-add ~/.ssh/id_ecdsa
-            git pull origin production
+            git reset --hard origin/production
             pnpm install
+            rm -rf .next
             pnpm run build
             sudo systemctl restart delve

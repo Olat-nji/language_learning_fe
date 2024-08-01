@@ -24,7 +24,7 @@ const ToggleSwitch = ({ variant = "default" }: ToggleSwitchProperties) => {
       onClick={toggleSwitch}
     >
       <div
-        className={`h-6 w-6 transform rounded-full bg-white shadow-md duration-300 ease-in-out ${
+        className={`shadow-md h-6 w-6 transform rounded-full bg-white duration-300 ease-in-out ${
           isOn ? "translate-x-8" : ""
         }`}
       ></div>

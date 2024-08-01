@@ -1,10 +1,14 @@
 import { useState } from "react";
 
-const VolumeBar = () => {
-  const [value, setValue] = useState(20);
+interface VolumeBarProperties {
+  value: number;
+}
+
+const VolumeBar = ({ value }: VolumeBarProperties) => {
+  const [internalValue, setInternalValue] = useState(value);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(Number.parseInt(event.target.value, 10));
+    setInternalValue(Number.parseInt(event.target.value, 10));
   };
   return (
     <div className="relative flex h-[26px] w-[269] items-center justify-center">
@@ -14,7 +18,7 @@ const VolumeBar = () => {
             <div
               className="h-[22px] rounded-[20px] bg-primary-100"
               style={{
-                width: `${value}px`,
+                width: `${internalValue}px`,
                 boxShadow:
                   "0px 3px 10px 0px rgba(254, 124, 50, 1) inset, 0px -3px 10px 0px rgba(103, 69, 55, 1) inset",
               }}
@@ -27,11 +31,11 @@ const VolumeBar = () => {
           type="range"
           min={20}
           max={269}
-          value={value}
+          value={internalValue}
           onChange={handleChange}
           className="custom-range h-full w-full cursor-pointer appearance-none rounded-full bg-gray-300"
           style={{
-            background: `linear-gradient(to right, #1597ff 0%, #1597ff ${value}%, #ddd ${value}%, #ddd 100%)`,
+            background: `linear-gradient(to right, #1597ff 0%, #1597ff ${internalValue}%, #ddd ${internalValue}%, #ddd 100%)`,
           }}
         />
       </div>

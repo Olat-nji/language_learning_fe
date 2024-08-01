@@ -174,6 +174,7 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
+        abel: ["Abel"],
         inter: ["Inter"],
         lilita: ["Lilita-One"],
         axiformaSemiBold: ["Axiforma-SemiBold", "sans-serif"],
@@ -233,6 +234,11 @@ const config = {
         "pulse-3": "pulse 1.5s ease-in-out 1s infinite",
         "beat": "beat 1s ease-in-out infinite",
       },
+    },
+    boxShadow: {
+      "inner-custom-1": "inset 0 2px 10px 0 rgba(214, 192, 255, 0.25)",
+      "inner-custom-2": "inset 0 2px 10px 0 #1F0451",
+      "custom-drop": "0 6px 4px 0 rgba(0, 0, 0, 0.25)",
     },
   },
 
