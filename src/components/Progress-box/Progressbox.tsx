@@ -16,7 +16,7 @@ export default function ProgressBox({
   progress,
 }: ProgressBoxProperties) {
   return (
-    <div className="mt-4 flex h-[127px] w-[417px] flex-col items-center rounded-l-[86px] rounded-r-[40px] border-[10px] border-primary-100 bg-primary-60">
+    <div className="mt-4 flex w-[417px] flex-col items-center rounded-l-[86px] rounded-r-[40px] border-[10px] border-primary-100 bg-primary-60">
       <div className="flex w-full items-center gap-4 px-2 py-2">
         <Image
           src="/logo/profile.svg"
@@ -25,7 +25,7 @@ export default function ProgressBox({
           height={84}
           className="mr-2"
         />
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1">
           <p className="text-2xl font-bold leading-9 text-primary-130">
             The Burning building
           </p>
