@@ -930,8 +930,8 @@ const StyleGuide: FC = () => {
         <h2 className="text-2xl font-semibold">Correct</h2>
         <Correct />
       </div>
-      <div className="flex justify-center items-center mx-auto">
-        <ButtonGrid/>
+      <div className="mx-auto flex items-center justify-center">
+        <ButtonGrid />
       </div>
     </main>
   );

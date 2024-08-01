@@ -46,9 +46,9 @@ const LightNav = () => {
     const userSignedIn = false;
     setIsSignedIn(userSignedIn);
   }, []);
-  
+
   const toggleSidebar = () => {
-    setIsSidebarOpen(prevState => !prevState);
+    setIsSidebarOpen((previousState) => !previousState);
   };
 
   return (
