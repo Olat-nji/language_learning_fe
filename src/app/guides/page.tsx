@@ -61,7 +61,7 @@ const StyleGuide: FC = () => {
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-20 px-4 py-4 text-black shadow">
           bg-neutral-20, text-black
         </div>
-        <div className="shadow flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-30 px-4 py-4 text-black">
+        <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-30 px-4 py-4 text-black shadow">
           bg-neutral-30, text-black
         </div>
         <div className="flex w-full items-center justify-center whitespace-nowrap rounded-lg bg-neutral-40 px-4 py-4 text-black shadow">
