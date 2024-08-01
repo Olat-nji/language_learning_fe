@@ -11,6 +11,7 @@ import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
 import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
 import LightNav from "~/components/light-navbar/LightNav";
+import MicrophoneComponent from "~/components/microphone/MicrophoneComponent";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import LearningGoalModal from "~/components/modals/LearningGoalModal";
@@ -25,6 +26,8 @@ import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
 import ProgressContainer from "~/components/Progress-box/ProgressContainer/ProgressContainer";
+import LoadingCircles from "~/components/quest-loading/LoadingCircles";
+import QuestLoadingPage from "~/components/quest-loading/QuestLoadingPage";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
 import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
@@ -42,6 +45,7 @@ import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [showQuestLoading, setShowQuestLoading] = useState(false);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -69,6 +73,14 @@ const StyleGuide: FC = () => {
       noOfLevels: 2,
     },
   ];
+  const handleShowQuestLoading = () => {
+    setShowQuestLoading(true);
+  };
+
+  const handleHideQuestLoading = () => {
+    setShowQuestLoading(false);
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
       <LightNav />
@@ -967,6 +979,33 @@ const StyleGuide: FC = () => {
         <PasswordCriteria password="Hng1$" />
       </div>
       <div></div>
+      {/* Quest Loading */}
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Quest Loading</h2>
+        <div className="flex flex-col items-start gap-4 rounded-lg bg-black p-6">
+          <h3 className="text-xl font-medium text-white">Loading Circles</h3>
+          <LoadingCircles />
+          <h3 className="text-xl font-medium text-white">
+            Microphone Component
+          </h3>
+          <MicrophoneComponent />
+        </div>
+      </div>
+      {/* New Quest Page section */}
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Quest Page</h2>
+        <CustomButton variant="primary" onClick={handleShowQuestLoading}>
+          Quest Page
+        </CustomButton>
+      </div>
+      {/* Conditional rendering of QuestLoadingPage */}
+      {showQuestLoading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative h-[80vh] w-[100] max-w-4xl rounded-lg bg-white p-6">
+            <QuestLoadingPage onClose={handleHideQuestLoading} />
+          </div>
+        </div>
+      )}
     </main>
   );
 };
