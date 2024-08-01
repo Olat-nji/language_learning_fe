@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -6,7 +7,19 @@ import QuestLearningNow from "./questLearningNow";
 
 vi.mock("next/image", () => ({
   __esModule: true,
-  default: () => <img />,
+  default: ({
+    src,
+    alt,
+    width,
+    height,
+  }: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  }) => {
+    return <img src={src} alt={alt} width={width} height={height} />;
+  },
 }));
 
 const mockQuests = [
