@@ -8,6 +8,7 @@ import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
+import MicrophoneComponent from "~/components/microphone/MicrophoneComponent";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
 import LearningGoalModal from "~/components/modals/LearningGoalModal";
@@ -19,6 +20,8 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import LoadingCircles from "~/components/quest-loading/LoadingCircles";
+import QuestLoadingPage from "~/components/quest-loading/QuestLoadingPage";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
 import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
@@ -30,9 +33,18 @@ import Accordion from "~/components/ui/CustomAccordion";
 
 const StyleGuide: FC = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [showQuestLoading, setShowQuestLoading] = useState(false);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
+  };
+
+  const handleShowQuestLoading = () => {
+    setShowQuestLoading(true);
+  };
+
+  const handleHideQuestLoading = () => {
+    setShowQuestLoading(false);
   };
 
   return (
@@ -908,6 +920,36 @@ const StyleGuide: FC = () => {
       <SearchIcon />
       <h2 className="text-2xl font-semibold">Search bar</h2>
       <SearchBar />
+
+      {/* Add this section for Quest Loading */}
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Quest Loading</h2>
+        <div className="flex flex-col items-start gap-4 rounded-lg bg-black p-6">
+          <h3 className="text-xl font-medium text-white">Loading Circles</h3>
+          <LoadingCircles />
+          <h3 className="text-xl font-medium text-white">
+            Microphone Component
+          </h3>
+          <MicrophoneComponent />
+        </div>
+      </div>
+
+      {/* New Quest Page section */}
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Quest Page</h2>
+        <CustomButton variant="primary" onClick={handleShowQuestLoading}>
+          Quest Page
+        </CustomButton>
+      </div>
+
+      {/* Conditional rendering of QuestLoadingPage */}
+      {showQuestLoading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative h-[80vh] w-[100] max-w-4xl rounded-lg bg-white p-6">
+            <QuestLoadingPage onClose={handleHideQuestLoading} />
+          </div>
+        </div>
+      )}
     </main>
   );
 };
