@@ -1,9 +1,8 @@
 "use client";
 
-import { Orbit, PlusIcon } from "lucide-react";
+import { Check, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
-import Check from "~/components/check";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
@@ -907,7 +906,6 @@ const StyleGuide: FC = () => {
       <SearchBar />
       <h2 className="text-2xl font-semibold">Speaking States</h2>
       <IconPanel />
-
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold">Speaker Components</h2>
         <div className="flex gap-3 bg-black p-5">

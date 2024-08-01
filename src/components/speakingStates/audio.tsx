@@ -1,7 +1,6 @@
 import { AudioLines, Mic } from "lucide-react";
-import React from "react";
 
-const IconPanel: React.FC = () => {
+const IconPanel = () => {
   return (
     <div className="flex h-[381.02px] w-[214.13px] flex-col items-center justify-around border-2 bg-black p-4">
       <div className="h-[60.02px] w-[152px] text-purple-500">
