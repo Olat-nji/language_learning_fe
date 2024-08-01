@@ -44,6 +44,6 @@ jobs:
             ssh-add ~/.ssh/id_ecdsa
             git reset --hard origin/production
             pnpm install
-            rm -rf.next
+            rm -rf .next
             pnpm run build
             sudo systemctl restart delve
