@@ -18,6 +18,7 @@ import Modal from "~/components/modals/LevelSuccessModal";
 import MissionBriefModal from "~/components/modals/MissionBriefModal";
 import NavTabs from "~/components/Nav-tab/Navtab";
 import Notification from "~/components/notification/Notification";
+import PasswordCriteria from "~/components/password/passwordCriteria";
 import { ConnectedPreButton } from "~/components/preview-buttons/Connected";
 import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
@@ -26,6 +27,9 @@ import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
 import QuestSceneCard from "~/components/quest/questSceneCard";
 import QuestWraper from "~/components/quest/questWraper";
+import QuestLearningNow, {
+  theQuestProperties,
+} from "~/components/questLearningNow/questLearningNow";
 import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Speakers from "~/components/speakers";
@@ -41,7 +45,29 @@ const StyleGuide: FC = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-
+  const theQuestArray: theQuestProperties[] = [
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+    {
+      image: "/images/hero-image.svg",
+      nameOfQuest: "Journey",
+      currentStageOfQuest: 5,
+      noOfPoints: 5,
+      noOfLevels: 2,
+    },
+  ];
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
       <LightNav />
@@ -924,6 +950,15 @@ const StyleGuide: FC = () => {
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold">Correct</h2>
         <Correct />
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold">Password Criteria </h2>
+        <PasswordCriteria password="Hng1$" />
+      </div>
+      <div>
+        <h2 className="text-2xl font-semibold">Quest Learning Now</h2>
+        <QuestLearningNow theQuest={theQuestArray} isCompleted={true} />
+        <QuestLearningNow theQuest={theQuestArray} isCompleted={false} />
       </div>
     </main>
   );

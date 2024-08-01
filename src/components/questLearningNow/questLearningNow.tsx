@@ -3,18 +3,18 @@ import { MouseEventHandler } from "react";
 
 import circle from "../../../public/quest learning now/circle.svg";
 
-interface theQuestProperties {
+export interface theQuestProperties {
   image: string;
   nameOfQuest: string;
-  currentStageOfQuest: string;
+  currentStageOfQuest: string | number;
   noOfPoints: string | number;
-  noOfLevels: string;
+  noOfLevels: string | number;
 }
 
 interface NextUpOrCompletedQuestLearningNowProperties {
   theQuest: theQuestProperties[];
   isCompleted: boolean;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const QuestLearningNow = ({
@@ -35,7 +35,7 @@ const QuestLearningNow = ({
           </p>
         )}
       </div>
-      <div className="flex flex-row flex-wrap items-center gap-4 sm:gap-8">
+      <div className="flex flex-row flex-wrap items-center gap-4 sm:gap-8 md:flex-nowrap">
         {theQuest.map((quest, index) => (
           <div
             key={index}
@@ -49,8 +49,8 @@ const QuestLearningNow = ({
                 height={432}
               />
             </div>
-            <div className="flex flex-col gap-5 px-[1rem] py-[1.5rem]">
-              <h1 className="font-inter overflow-hidden text-ellipsis font-medium leading-[1.625rem] text-[#1B1B1B]">
+            <div className="flex flex-col gap-2 px-[1rem] py-[1.5rem] sm:gap-5">
+              <h1 className="overflow-hidden text-ellipsis font-inter font-medium leading-[1.625rem] text-[#1B1B1B]">
                 {quest?.nameOfQuest}
               </h1>
               <div>
@@ -67,7 +67,6 @@ const QuestLearningNow = ({
                   <p className="font-inter text-[0.875rem] font-normal leading-[1.25rem] text-[#435B76]">
                     {quest?.noOfLevels} Levels
                   </p>
-                  <Image src={circle} alt="circle" width={8} height={8} />
                 </div>
               </div>
 
@@ -77,7 +76,7 @@ const QuestLearningNow = ({
               <div>
                 <button
                   onClick={onClick}
-                  className="font-inter flex w-full items-center rounded-[3.6875rem] border-secondary-30 bg-[#FFF2E5] px-[0.625rem] py-[2rem] text-[1.125rem] font-semibold leading-[1.75rem] text-[#FF7C00]"
+                  className="flex w-full items-center justify-center rounded-[3.6875rem] border-secondary-30 bg-[#FFF2E5] px-[0.625rem] py-[1rem] text-center font-inter text-[1.125rem] font-semibold leading-[1.75rem] text-[#FF7C00]"
                 >
                   {isCompleted ? "Continue Quest" : "Preview  Quest"}
                 </button>
