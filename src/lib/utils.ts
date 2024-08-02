@@ -80,7 +80,6 @@ export const handleMouseEnter = (event: MouseEvent) => {
     const deltaTime = timestamp - lastTimestamp;
 
     if (deltaTime >= speed) {
-      // @ts-expect-error Hacking the type
       element!.textContent! = [...element!.textContent!]
         .map((_: string, index: number) => {
           if (index < iteration) {
