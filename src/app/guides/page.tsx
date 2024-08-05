@@ -25,7 +25,6 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
-import ProgressContainer from "~/components/Progress-box/ProgressContainer/ProgressContainer";
 import LoadingCircles from "~/components/quest-loading/LoadingCircles";
 import QuestLoadingPage from "~/components/quest-loading/QuestLoadingPage";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
@@ -968,7 +967,6 @@ const StyleGuide: FC = () => {
       ,
       <div className="flex flex-col gap-3">
         <h2 className="mt-2 text-2xl font-semibold">Progress Container</h2>
-        <ProgressContainer />
       </div>
       <div className="flex flex-col gap-4 py-5">
         <h2 className="mt-2 text-2xl font-semibold">Game Navigation Tab</h2>
