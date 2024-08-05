@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { lilitaOne } from "~/app/layout";
 
 const HeroSection = () => {
@@ -17,9 +19,11 @@ const HeroSection = () => {
           </p>
 
           <div className="mx-auto w-fit md:mx-0">
-            <button className="font-fira mt-4 rounded-full bg-primary-100 px-6 py-3 text-sm capitalize text-white outline-none">
-              Explore questes
-            </button>
+            <Link href={"/quest"}>
+              <button className="font-fira mt-4 rounded-full bg-primary-100 px-6 py-3 text-sm capitalize text-white outline-none">
+                Explore questes
+              </button>
+            </Link>
           </div>
         </div>
       </div>
