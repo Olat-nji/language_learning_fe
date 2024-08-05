@@ -1,12 +1,12 @@
 "use client";
 
-import { useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
+import { GLTFLoader } from "three-stdlib";
 
 const RunningAvatar: React.FC = () => {
-  const { scene } = useGLTF("/models/avatar1.glb");
+  const scene = useLoader(GLTFLoader, "/models/avatar1.glb").scene;
   const reference = useRef<THREE.Group>(null);
 
   scene.scale.set(3, 3, 1);
@@ -17,7 +17,7 @@ const RunningAvatar: React.FC = () => {
 };
 
 const StaticAvatar: React.FC = () => {
-  const { scene } = useGLTF("/models/avatar1.glb");
+  const scene = useLoader(GLTFLoader, "/models/avatar1.glb").scene;
   // eslint-disable-next-line react/no-unknown-property
   return <primitive object={scene} />;
 };
