@@ -217,10 +217,22 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        pulse: {
+          "0%, 100%": { opacity: "0.1" },
+          "50%": { opacity: "0.3" },
+        },
+        beat: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.2)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-1": "pulse 1.5s ease-in-out infinite",
+        "pulse-2": "pulse 1.5s ease-in-out 0.5s infinite",
+        "pulse-3": "pulse 1.5s ease-in-out 1s infinite",
+        "beat": "beat 1s ease-in-out infinite",
       },
     },
     boxShadow: {
