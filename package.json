@@ -19,6 +19,7 @@
     "email:start": "email start"
   },
   "dependencies": {
+    "@google-cloud/text-to-speech": "^5.3.0",
     "@headlessui/react": "^2.1.2",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -30,6 +31,7 @@
     "@radix-ui/react-visually-hidden": "^1.1.0",
     "@react-email/components": "0.0.21",
     "@react-email/tailwind": "^0.0.18",
+    "@readyplayerme/visage": "^6.0.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@types/jest-axe": "^3.5.9",
     "class-variance-authority": "^0.7.0",
