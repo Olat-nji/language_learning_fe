@@ -19,12 +19,12 @@ import styles from "./LightNav.module.css";
 import Logo from "./logo-component";
 
 const LightNav = () => {
-  const [isSignedIn, setIsSignedIn] = useState(true);
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     // Check if the user is signed in
-    const userSignedIn = true;
+    const userSignedIn = false;
     setIsSignedIn(userSignedIn);
   }, []);
 
@@ -153,7 +153,6 @@ const LightNav = () => {
   
 
         {/* Mobile Navigation */}
-        {/* <div className="mx-auto my-6 flex h-12 w-full items-center justify-between py-2 px-5 shadow-sm md:hidden "> */}
         <div
           className={`mx-auto my-4 flex h-12 w-full items-center justify-between py-2 px-5 shadow-sm md:hidden ${
             isSignedIn ? styles.navLinkGradient : ""
