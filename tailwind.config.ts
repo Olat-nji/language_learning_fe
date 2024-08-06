@@ -22,6 +22,8 @@ const config = {
       colors: {
         black: "rgb(var(--secondary-120))",
         neutral: {
+          stroke: "rgb(var(--stroke))",
+          5: "rgb(var(--neutral-5))",
           10: "rgb(var(--neutral-10))",
           20: "rgb(var(--neutral-20))",
           30: "rgb(var(--neutral-30))",
@@ -200,6 +202,8 @@ const config = {
       },
       boxShadow: {
         spread: "0px 1px 18px 0px #0A39B01F",
+        primary:
+          "0px 58px 16px 0px rgba(184, 184, 184, 0.00), 0px 37px 15px 0px rgba(184, 184, 184, 0.01), 0px 21px 13px 0px rgba(184, 184, 184, 0.05), 0px 9px 9px 0px rgba(184, 184, 184, 0.09), 0px 2px 5px 0px rgba(184, 184, 184, 0.10)",
       },
       backgroundImage: {
         heroImageOne: "url('/images/_Hero_Image.png')",
