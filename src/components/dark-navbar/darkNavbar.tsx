@@ -153,12 +153,7 @@ const LightNav = () => {
   
 
         {/* Mobile Navigation */}
-        {/* <div className="mx-auto my-6 flex h-12 w-full items-center justify-between py-2 px-5 shadow-sm md:hidden "> */}
-        <div
-          className={`mx-auto my-4 flex h-12 w-full items-center justify-between py-2 px-5 shadow-sm md:hidden ${
-            isSignedIn ? styles.navLinkGradient : ""
-          }`}
-        >
+        <div className="mx-auto my-6 flex h-12 w-full items-center justify-between py-2 px-5 shadow-sm md:hidden ">
           <div className="flex items-center">
             <Link href={"/"}>
               <Image
@@ -182,10 +177,10 @@ const LightNav = () => {
                 />
                 <button
                   onClick={toggleSidebar}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-40 bg-white p-[10px]"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-secondary-120 bg-secondary-110 p-[10px]"
                 >
                   <Image
-                    src="/navbar/Mobile-3lines.svg"
+                    src="/navbar/mobile-line_lightnav.svg"
                     alt="menu-icon"
                     width={48}
                     height={48}
@@ -199,9 +194,10 @@ const LightNav = () => {
                 </button>
                 <button
                   onClick={toggleSidebar}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-secondary-120 bg-secondary-110 p-[10px]"
                 >
                   <Image
-                    src="/logo/mobile-3lines.svg"
+                    src="/navbar/mobile-line_lightnav.svg"
                     alt="menu-icon"
                     width={20}
                     height={20}
