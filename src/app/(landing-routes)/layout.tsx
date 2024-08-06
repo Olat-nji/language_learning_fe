@@ -1,3 +1,4 @@
+import DarkNav from "~/components/DarkNav/DarkNav";
 import Footer from "~/components/footer/Footer";
 import GotoTop from "~/components/miscellaneous/goto-top";
 
