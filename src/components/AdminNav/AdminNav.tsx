@@ -14,7 +14,7 @@ import Logo from "./logo-component";
 
 const AdminNav = () => {
   return (
-    <nav className="z-50  w-full text-black md:h-[100px] md:p-0">
+    <nav className="z-50 h-12 w-full text-black md:h-[96px] md:p-0">
       <div
         className={`shadow  mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white px-5 ${styles.navLinkGradient}`}
       >
