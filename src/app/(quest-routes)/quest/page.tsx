@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-import ProgressBox from "~/components/Progress-box/Progressbox";
+import LevelDisplay from "~/components/level-display/LevelDisplay";
 import QuestLevelTimer from "~/components/quest-level-timer/QuestLevelTimer";
 import ExampleComponent from "~/components/thoughts/PlayerThought";
 
@@ -33,8 +33,8 @@ const Home: React.FC = () => {
         justifyContent: "space-between",
       }}
     >
-      <div className="flex w-full justify-between px-[2%] pt-5">
-        <ProgressBox level={1} progressStarted={false} progress={0} />
+      <div className="flex w-full flex-col justify-between gap-2 px-[2%] pt-5 lg:flex-row">
+        <LevelDisplay />
         <QuestLevelTimer initialTime={300} />
       </div>
 
