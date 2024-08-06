@@ -1,4 +1,3 @@
-import AdminNav from "~/components/AdminNav/AdminNav";
 import LightNav from "~/components/light-navbar/LightNav";
 import GotoTop from "~/components/miscellaneous/goto-top";
 

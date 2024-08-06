@@ -13,12 +13,10 @@ describe("lightNav", () => {
     expect(desktopLogo).toBeInTheDocument();
   });
 
-  it("renders Sign In and Sign Up buttons when not signed in", () => {
-    expect.assertions(2); // Adding this line to specify the number of assertions in the test
+  it("renders the signed-out state correctly", () => {
+    expect.assertions(2);
     render(<LightNav />);
-    const signInButton = screen.getByText("Sign In");
-    const signUpButtons = screen.getAllByText("Sign Up");
-    expect(signInButton).toBeInTheDocument();
-    expect(signUpButtons.length).toBeGreaterThan(0);
+    expect(screen.getByText("How it works")).toBeInTheDocument();
+    expect(screen.getAllByText("Delve In")).toHaveLength(2);
   });
 });
