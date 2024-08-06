@@ -26,10 +26,10 @@ const Home: React.FC = () => {
       style={{
         position: "relative",
         width: "100%",
-        height: "100vh",
+        height: "100dvh",
         backgroundImage: "url('/models/Level 12.png')",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom center",
         backgroundRepeat: "no-repeat",
         display: "flex",
         flexDirection: "column",

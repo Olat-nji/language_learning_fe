@@ -13,7 +13,7 @@ const Scene = () => {
 
 
       <ambientLight intensity={1.5} />
-      <group rotation={[Math.PI / 12, 1.5, -0.2]} position={[3, -3.7, 0]} >
+      <group rotation={[Math.PI / 12, 1.5, -0.2]} position={[-4, -4.5, 0]} >
         <Avatar />
       </group>
 
