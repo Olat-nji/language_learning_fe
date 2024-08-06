@@ -36,7 +36,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/light-navbar/LightNav.testx.tsx"
+    "src/components/light-navbar/LightNav.testx.tsx",
+    "src/app/(quest-routes)/**/*.{ts,tsx,jsx}",
+    "src/app/(quest-routes)/quest/_component/scene.jsx",
   ],
   "exclude": [
     "node_modules"
