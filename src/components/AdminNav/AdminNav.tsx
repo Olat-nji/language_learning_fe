@@ -19,7 +19,7 @@ const AdminNav = () => {
         className={`shadow mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white ${styles.navLinkGradient}`}
       >
         {/* Desktop Navigation */}
-        <div className="hidden w-full items-center justify-between pl-[52px] pr-20 py-4 md:flex">
+        <div className="hidden w-full items-center justify-between py-4 pl-[52px] pr-20 md:flex">
           <div className="flex items-center">
             <Logo />
           </div>
