@@ -1031,34 +1031,20 @@ const StyleGuide: FC = () => {
           </h2>
           <PlayerThought />
         </section>
+        {/* Navbar Components */}
+        <h2 className="text-2xl font-semibold">Navbar Components</h2>
+        <div className="flex flex-col gap-3 py-5">
+          <div className="">
+            <h2 className="text-xl font-semibold">AdminNav</h2>
+            <AdminNav />
+          </div>
+          <div className="relative">
+            <h2 className="text-xl font-semibold">DarkNav</h2>
+            <DarkNav />
+          </div>
+        </div>
       </main>
     </Layout>
-      )}
-      <div className="flex flex-col gap-3 py-5">
-        <h2 className="text-2xl font-semibold">Quest Level Timer</h2>
-        <QuestLevelTimer initialTime={300} />
-      </div>
-      <h2 className="text-2xl font-semibold">Level Display</h2>
-      <LevelDisplay completedLevels={2} />
-      <section className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold">
-          Player Thought Component
-        </h2>
-        <PlayerThought />
-      </section>
-      {/* Navbar Components */}
-      <h2 className="text-2xl font-semibold">Navbar Components</h2>
-      <div className="flex flex-col gap-3 py-5">
-        <div className="">
-          <h2 className="text-xl font-semibold">AdminNav</h2>
-          <AdminNav />
-        </div>
-        <div className="relative">
-          <h2 className="text-xl font-semibold">DarkNav</h2>
-          <DarkNav />
-        </div>
-      </div>
-    </main>
   );
 };
 
