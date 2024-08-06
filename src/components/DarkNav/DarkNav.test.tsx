@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { beforeEach, describe, expect, it, Mock, vi } from "vitest";
 
 import "@testing-library/jest-dom";
