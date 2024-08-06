@@ -26,6 +26,7 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import QuestLevelTimer from "~/components/quest-level-timer/QuestLevelTimer";
 import LoadingCircles from "~/components/quest-loading/LoadingCircles";
 import QuestLoadingPage from "~/components/quest-loading/QuestLoadingPage";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
@@ -38,6 +39,7 @@ import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Speakers from "~/components/speakers";
 import IconPanel from "~/components/speakingStates/audio";
+import PlayerThought from "~/components/thoughts/PlayerThought";
 import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import TryAgain from "~/components/TryAgain";
@@ -1005,8 +1007,18 @@ const StyleGuide: FC = () => {
           </div>
         </div>
       )}
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Quest Level Timer</h2>
+        <QuestLevelTimer initialTime={300} />
+      </div>
       <h2 className="text-2xl font-semibold">Level Display</h2>
       <LevelDisplay completedLevels={2} />
+      <section className="mb-8">
+        <h2 className="mb-4 text-2xl font-semibold">
+          Player Thought Component
+        </h2>
+        <PlayerThought />
+      </section>
     </main>
   );
 };
