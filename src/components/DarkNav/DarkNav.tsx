@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import CustomButton from "../common/common-button/common-button";
+import { TransitionLink } from "../miscellaneous/transition-link";
 import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
@@ -143,9 +143,9 @@ const DarkNav = () => {
 
             <div className="flex space-x-6">
               <>
-                <CustomButton href="/signup" variant="secondary-two">
+                <TransitionLink href="/signup" variant="secondary-two">
                   Delve In
-                </CustomButton>
+                </TransitionLink>
               </>
             </div>
           </div>
@@ -192,9 +192,9 @@ const DarkNav = () => {
               </div>
             ) : (
               <>
-                <CustomButton href="/signup" variant="secondary-two">
+                <TransitionLink href="/signup" variant="secondary-two">
                   Delve In
-                </CustomButton>
+                </TransitionLink>
                 <button
                   onClick={toggleSidebar}
                   className="h-10 w-10 rounded-[59px] border border-neutral-40 bg-white p-[10px]"
