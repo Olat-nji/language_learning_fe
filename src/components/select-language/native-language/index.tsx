@@ -71,7 +71,7 @@ const NativeLanguage = () => {
                         <div className="mr-2">
                           <Image
                             src={lang.flag}
-                            alt={`${lang.name}_flag`}
+                            alt={`${nativeLanguage.toLowerCase()}_flag`}
                             width={24}
                             height={24}
                             objectFit="contain"

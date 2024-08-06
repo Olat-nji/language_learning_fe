@@ -60,6 +60,10 @@ describe("nativeLanguage Component", () => {
     fireEvent.click(button);
     const languageOption = screen.getByText("English");
     fireEvent.click(languageOption);
-    expect(screen.getByAltText("english_flag")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /english/i }),
+    ).toBeInTheDocument();
+    const image = screen.getByAltText("/flags/english_flag.svg_flag");
+    expect(image).toBeInTheDocument();
   });
 });
