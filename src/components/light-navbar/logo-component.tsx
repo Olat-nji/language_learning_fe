@@ -6,7 +6,7 @@ const Logo = () => {
     <>
       <Link href="/" className="hidden no-underline outline-none md:block">
         <Image
-          src="/images/_Logo.svg"
+          src="/navbar/delve-black__desktop.svg"
           width={100}
           height={32}
           alt="desktop-logo"
@@ -15,7 +15,7 @@ const Logo = () => {
 
       <Link href="/" className="block no-underline outline-none md:hidden">
         <Image
-          src="/images/_Logo.svg"
+          src="/navbar/Delve-black_mobile.svg"
           width={100}
           height={32}
           alt="mobile-logo"
