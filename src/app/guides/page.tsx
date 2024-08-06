@@ -1032,10 +1032,6 @@ const StyleGuide: FC = () => {
           <h2 className="text-xl font-semibold">AdminNav</h2>
           <AdminNav />
         </div>
-        <div className="relative">
-          <h2 className="text-xl font-semibold">DarkNav</h2>
-          <DarkNav />
-        </div>
       </div>
       <div>
         {/* Button to toggle modal visibility */}
