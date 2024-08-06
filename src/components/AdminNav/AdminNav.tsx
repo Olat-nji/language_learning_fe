@@ -2,17 +2,24 @@
 
 import Image from "next/image";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
 import styles from "./AdminNav.module.css";
 import Logo from "./logo-component";
 
 const AdminNav = () => {
   return (
-    <nav className="z-50 h-12 text-black md:h-[100px] md:p-0">
+    <nav className="z-50 h-12 w-full text-black md:h-[96px] md:p-0">
       <div
-        className={`shadow mx-auto flex max-w-[1728px] items-center justify-between border-b border-b-neutral-40 bg-white px-5 ${styles.navLinkGradient}`}
+        className={`shadow mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white ${styles.navLinkGradient}`}
       >
         {/* Desktop Navigation */}
-        <div className="hidden w-full items-center justify-between py-4 md:flex">
+        <div className="hidden w-full items-center justify-between py-4 pl-[52px] pr-20 md:flex">
           <div className="flex items-center">
             <Logo />
           </div>
@@ -21,22 +28,120 @@ const AdminNav = () => {
             <Image
               src="/logo/search.svg"
               alt="search-icon"
-              width={40}
-              height={40}
+              width={48}
+              height={48}
             />
 
-            <div className="flex items-center border-l border-neutral-40"></div>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={`relative flex w-full max-w-max select-none items-center duration-300 ease-in focus:outline-none active:scale-95`}
+              >
+                <Image
+                  src="/logo/bell.svg"
+                  alt="notification-icon"
+                  width={38}
+                  height={38}
+                />
+                <p className="sr-only">Notifications</p>
 
-            <Image
-              src="/logo/bell.svg"
-              alt="notification-icon"
-              width={36}
-              height={36}
-            />
+                <span className="absolute right-[7px] top-[1px] size-[12px] rounded-full bg-primary-100 stroke-white stroke-[1px]" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="shadow-sm shadow-sm w-[400px] divide-y-[1px] divide-neutral-30 rounded-xl bg-white p-0 shadow-blue-200">
+                <DropdownMenuLabel className="flex items-center justify-between gap-8 bg-secondary-110 px-6 py-5">
+                  <p className="text-lg font-medium text-white">
+                    Notifications
+                  </p>
+                  <button
+                    type="button"
+                    className="text-sm text-primary-100 duration-200 hover:underline active:scale-95"
+                  >
+                    View All
+                  </button>
+                </DropdownMenuLabel>
 
-            <div className="flex items-center border-l border-neutral-40"></div>
+                <DropdownMenuItem className="flex items-center justify-between gap-5 p-4 text-secondary-120 duration-150 hover:cursor-pointer hover:bg-neutral-10">
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <span className="flex size-8 items-center justify-center rounded-full border border-neutral-40">
+                        <Image
+                          src="/logo/notification-badge.svg"
+                          alt="notification-icon"
+                          width={16}
+                          height={16}
+                        />
+                      </span>
+                    </div>
+                    <h4 className="text-sm">
+                      You have gained a new badge{" "}
+                      <span className="font-medium">“Ultimate Player”</span> for
+                      beating record time consistently.
+                    </h4>
+                  </div>
+                  <p className="min-w-max text-xs text-secondary-80">July 20</p>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center justify-between gap-5 p-4 text-secondary-120 duration-150 hover:cursor-pointer hover:bg-neutral-10">
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <span className="flex size-8 items-center justify-center rounded-full border border-neutral-40">
+                        <Image
+                          src="/logo/notification-checkmark.svg"
+                          alt="notification-icon"
+                          width={16}
+                          height={16}
+                        />
+                      </span>
+                    </div>
+                    <h4 className="text-sm">
+                      You have beat your record! Great job!
+                    </h4>
+                  </div>
 
-            <div className="flex h-11 w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[10px] py-2">
+                  <p className="min-w-max text-xs text-secondary-80">July 19</p>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center justify-between gap-5 p-4 text-secondary-120 duration-150 hover:cursor-pointer hover:bg-neutral-10">
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <span className="flex size-8 items-center justify-center rounded-full border border-neutral-40">
+                        <Image
+                          src="/logo/notification-diamond.svg"
+                          alt="notification-icon"
+                          width={16}
+                          height={16}
+                        />
+                      </span>
+                    </div>
+                    <h4 className="text-sm">
+                      You are now{" "}
+                      <span className="font-medium">Player #45</span> on the
+                      leaderboard. Keep going!
+                    </h4>
+                  </div>
+
+                  <p className="min-w-max text-xs text-secondary-80">July 18</p>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center justify-between gap-5 p-4 text-secondary-120 duration-150 hover:cursor-pointer hover:bg-neutral-10">
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <span className="flex size-8 items-center justify-center rounded-full border border-neutral-40">
+                        <Image
+                          src="/logo/notification-checkmark.svg"
+                          alt="notification-icon"
+                          width={16}
+                          height={16}
+                        />
+                      </span>
+                    </div>
+                    <h4 className="text-sm">
+                      Your email has been successfully verified
+                    </h4>
+                  </div>
+
+                  <p className="min-w-max text-xs text-secondary-80">July 17</p>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <div className="flex h-11 w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[9px]">
               <Image
                 src="/navbar/profile-standin.svg"
                 alt="profile-icon"
@@ -82,6 +187,7 @@ const AdminNav = () => {
               className="rounded-full"
             />
             <button className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-40 bg-white p-[10px]">
+              <p className="sr-only">Menu</p>
               <Image
                 src="/navbar/Mobile-3lines.svg"
                 alt="menu-icon"

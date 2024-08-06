@@ -3,6 +3,7 @@
 import { Check, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
+import AdminNav from "~/components/AdminNav/AdminNav";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
@@ -11,7 +12,6 @@ import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
 import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
 import LevelDisplay from "~/components/level-display/LevelDisplay";
-import LightNav from "~/components/light-navbar/LightNav";
 import MicrophoneComponent from "~/components/microphone/MicrophoneComponent";
 import VolumeBar from "~/components/miscellaneous/Volume";
 import { Cookies } from "~/components/modals/cookies";
@@ -44,10 +44,16 @@ import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
+import SignUpModal from "~/components/userSignUp/SignUpModal";
 
 const StyleGuide: FC = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [showQuestLoading, setShowQuestLoading] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalVisible((previous) => !previous);
+  };
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -85,7 +91,6 @@ const StyleGuide: FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-start gap-7 overflow-hidden p-6 sm:p-12 md:p-24">
-      <LightNav />
       <div className="w-4/5 space-y-2 py-5">
         <h2 className="text-2xl font-semibold">Navigation Tab</h2>
         <NavTabs />
@@ -1019,6 +1024,29 @@ const StyleGuide: FC = () => {
         </h2>
         <PlayerThought />
       </section>
+      {/* Navbar Components */}
+      <h2 className="text-2xl font-semibold">Navbar Components</h2>
+      <div className="flex w-full flex-col gap-3 py-5">
+        <div className="">
+          <h2 className="text-xl font-semibold">AdminNav</h2>
+          <AdminNav />
+        </div>
+      </div>
+      <div>
+        {/* Button to toggle modal visibility */}
+        <CustomButton variant="primary" onClick={toggleModal}>
+          Sign Up
+        </CustomButton>
+
+        {/* Conditionally render the SignUpModal */}
+        {isModalVisible && (
+          <div
+            className={`fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50`}
+          >
+            <SignUpModal closeModal={toggleModal} />
+          </div>
+        )}
+      </div>
     </main>
   );
 };

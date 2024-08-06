@@ -5,6 +5,7 @@ import { ToastProvider } from "~/components/ui/toast";
 
 import "./globals.css";
 
+import GotoTop from "~/components/miscellaneous/goto-top";
 import Progress_bar from "~/components/progress-bar";
 import { Toaster } from "~/components/ui/toaster";
 
@@ -32,11 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <div className="mx-auto w-full max-w-[1500px]">
+        <div className="mx-auto w-full">
           <ToastProvider>
             <Progress_bar />
             {children}
             <Toaster />
+            <GotoTop />
           </ToastProvider>
         </div>
       </body>
