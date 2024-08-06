@@ -25,6 +25,7 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
+import QuestLevelTimer from "~/components/quest-level-timer/QuestLevelTimer";
 import LoadingCircles from "~/components/quest-loading/LoadingCircles";
 import QuestLoadingPage from "~/components/quest-loading/QuestLoadingPage";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
@@ -1004,6 +1005,11 @@ const StyleGuide: FC = () => {
           </div>
         </div>
       )}
+      {/* New Quest Level Timer section */}
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Quest Level Timer</h2>
+        <QuestLevelTimer initialTime={300} /> {/* 5 minutes */}
+      </div>
     </main>
   );
 };
