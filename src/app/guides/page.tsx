@@ -10,7 +10,6 @@ import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
-import DarkNav from "~/components/DarkNav/DarkNav";
 import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
 import LevelDisplay from "~/components/level-display/LevelDisplay";
 import MicrophoneComponent from "~/components/microphone/MicrophoneComponent";
