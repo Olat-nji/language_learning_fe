@@ -7,7 +7,7 @@ on:
 
 jobs:
   test-and-deploy:
-    runs-on: [self-hosted,langlearn_fe_runners3]
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v4
@@ -21,6 +21,9 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 9
+          dest: setup-pnpm
+          package_json_file: package.json
+          standalone: false
 
       - name: Install dependencies
         run: pnpm install
