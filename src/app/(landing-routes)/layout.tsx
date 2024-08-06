@@ -1,5 +1,4 @@
 import LightNav from "~/components/light-navbar/LightNav";
-import GotoTop from "~/components/miscellaneous/goto-top";
 
 export default function LandingLayout({
   children,
@@ -14,7 +13,6 @@ export default function LandingLayout({
       <LightNav />
       <div className="flex-1">{children}</div>
       {/* FOOTER */}
-      <GotoTop />
     </div>
   );
 }
