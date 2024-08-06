@@ -1033,7 +1033,7 @@ const StyleGuide: FC = () => {
         </section>
         {/* Navbar Components */}
         <h2 className="text-2xl font-semibold">Navbar Components</h2>
-        <div className="flex flex-col gap-3 py-5 w-full ">
+        <div className="flex w-full flex-col gap-3 py-5">
           <div className="">
             <h2 className="text-xl font-semibold">AdminNav</h2>
             <AdminNav />
