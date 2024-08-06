@@ -7,8 +7,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="grid min-h-screen w-full grid-rows-[auto_1fr]">
-      {/* Navbar */}
-      <div className="relative mx-auto w-full bg-white px-2 max-lg:overflow-hidden xl:px-4">
+      <div className="relative w-full bg-white max-lg:overflow-hidden">
         <Suspense>{children}</Suspense>
       </div>
     </div>
