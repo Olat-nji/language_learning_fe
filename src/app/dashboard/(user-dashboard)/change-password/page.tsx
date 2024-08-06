@@ -3,7 +3,10 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
+import { useToast } from "~/components/ui/use-toast";
+
 const ChangePasswordPage = () => {
+  const { toast } = useToast();
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -56,10 +59,27 @@ const ChangePasswordPage = () => {
     [newPassword],
   );
 
-  const handleSubmit = useCallback((event: React.FormEvent) => {
-    event.preventDefault();
-    // Add your password change logic here
-  }, []);
+  const handleSubmit = useCallback(
+    (event: React.FormEvent) => {
+      event.preventDefault();
+      // Add your password change logic here
+      // For this example, we'll assume the change is always successful
+
+      // Simulating an API call with a timeout
+      setTimeout(() => {
+        // Show success toast
+        toast({
+          description: "Password Changed successfully",
+          variant: "default",
+        });
+
+        // Reset form
+        handleDiscard();
+      }, 1000); // Simulating a 1-second delay
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [toast],
+  );
 
   const handleDiscard = useCallback(() => {
     setCurrentPassword("");
