@@ -43,6 +43,7 @@ jobs:
             eval $(ssh-agent)
             ssh-add ~/.ssh/id_ecdsa
             git reset --hard origin/production
+            git pull
             pnpm install
             rm -rf .next
             pnpm run build

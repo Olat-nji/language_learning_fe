@@ -1,6 +1,3 @@
-import Link from "next/link";
-
-import CustomButton from "~/components/common/common-button/common-button";
 import HeroSection from "~/components/HeroSection";
 import HomeKeyFeaturesSection from "~/components/LandingPageComponents/HomeKeyFeaturesSection";
 import HomeSection2 from "~/components/LandingPageComponents/HomeSection2";
