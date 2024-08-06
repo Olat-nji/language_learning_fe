@@ -7,7 +7,7 @@ on:
 
 jobs:
   test-and-deploy:
-    runs-on: [self-hosted,langlearn_fe_runner_3]
+    runs-on: [self-hosted,langlearn_fe_runners3]
 
     steps:
       - uses: actions/checkout@v4
