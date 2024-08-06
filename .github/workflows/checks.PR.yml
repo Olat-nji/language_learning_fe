@@ -23,7 +23,7 @@ jobs:
           name: coverage
           path: coverage
   eslint:
-    runs-on: [self-hosted,langlearn_fe_runners_2]
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
