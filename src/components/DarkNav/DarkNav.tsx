@@ -153,8 +153,9 @@ const DarkNav = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`shadow-sm mx-auto my-4 flex h-12 w-full items-center justify-between px-5 py-2 md:hidden ${isSignedIn ? styles.navLinkGradient : ""
-            }`}
+          className={`shadow-sm mx-auto my-4 flex h-12 w-full items-center justify-between px-5 py-2 md:hidden ${
+            isSignedIn ? styles.navLinkGradient : ""
+          }`}
         >
           <div className="flex items-center">
             <Link href={"/"}>
@@ -211,8 +212,9 @@ const DarkNav = () => {
         </div>
       </nav>
       <div
-        className={`fixed bottom-0 left-0 top-20 z-50 flex h-screen w-full transform flex-col justify-start border-r bg-[#FDFDFD] md:w-[220px] lg:w-[252px] ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 ease-in-out`}
+        className={`fixed bottom-0 left-0 top-20 z-50 flex h-screen w-full transform flex-col justify-start border-r bg-[#FDFDFD] md:w-[220px] lg:w-[252px] ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out`}
       >
         {isSidebarOpen && <Sidebar />}
       </div>
