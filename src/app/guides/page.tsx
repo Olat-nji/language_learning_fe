@@ -10,6 +10,7 @@ import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
 import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
+import LevelDisplay from "~/components/level-display/LevelDisplay";
 import LightNav from "~/components/light-navbar/LightNav";
 import MicrophoneComponent from "~/components/microphone/MicrophoneComponent";
 import VolumeBar from "~/components/miscellaneous/Volume";
@@ -1005,6 +1006,8 @@ const StyleGuide: FC = () => {
           </div>
         </div>
       )}
+      <h2 className="text-2xl font-semibold">Level Display</h2>
+      <LevelDisplay completedLevels={2} />
       {/* PlayerThought component section */}
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">
