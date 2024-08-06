@@ -62,7 +62,7 @@ const DifficultySelect = () => {
               <DropdownMenuItem
                 onClick={() => onChange(id)}
                 key={index}
-                className="w-full bg-transparent p-2 text-sm font-normal text-neutral-140 outline-none duration-300 ease-in hover:bg-neutral-30"
+                className="w-full cursor-pointer bg-transparent p-2 text-sm font-normal text-neutral-140 outline-none duration-300 ease-in hover:bg-neutral-30"
               >
                 {text}
               </DropdownMenuItem>
