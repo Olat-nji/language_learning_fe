@@ -54,7 +54,7 @@ const DifficultySelect = () => {
           <div className="mr-auto">{difficulty}</div>
           <ChevronDown size={16} />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="shadow-dropdown mt-2 w-[150px] overflow-hidden rounded-xl bg-white duration-300">
+        <DropdownMenuContent className="mt-2 w-[150px] overflow-hidden rounded-xl bg-white shadow-dropdown duration-300">
           {dropdownMenu.map((data, index) => {
             const { onChange, text, id } = data;
 
