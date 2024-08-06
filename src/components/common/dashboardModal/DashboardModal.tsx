@@ -10,7 +10,7 @@ const DashboardModal = ({
   return (
     <main
       className={clsx(
-        "absolute top-0 z-50 flex h-full w-full items-center justify-center bg-slate-100 bg-opacity-20 px-[15px] backdrop-blur-sm md:px-0",
+        "fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-slate-100 bg-opacity-20 px-[15px] backdrop-blur-sm md:px-0",
       )}
     >
       <section

@@ -95,7 +95,7 @@ const AdminProfile = () => {
   }
 
   return (
-    <main className="relative font-inter">
+    <main data-testid="profile-settings" className="font-inter">
       {/* upload image modal ***********/}
       {isModalOpen && (
         <DashboardModal className="flex w-full flex-col items-center justify-center space-y-[20px] md:w-[40rem]">
@@ -155,21 +155,16 @@ const AdminProfile = () => {
           </CustomButton>
         </DashboardModal>
       )}
-      <header className="flex h-[50px] w-full items-center justify-center bg-primary-20">
-        header
-      </header>
-      <main className="flex">
-        <section className="hidden h-screen w-[25%] items-center justify-center bg-primary-10 lg:flex">
-          sidebar
-        </section>
-        <section className="h-screen w-full p-[20px] sm:p-[30px] md:p-[40px]">
-          <div className="block w-full items-center space-x-0 md:flex md:space-x-[70px]">
+      <>
+        <section className="mt-[30px] w-full rounded-[15px] border-2 border-neutral-30 bg-white p-[20px] sm:p-[30px] md:p-[40px]">
+          <div className="block w-full items-center space-x-0 lg:flex lg:space-x-[70px]">
             {/* profile image section ***********/}
             <section className="profile-image">
               {isEditing ? (
                 <div
+                  data-testid="profileImage"
                   onClick={() => setIsModalOpen(true)}
-                  className="relative h-[250px] w-[250px] cursor-pointer sm:h-[300px] sm:w-[300px] lg:h-[500px] lg:w-[500px]"
+                  className="relative h-[180px] w-[180px] cursor-pointer sm:h-[300px] sm:w-[300px] lg:h-[500px] lg:w-[500px]"
                 >
                   <Image
                     src={temporaryImage || "/images/profile_avatar.svg"}
@@ -181,7 +176,7 @@ const AdminProfile = () => {
                   <Camera className="absolute left-[20px] top-[20px] text-neutral-110 sm:top-[30px] md:left-[30px] md:top-[50px]" />
                 </div>
               ) : (
-                <div className="h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] lg:h-[500px] lg:w-[500px]">
+                <div className="h-[180px] w-[180px] sm:h-[300px] sm:w-[300px] lg:h-[500px] lg:w-[500px]">
                   <Image
                     src={image || "/images/profile_avatar.svg"}
                     alt="Profile Image"
@@ -194,7 +189,7 @@ const AdminProfile = () => {
             </section>
 
             {/* profile details section ***********/}
-            <section className="mt-[30px] w-full md:mt-0">
+            <section className="mt-[30px] w-full lg:mt-0">
               {isEditing ? (
                 <>
                   <section className="space-y-[15px] sm:space-y-[25px]">
@@ -206,6 +201,7 @@ const AdminProfile = () => {
                         <CustomInput
                           name="fullname"
                           inputType="text"
+                          className="w-[100%]"
                           value={temporaryName}
                           onChange={(event) =>
                             setTemporaryName(event.target.value)
@@ -222,6 +218,7 @@ const AdminProfile = () => {
                           name="email"
                           inputType="email"
                           value={temporaryEmail}
+                          className="w-[100%]"
                           onChange={(event) =>
                             setTemporaryEmail(event.target.value)
                           }
@@ -237,6 +234,7 @@ const AdminProfile = () => {
                           name="gender"
                           inputType="text"
                           value={temporaryGender}
+                          className="w-[100%]"
                           onChange={(event) =>
                             setTemporaryGender(event.target.value)
                           }
@@ -244,12 +242,13 @@ const AdminProfile = () => {
                       </div>
                     </div>
                   </section>
-                  <div className="mt-[2rem] sm:mt-[4rem]">
+                  <div className="mt-[2rem] space-x-2 sm:mt-[4rem]">
                     <CustomButton variant="primary" onClick={handleSave}>
                       Save
                     </CustomButton>
                     <CustomButton
                       variant="outline"
+                      className="border-2 border-primary-60 bg-transparent text-primary-60"
                       onClick={handleUpdateProfileClick}
                     >
                       Cancel
@@ -259,8 +258,8 @@ const AdminProfile = () => {
               ) : (
                 <div className="space-y-[30px]">
                   <CustomButton
-                    variant="primary"
-                    className="hidden md:block"
+                    variant="outline"
+                    className="hidden border-2 border-primary-60 bg-transparent text-primary-60 md:block"
                     onClick={handleUpdateProfileClick}
                   >
                     Edit your profile
@@ -278,8 +277,8 @@ const AdminProfile = () => {
                     <p className="text-[14px]">{gender}</p>
                   </div>
                   <CustomButton
-                    variant="primary"
-                    className="block md:hidden"
+                    variant="outline"
+                    className="block border-2 border-b-primary-60 bg-transparent text-primary-60 md:hidden"
                     onClick={handleUpdateProfileClick}
                   >
                     Edit your profile
@@ -289,7 +288,7 @@ const AdminProfile = () => {
             </section>
           </div>
         </section>
-      </main>
+      </>
     </main>
   );
 };
