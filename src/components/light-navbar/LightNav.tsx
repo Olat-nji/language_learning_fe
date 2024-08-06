@@ -1,10 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import CustomButton from "../common/common-button/common-button";
 import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
@@ -16,6 +16,16 @@ import {
 } from "../ui/dropdown-menu";
 import styles from "./LightNav.module.css";
 import Logo from "./logo-component";
+
+const TransitionLink = dynamic(
+  () =>
+    import("../miscellaneous/transition-link").then(
+      (module_) => module_.TransitionLink,
+    ),
+  {
+    ssr: false,
+  },
+);
 
 const LightNav = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -33,7 +43,7 @@ const LightNav = () => {
 
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-50 mx-auto w-screen max-w-[1728px] px-0">
+      <nav className="fixed left-0 right-0 top-0 z-50 mx-auto w-full max-w-[1500px] px-0">
         {isSignedIn ? (
           <div
             className={`shadow-md md:shadow mx-auto hidden w-full flex-row items-center bg-white px-20 py-6 md:flex md:justify-between ${styles.navLinkGradient}`}
@@ -143,9 +153,9 @@ const LightNav = () => {
 
             <div className="flex space-x-6">
               <>
-                <CustomButton href="/signup" variant="secondary">
-                  Delve In
-                </CustomButton>
+                <TransitionLink href="/signup" variant={"secondary"}>
+                  Delve in
+                </TransitionLink>
               </>
             </div>
           </div>
