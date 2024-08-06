@@ -3,12 +3,14 @@
 import { Check, Orbit, PlusIcon } from "lucide-react";
 import { FC, useState } from "react";
 
+import AdminNav from "~/components/AdminNav/AdminNav";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
+import DarkNav from "~/components/DarkNav/DarkNav";
 import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
 import LevelDisplay from "~/components/level-display/LevelDisplay";
 import LightNav from "~/components/light-navbar/LightNav";
@@ -1019,6 +1021,18 @@ const StyleGuide: FC = () => {
         </h2>
         <PlayerThought />
       </section>
+      {/* Navbar Components */}
+      <h2 className="text-2xl font-semibold">Navbar Components</h2>
+      <div className="flex flex-col gap-3 py-5">
+        <div className="">
+          <h2 className="text-xl font-semibold">AdminNav</h2>
+          <AdminNav />
+        </div>
+        <div className="relative">
+          <h2 className="text-xl font-semibold">DarkNav</h2>
+          <DarkNav />
+        </div>
+      </div>
     </main>
   );
 };
