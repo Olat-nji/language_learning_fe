@@ -35,9 +35,8 @@ const Account = ({ children }: { children: React.ReactNode }) => {
             </li>
             <Link href={"/audio"}>
               <li
-                className={`flex items-center gap-x-[12px] rounded-[18px] px-[20px] py-[12px] ${
-                  pathname === "/audio" ? "border border-secondary-120" : ""
-                }`}
+                className={`flex items-center gap-x-[12px] rounded-[18px] px-[20px] py-[12px] ${pathname === "/audio" ? "border border-secondary-120" : ""
+                  }`}
               >
                 <Image
                   src={"/images/_Audio.svg"}
@@ -59,11 +58,10 @@ const Account = ({ children }: { children: React.ReactNode }) => {
             </li>
             <Link href={"/notification"}>
               <li
-                className={`flex items-center gap-x-[12px] rounded-[18px] px-[20px] py-[12px] ${
-                  pathname === "/notification"
-                    ? "border border-secondary-120"
-                    : ""
-                }`}
+                className={`flex items-center gap-x-[12px] rounded-[18px] px-[20px] py-[12px] ${pathname === "/notification"
+                  ? "border border-secondary-120"
+                  : ""
+                  }`}
               >
                 <Image
                   src={"/images/_notification.svg"}
