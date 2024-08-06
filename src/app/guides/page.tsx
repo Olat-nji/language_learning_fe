@@ -1049,22 +1049,21 @@ const StyleGuide: FC = () => {
             <DarkNav />
           </div>
         </div>
-
         <div>
-        {/* Button to toggle modal visibility */}
-        <CustomButton variant="primary" onClick={toggleModal}>
-          Sign Up
-        </CustomButton>
+          {/* Button to toggle modal visibility */}
+          <CustomButton variant="primary" onClick={toggleModal}>
+            Sign Up
+          </CustomButton>
 
-        {/* Conditionally render the SignUpModal */}
-        {isModalVisible && (
-          <div
-            className={`fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50`}
-          >
-            <SignUpModal closeModal={toggleModal} />
-          </div>
-        )}
-      </div>
+          {/* Conditionally render the SignUpModal */}
+          {isModalVisible && (
+            <div
+              className={`fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50`}
+            >
+              <SignUpModal closeModal={toggleModal} />
+            </div>
+          )}
+        </div>
       </main>
     </Layout>
   );
