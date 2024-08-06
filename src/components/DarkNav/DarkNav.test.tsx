@@ -14,9 +14,9 @@ describe("darkNav", () => {
   });
 
   it("renders mobile logo", () => {
-    expect.assertions(1);
+    expect.assertions(2);
     render(<DarkNav />);
-    const mobileLogo = screen.getByAltText("mobile-logo");
-    expect(mobileLogo).toBeInTheDocument();
+    expect(screen.getByText("How it works")).toBeInTheDocument();
+    expect(screen.getAllByText("Delve In")).toHaveLength(2);
   });
 });
