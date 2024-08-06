@@ -121,7 +121,9 @@ const LightNav = () => {
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="shadow-sm w-[200px] rounded-xl border border-blue-200 bg-white">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuLabel>
+                    <Link href={"/account"}>My Account</Link>
+                  </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>Billing</DropdownMenuItem>
