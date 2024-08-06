@@ -6,7 +6,6 @@ import Link from "next/link";
 const LoginNav = () => {
   return (
     <nav className="z-50 w-full bg-neutral-10 text-black">
-      <div className="shadow w-full bg-white">
         <div className="md:py-24px flex h-[96px] w-full items-center justify-between px-[15px] md:px-[80px]">
           <div className="flex items-center">
             <Link href={"/"}>
@@ -83,8 +82,7 @@ const LoginNav = () => {
             </div>
           </div>
         </div>
-        <div className="h-[12px] w-full bg-gradient-to-r from-[#FE5900] via-[#FE5900] via-[#FFA500] to-[#FFA500]"></div>
-      </div>
+        <div className="h-[12px] w-full bg-gradient-to-r from-[#FE5900] via-[#FFA500] to-[#FE5900]"></div>
     </nav>
   );
 };
