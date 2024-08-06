@@ -1,10 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { TransitionLink } from "../miscellaneous/transition-link";
 import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
@@ -16,6 +16,16 @@ import {
 } from "../ui/dropdown-menu";
 import styles from "./LightNav.module.css";
 import Logo from "./logo-component";
+
+const TransitionLink = dynamic(
+  () =>
+    import("../miscellaneous/transition-link").then(
+      (module_) => module_.TransitionLink,
+    ),
+  {
+    ssr: false,
+  },
+);
 
 const LightNav = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
