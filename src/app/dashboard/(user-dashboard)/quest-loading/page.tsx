@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { Mic } from "lucide-react";
 
 import LevelDisplay from "~/components/level-display/LevelDisplay";

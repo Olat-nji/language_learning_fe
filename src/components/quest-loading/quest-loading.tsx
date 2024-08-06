@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { cn } from "~/lib/utils";
 
@@ -10,18 +10,21 @@ interface QuestLoadingProperties {
 export default function QuestLoading({ tips }: QuestLoadingProperties) {
   const [index, setIndex] = useState(0);
 
-  const handleKeyPress = (event: KeyboardEvent) => {
-    if (event.key === "n") {
-      setIndex((previous) => (previous < tips.length - 1 ? previous + 1 : 0));
-    }
-  };
+  const handleKeyPress = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "n") {
+        setIndex((previous) => (previous < tips.length - 1 ? previous + 1 : 0));
+      }
+    },
+    [tips.length],
+  );
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyPress);
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, []);
+  }, [handleKeyPress]);
 
   return (
     <div className="min-h-[224px] bg-[#f9fafa] px-[24px] py-[24px] lg:px-[78px]">
