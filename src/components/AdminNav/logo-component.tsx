@@ -7,6 +7,7 @@ const Logo = () => {
       <Link href="/" className="hidden no-underline outline-none md:block">
         <Image
           src="/navbar/delve-black__desktop.svg"
+          // src="/navbar/admin-logo.svg"
           width={156}
           height={48}
           alt="desktop-logo"
