@@ -8,7 +8,7 @@ on:
 
 jobs:
   report-test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     permissions:
       pull-requests: write 
