@@ -5,7 +5,7 @@ import AdminNav from "./AdminNav";
 
 import "@testing-library/jest-dom";
 
-describe("AdminNav", () => {
+describe("adminNav", () => {
   it("renders desktop logo", () => {
     expect.assertions(1);
     render(<AdminNav />);
@@ -13,10 +13,10 @@ describe("AdminNav", () => {
     expect(desktopLogo).toBeInTheDocument();
   });
 
-  it("renders mobile logo", () => {
-    expect.assertions(1);
+  it("renders mobile navigation with correct elements", () => {
+    expect.assertions(2);
     render(<AdminNav />);
-    const mobileLogo = screen.getByAltText("mobile-logo");
-    expect(mobileLogo).toBeInTheDocument();
+    expect(screen.getAllByAltText("profile-icon")[1]).toBeInTheDocument();
+    expect(screen.getByAltText("menu-icon")).toBeInTheDocument();
   });
 });

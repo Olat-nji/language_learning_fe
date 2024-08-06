@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
+
 import styles from "./AdminNav.module.css";
 import Logo from "./logo-component";
-
 
 const AdminNav = () => {
   return (
     <nav className="z-50 h-12 text-black md:h-[100px] md:p-0">
-      <div className={`shadow mx-auto flex max-w-[1728px] items-center justify-between border-b border-b-neutral-40 bg-white px-5  ${styles.navLinkGradient}`}>
+      <div
+        className={`shadow mx-auto flex max-w-[1728px] items-center justify-between border-b border-b-neutral-40 bg-white px-5 ${styles.navLinkGradient}`}
+      >
         {/* Desktop Navigation */}
         <div className="hidden w-full items-center justify-between py-4 md:flex">
           <div className="flex items-center">
@@ -42,9 +44,13 @@ const AdminNav = () => {
                 height={36}
                 className="rounded-full"
               />
-              <div className="flex flex-col ">
-                <p className="text-sm font-semibold text-secondary-120">John Doe</p>
-                <p className="text-sm font-normal text-secondary-70">Super Admin</p>
+              <div className="flex flex-col">
+                <p className="text-sm font-semibold text-secondary-120">
+                  John Doe
+                </p>
+                <p className="text-sm font-normal text-secondary-70">
+                  Super Admin
+                </p>
               </div>
               <Image
                 src="/logo/about-down.svg"
@@ -57,14 +63,14 @@ const AdminNav = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="flex w-full py-1 items-center justify-between md:hidden">
+        <div className="flex w-full items-center justify-between py-1 md:hidden">
           <div className="flex items-center">
             <Image
               src="/navbar/Delve-black_mobile.svg"
               alt="mobile-logo"
               width={48}
               height={48}
-              className="block md:hidden "
+              className="block md:hidden"
             />
           </div>
           <div className="flex items-center space-x-4">
@@ -73,18 +79,15 @@ const AdminNav = () => {
               alt="profile-icon"
               width={48}
               height={48}
-              className="rounded-full "
-
+              className="rounded-full"
             />
-            <button
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-40 bg-white p-[10px]"
-                >
-                  <Image
-                    src="/navbar/Mobile-3lines.svg"
-                    alt="menu-icon"
-                    width={48}
-                    height={48}
-                  />
+            <button className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-40 bg-white p-[10px]">
+              <Image
+                src="/navbar/Mobile-3lines.svg"
+                alt="menu-icon"
+                width={48}
+                height={48}
+              />
             </button>
           </div>
         </div>
