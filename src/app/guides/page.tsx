@@ -10,6 +10,7 @@ import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
 import ButtonGrid from "~/components/gameNavigationButtons/ButtonGrid";
+import LevelDisplay from "~/components/level-display/LevelDisplay";
 import LightNav from "~/components/light-navbar/LightNav";
 import MicrophoneComponent from "~/components/microphone/MicrophoneComponent";
 import VolumeBar from "~/components/miscellaneous/Volume";
@@ -25,7 +26,7 @@ import { DefaultPreButton } from "~/components/preview-buttons/Default";
 import { DisabledPreButton } from "~/components/preview-buttons/Disabled";
 import { FocussedPreButton } from "~/components/preview-buttons/Focussed";
 import { LoadedPreButton } from "~/components/preview-buttons/Loaded";
-import ProgressContainer from "~/components/Progress-box/ProgressContainer/ProgressContainer";
+import QuestLevelTimer from "~/components/quest-level-timer/QuestLevelTimer";
 import LoadingCircles from "~/components/quest-loading/LoadingCircles";
 import QuestLoadingPage from "~/components/quest-loading/QuestLoadingPage";
 import QuestPreviewCard from "~/components/quest/questPreviewCard";
@@ -38,6 +39,7 @@ import DifficultLevel from "~/components/range/difficulty-level/DifficultLevel";
 import LevelProgress from "~/components/range/Levels/LevelProgress";
 import Speakers from "~/components/speakers";
 import IconPanel from "~/components/speakingStates/audio";
+import PlayerThought from "~/components/thoughts/PlayerThought";
 import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import TryAgain from "~/components/TryAgain";
@@ -968,7 +970,6 @@ const StyleGuide: FC = () => {
       ,
       <div className="flex flex-col gap-3">
         <h2 className="mt-2 text-2xl font-semibold">Progress Container</h2>
-        <ProgressContainer />
       </div>
       <div className="flex flex-col gap-4 py-5">
         <h2 className="mt-2 text-2xl font-semibold">Game Navigation Tab</h2>
@@ -1006,6 +1007,18 @@ const StyleGuide: FC = () => {
           </div>
         </div>
       )}
+      <div className="flex flex-col gap-3 py-5">
+        <h2 className="text-2xl font-semibold">Quest Level Timer</h2>
+        <QuestLevelTimer initialTime={300} />
+      </div>
+      <h2 className="text-2xl font-semibold">Level Display</h2>
+      <LevelDisplay completedLevels={2} />
+      <section className="mb-8">
+        <h2 className="mb-4 text-2xl font-semibold">
+          Player Thought Component
+        </h2>
+        <PlayerThought />
+      </section>
     </main>
   );
 };
