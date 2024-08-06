@@ -1,7 +1,26 @@
-const DashboardModal = ({ children }: { children: React.ReactNode }) => {
+import clsx from "clsx";
+
+const DashboardModal = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <main className="absolute top-0 z-50 h-full w-full bg-slate-100 bg-opacity-20 backdrop-blur-sm">
-      <section className="modal-content">{children}</section>
+    <main
+      className={clsx(
+        "absolute top-0 z-50 flex h-full w-full items-center justify-center bg-slate-100 bg-opacity-20 px-[15px] backdrop-blur-sm md:px-0",
+      )}
+    >
+      <section
+        className={clsx(
+          className,
+          "shadow-sm w-fit rounded-[20px] bg-white p-[20px]",
+        )}
+      >
+        {children}
+      </section>
     </main>
   );
 };
