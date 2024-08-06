@@ -1,10 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import CustomButton from "../common/common-button/common-button";
 import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
@@ -16,16 +16,6 @@ import {
 } from "../ui/dropdown-menu";
 import styles from "./LightNav.module.css";
 import Logo from "./logo-component";
-
-const TransitionLink = dynamic(
-  () =>
-    import("../miscellaneous/transition-link").then(
-      (module_) => module_.TransitionLink,
-    ),
-  {
-    ssr: false,
-  },
-);
 
 const LightNav = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -43,7 +33,7 @@ const LightNav = () => {
 
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-50 mx-auto w-full max-w-[1500px] px-0">
+      <nav className="fixed left-0 right-0 top-0 z-50 mx-auto w-screen max-w-[1728px] bg-white px-0">
         {isSignedIn ? (
           <div
             className={`shadow-md md:shadow mx-auto hidden w-full flex-row items-center bg-white px-20 py-6 md:flex md:justify-between ${styles.navLinkGradient}`}
@@ -124,20 +114,10 @@ const LightNav = () => {
                 <DropdownMenuTrigger
                   className={`flex flex-row items-center font-inter text-sm text-neutral-80 no-underline outline-none duration-300 ease-in`}
                 >
-                  <div className="flex gap-4">
-                    <Image
-                      src="/navbar/howitworks-circle.svg"
-                      alt="mobile-logo"
-                      width={8}
-                      height={8}
-                    />
+                  <div className="flex items-center gap-4 text-secondary-120">
+                    <div className="h-2 w-2 rounded-full bg-primary-100"></div>
                     How it works
-                    <Image
-                      src="/navbar/howitworks-circle.svg"
-                      alt="mobile-logo"
-                      width={8}
-                      height={8}
-                    />
+                    <div className="h-2 w-2 rounded-full bg-primary-100"></div>
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="shadow-sm w-[200px] rounded-xl border border-blue-200 bg-white">
@@ -153,9 +133,9 @@ const LightNav = () => {
 
             <div className="flex space-x-6">
               <>
-                <TransitionLink href="/signup" variant={"secondary"}>
-                  Delve in
-                </TransitionLink>
+                <CustomButton href="/signup" variant="secondary">
+                  Delve In
+                </CustomButton>
               </>
             </div>
           </div>
