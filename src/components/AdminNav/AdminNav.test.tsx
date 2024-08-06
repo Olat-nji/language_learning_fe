@@ -1,22 +1,22 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import DarkNav from "./DarkNav";
+import AdminNav from "./AdminNav";
 
 import "@testing-library/jest-dom";
 
-describe("darkNav", () => {
+describe("adminNav", () => {
   it("renders desktop logo", () => {
     expect.assertions(1);
-    render(<DarkNav />);
+    render(<AdminNav />);
     const desktopLogo = screen.getByAltText("desktop-logo");
     expect(desktopLogo).toBeInTheDocument();
   });
 
-  it("renders mobile logo", () => {
+  it("renders mobile navigation with correct elements", () => {
     expect.assertions(2);
-    render(<DarkNav />);
-    expect(screen.getByText("How it works")).toBeInTheDocument();
-    expect(screen.getAllByText("Delve In")).toHaveLength(2);
+    render(<AdminNav />);
+    expect(screen.getAllByAltText("profile-icon")[1]).toBeInTheDocument();
+    expect(screen.getByAltText("menu-icon")).toBeInTheDocument();
   });
 });
