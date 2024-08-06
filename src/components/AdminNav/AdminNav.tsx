@@ -7,9 +7,9 @@ import Logo from "./logo-component";
 
 const AdminNav = () => {
   return (
-    <nav className="z-50 h-12 text-black md:h-[100px] md:p-0">
+    <nav className="z-50 h-12 w-full max-w-[1728px] text-black md:h-[100px] md:p-0">
       <div
-        className={`shadow mx-auto flex max-w-[1728px] items-center justify-between border-b border-b-neutral-40 bg-white px-5 ${styles.navLinkGradient}`}
+        className={`shadow mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white px-5 ${styles.navLinkGradient}`}
       >
         {/* Desktop Navigation */}
         <div className="hidden w-full items-center justify-between py-4 md:flex">
