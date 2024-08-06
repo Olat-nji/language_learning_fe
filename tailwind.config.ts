@@ -243,6 +243,8 @@ const config = {
       "inner-custom-1": "inset 0 2px 10px 0 rgba(214, 192, 255, 0.25)",
       "inner-custom-2": "inset 0 2px 10px 0 #1F0451",
       "custom-drop": "0 6px 4px 0 rgba(0, 0, 0, 0.25)",
+      "inner-button": "0px -1px 4px 0px #00000012 inset",
+      "dropdown": "0px 4px 4px 0px #D3D3D354",
     },
   },
 

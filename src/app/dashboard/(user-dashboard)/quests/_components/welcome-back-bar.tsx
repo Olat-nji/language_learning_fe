@@ -13,7 +13,7 @@ export default function WelcomeBackBar() {
 
   return (
     <>
-      <div className="flex w-full flex-row items-center justify-between rounded-[18px] bg-white p-[18px]">
+      <div className="hidden w-full flex-row items-center justify-between rounded-[18px] bg-white p-[18px] sm:flex">
         <div className="">
           <h1 className="text-[22px] font-bold text-black">
             Hello, <span className="text-primary-100">{firstName}</span>

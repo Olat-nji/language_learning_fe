@@ -53,7 +53,7 @@ const QuestTabSwitcher: React.FC<QuestTabSwitcherProperties> = ({
   }, [tab]);
 
   return (
-    <div className="relative flex flex-row items-center rounded-full bg-white p-[3px]">
+    <div className="relative hidden flex-row items-center rounded-full bg-white p-[3px] sm:flex">
       {tabItems.map((tabItem) => (
         <div
           key={tabItem.id}

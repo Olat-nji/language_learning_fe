@@ -52,7 +52,7 @@ export const QuestTabBody: React.FC<tabProperties> = ({ tab }) => {
   const filteredQuests = filterQuests(tab);
 
   return (
-    <div className="flex min-h-[400px] w-full flex-row items-center justify-center rounded-[20px] bg-white p-[30px]">
+    <div className="flex min-h-[400px] w-full flex-row items-center justify-center rounded-[20px] bg-white p-[0px] sm:p-[30px]">
       {filteredQuests.length === 0 ? (
         <div className="flex flex-col items-center gap-[10px]">
           <Image src={gamepad} height={40} width={80} alt="Gamepad" />

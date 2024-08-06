@@ -21,7 +21,7 @@ export default function QuestCard({ quest }: QuestCardProperties) {
       transition={{ duration: 0.3 }}
       className=""
     >
-      <div className="group flex h-[400px] w-full cursor-pointer flex-col gap-[20px] sm:h-[510px]">
+      <div className="group flex h-[300px] w-full cursor-pointer flex-col gap-[20px] sm:h-[510px]">
         <div className="flex-[6] overflow-hidden rounded-[25px] border-solid duration-100 group-hover:border-[3px] group-hover:border-primary-60 group-hover:shadow-primary">
           <Image
             src={quest.img}
