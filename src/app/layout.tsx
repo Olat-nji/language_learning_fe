@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <div className="mx-auto w-full max-w-[1500px]">
+        <div className="mx-auto w-full">
           <ToastProvider>
             <Progress_bar />
             {children}
