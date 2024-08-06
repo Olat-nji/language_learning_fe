@@ -14,7 +14,7 @@ import Logo from "./logo-component";
 
 const AdminNav = () => {
   return (
-    <nav className="z-50 h-12 w-full text-black md:h-[100px] md:p-0">
+    <nav className="z-50 h-12 w-full text-black md:h-[96px] md:p-0">
       <div
         className={`shadow mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white px-5 ${styles.navLinkGradient}`}
       >
@@ -28,11 +28,9 @@ const AdminNav = () => {
             <Image
               src="/logo/search.svg"
               alt="search-icon"
-              width={40}
-              height={40}
+              width={48}
+              height={48}
             />
-
-            <div className="flex items-center border-l border-neutral-40"></div>
 
             <DropdownMenu>
               <DropdownMenuTrigger
@@ -41,8 +39,8 @@ const AdminNav = () => {
                 <Image
                   src="/logo/bell.svg"
                   alt="notification-icon"
-                  width={36}
-                  height={36}
+                  width={38}
+                  height={38}
                 />
                 <p className="sr-only">Notifications</p>
 
@@ -143,9 +141,7 @@ const AdminNav = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <div className="flex items-center border-l border-neutral-40"></div>
-
-            <div className="flex h-11 w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[10px] py-2">
+            <div className="flex h-11 w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[9px]">
               <Image
                 src="/navbar/profile-standin.svg"
                 alt="profile-icon"
