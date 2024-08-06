@@ -33,7 +33,7 @@ const LightNav = () => {
 
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 lg:top-10 z-50 mx-auto w-screen max-w-[1728px] px-0">
+      <nav className="fixed bg-white left-0 right-0 top-0 z-50 mx-auto w-screen max-w-[1728px] px-0">
         {isSignedIn ? (
           <div
             className={`shadow-md md:shadow mx-auto hidden w-full flex-row items-center bg-white px-20 py-6 md:flex md:justify-between ${styles.navLinkGradient}`}
@@ -114,20 +114,10 @@ const LightNav = () => {
                 <DropdownMenuTrigger
                   className={`flex flex-row items-center font-inter text-sm text-neutral-80 no-underline outline-none duration-300 ease-in`}
                 >
-                  <div className="flex gap-4">
-                    <Image
-                      src="/navbar/howitworks-circle.svg"
-                      alt="mobile-logo"
-                      width={8}
-                      height={8}
-                    />
+                  <div className="flex items-center gap-4 text-secondary-120">
+                    <div className="bg-primary-100 w-2 h-2 rounded-full" ></div>
                     How it works
-                    <Image
-                      src="/navbar/howitworks-circle.svg"
-                      alt="mobile-logo"
-                      width={8}
-                      height={8}
-                    />
+                    <div className="bg-primary-100 w-2 h-2 rounded-full" ></div>
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="shadow-sm w-[200px] rounded-xl border border-blue-200 bg-white">
