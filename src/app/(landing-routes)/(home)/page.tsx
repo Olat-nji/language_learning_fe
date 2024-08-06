@@ -14,8 +14,6 @@ function page() {
       <HomeSection4 />
       <HomeKeyFeaturesSection />
       <ReadytoStartSection />
-      
-  
     </div>
   );
 }
