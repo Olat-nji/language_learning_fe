@@ -46,10 +46,16 @@ import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
+import SignUpModal from "~/components/userSignUp/SignUpModal";
 
 const StyleGuide: FC = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [showQuestLoading, setShowQuestLoading] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalVisible((previous) => !previous);
+  };
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -1042,6 +1048,21 @@ const StyleGuide: FC = () => {
             <h2 className="text-xl font-semibold">DarkNav</h2>
             <DarkNav />
           </div>
+        </div>
+        <div>
+          {/* Button to toggle modal visibility */}
+          <CustomButton variant="primary" onClick={toggleModal}>
+            Sign Up
+          </CustomButton>
+
+          {/* Conditionally render the SignUpModal */}
+          {isModalVisible && (
+            <div
+              className={`fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50`}
+            >
+              <SignUpModal closeModal={toggleModal} />
+            </div>
+          )}
         </div>
       </main>
     </Layout>
