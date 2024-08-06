@@ -7,7 +7,7 @@ function page() {
       <HeroSection />
       <div className="mt-10 flex flex-col gap-4 px-10 py-5" id="temporary">
         <TransitionLink
-          href={"/waitlist"}
+          href="/waitlist"
           variant="primary-two"
           className="w-fit px-4"
         >
@@ -15,7 +15,7 @@ function page() {
         </TransitionLink>
 
         <TransitionLink
-          href={"/guides"}
+          href="/guides"
           variant="primary-two"
           className="w-fit px-4"
         >
