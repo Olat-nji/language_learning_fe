@@ -1,4 +1,3 @@
-
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 
