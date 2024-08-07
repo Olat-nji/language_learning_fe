@@ -2,7 +2,6 @@
 
 import { LayoutList, Lock, ShieldCheck, User } from "lucide-react";
 import { ReactNode, useState } from "react";
-import SecurityCard from "~/components/Password&Security/SecurityCard";
 
 import AdminProfile from "~/components/profileSettings/page";
 
@@ -24,7 +23,7 @@ const tabs: TabProperties[] = [
   },
   {
     label: "Password & Security",
-    children: <SecurityCard />,
+    children: <>Nothing yet!</>,
     title: "Password & Security",
     subDescription: "Change password",
     icon: <Lock className="text-[14px]" />,
