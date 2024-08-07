@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
 
 import avatar1 from "../../../public/adminRoles/21.svg";
@@ -31,7 +30,8 @@ const PendingTable = ({
   openDeletedModal,
   setOpenDeletedModal,
 }: PendingTableProperties) => {
-  const [admins, setAdmins] = useState<Admin[]>([
+  const [admins, setAdmins] = useState<Admin[]>([]);
+  const adminsData = [
     {
       name: "Afolabi Olanipekun",
       email: "AfolabiOlanipekun@gmail.com",
@@ -60,7 +60,10 @@ const PendingTable = ({
       role: "Super Admin",
       avatar: avatar4,
     },
-  ]);
+  ];
+  useEffect(() => {
+    setAdmins(adminsData);
+  }, []);
 
   const [indexPick, setIndexPick] = useState(0);
 

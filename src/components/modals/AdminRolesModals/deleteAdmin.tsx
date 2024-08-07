@@ -22,7 +22,7 @@ const DeleteAdmin = ({ setOpen, admin }: deleteAdminProperties) => {
           undone.
         </p>
         <div className="hidden h-[0.5rem] self-stretch bg-[#F4F6F9] sm:mt-[2rem] sm:block"></div>
-        <div className=" flex w-full items-center gap-6 mt-[1.5rem]">
+        <div className="mt-[1.5rem] flex w-full items-center gap-6">
           <button
             className="shadowBtn flex w-full items-center justify-center rounded-[3.6875rem] border border-b border-solid border-[#E7E7E7] bg-[#F8FAFB] py-[0.62rem] font-inter text-[1.125rem] font-semibold leading-[1.75rem] text-[#1B1B1B]"
             onClick={() => setOpen()}
