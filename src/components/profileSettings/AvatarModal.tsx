@@ -15,7 +15,9 @@ const AvatarModal: React.FC<ModalProperties> = ({
   onFileSelect,
   onAvatarSelect,
 }) => {
-  const [selectedImage, setSelectedImage] = useState<string | undefined>();
+  const [selectedImage, setSelectedImage] = useState<string>(
+    "/profile/profile.png",
+  );
   const [imagePreviews, setImagePreviews] = useState<string[]>([
     "/profile/profile.png",
     "/profile/profile2.png",
@@ -34,7 +36,7 @@ const AvatarModal: React.FC<ModalProperties> = ({
     "/profile/profile15.png",
   ]);
 
-  if (!isOpen) return null;
+  if (!isOpen) return;
 
   const totalAvatars = 15;
 
@@ -51,9 +53,11 @@ const AvatarModal: React.FC<ModalProperties> = ({
     }
   };
 
-  const handleAvatarClick = (source: string) => {
-    setSelectedImage(source);
-    onAvatarSelect(source);
+  const handleAvatarClick = (source: unknown) => {
+    if (typeof source === "string") {
+      setSelectedImage(source);
+      onAvatarSelect(source);
+    }
   };
 
   const avatarsToShow = [
@@ -73,7 +77,7 @@ const AvatarModal: React.FC<ModalProperties> = ({
       >
         <div className="flex flex-col items-center space-y-2">
           <Image
-            src={selectedImage || "/profile/profile.png"}
+            src={selectedImage}
             alt="Profile"
             width={128}
             height={128}
@@ -90,7 +94,7 @@ const AvatarModal: React.FC<ModalProperties> = ({
                 onClick={() => handleAvatarClick(source)}
               >
                 <Image
-                  src={source}
+                  src={source as string}
                   alt={`Avatar ${index}`}
                   width={50}
                   height={50}

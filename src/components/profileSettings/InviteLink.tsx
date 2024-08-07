@@ -65,7 +65,7 @@ const InviteLink: React.FC<InviteLinkProperties> = ({ inviteLink }) => {
             className="w-full border px-4 py-2 pr-12"
             style={{ borderRadius: "6px" }}
           />
-          <div className="absolute inset-y-0 right-0 flex items-center space-x-2 pr-3">
+          <div className="absolute inset-y-0 right-0 flex items-center space-x-1">
             <button
               onClick={handleCopyClick}
               className="rounded-full p-2 text-gray-600 hover:bg-blue-100"
