@@ -246,7 +246,7 @@ const RoleTable = () => {
   };
 
   return (
-    <div className="my-6 w-full">
+    <div className="my-6 ml-4 mt-[2.8rem] w-[90%] sm:ml-[2.5rem]">
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white">
           <thead>
