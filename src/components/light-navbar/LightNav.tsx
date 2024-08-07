@@ -8,10 +8,6 @@ import CustomButton from "../common/common-button/common-button";
 import Sidebar from "../sidebar/sideBar";
 import {
   DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import styles from "./LightNav.module.css";
@@ -120,22 +116,12 @@ const LightNav: React.FC<LightNavProperties> = ({ className }) => {
                 <DropdownMenuTrigger
                   className={`flex flex-row items-center font-inter text-sm text-neutral-80 no-underline outline-none duration-300 ease-in`}
                 >
-                  <div className="flex items-center gap-4 text-secondary-120">
+                  <Link href="/how-it-works" className="flex items-center gap-4 text-secondary-120">
                     <div className="h-2 w-2 rounded-full bg-primary-100"></div>
                     How it works
                     <div className="h-2 w-2 rounded-full bg-primary-100"></div>
-                  </div>
+                  </Link>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="shadow-sm w-[200px] rounded-xl border border-blue-200 bg-white">
-                  <DropdownMenuLabel>
-                    <Link href={"/account"}>My Account</Link>
-                  </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Billing</DropdownMenuItem>
-                  <DropdownMenuItem>Team</DropdownMenuItem>
-                  <DropdownMenuItem>Subscription</DropdownMenuItem>
-                </DropdownMenuContent>
               </DropdownMenu>
             </div>
 

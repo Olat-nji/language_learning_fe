@@ -6,11 +6,10 @@ type TabKey = "profile" | "difficulty" | "quest" | "learning";
 
 interface TabContent {
   number: string;
-  description: string;
+  description: JSX.Element;
   illustration: string;
 }
 
-// Define the tabs with their labels
 const tabs: { id: TabKey; label: string }[] = [
   { id: "profile", label: "Profile Setup" },
   { id: "difficulty", label: "Difficulty Selection" },
@@ -18,26 +17,56 @@ const tabs: { id: TabKey; label: string }[] = [
   { id: "learning", label: "Learning Begins" },
 ];
 
-// Define the content for each tab
 const tabContent: Record<TabKey, TabContent> = {
   profile: {
     number: "01.",
-    description: "Begin Your Learning Journey By Setting Up Your Profile And Picking Languages You Are Interested In",
+    description: (
+      <>
+        <span className="text-transparent-white-65">Begin Your Learning Journey By </span>
+        <span className="text-white">Setting Up Your Profile</span>
+        <span className="text-transparent-white-65"> And </span>
+        <span className="text-white">Picking Languages </span>
+        <span className="text-transparent-white-65">You Are Interested In</span>
+      </>
+    ),
     illustration: "/steptabs/profiletab.png",
   },
   difficulty: {
     number: "02.",
-    description: "Before You Play, Set Your Difficulty Level So You Get The Best Experience For You",
+    description: (
+      <>
+        <span className="text-transparent-white-65">Before You Play, </span>
+        <span className="text-white">Set Your Difficulty Level </span>
+        <span className="text-transparent-white-65">So You Get </span>
+        <span className="text-white">The Best Experience </span>
+        <span className="text-transparent-white-65">For You</span>
+      </>
+    ),
     illustration: "/steptabs/difficultytab.png",
   },
   quest: {
     number: "03.",
-    description: "Now, You’re Ready To Explore. Select A Quest And Preview It To Get A Better Idea.",
+    description: (
+      <>
+        <span className="text-transparent-white-65">Now, You’re Ready To Explore. </span>
+        <span className="text-white">Select A Quest</span>
+        <span className="text-transparent-white-65"> And </span>
+        <span className="text-white">Preview It </span>
+        <span className="text-transparent-white-65">To Get A Better Idea.</span>
+      </>
+    ),
     illustration: "/steptabs/questtab.png",
   },
   learning: {
     number: "04.",
-    description: "Your Game Awaits. Read The Game Tips While You Wait. Remember Your Timer Starts Soon.",
+    description: (
+      <>
+        <span className="text-transparent-white-65">Your Game Awaits. </span>
+        <span className="text-white">Read The Game Tips </span>
+        <span className="text-transparent-white-65">While You Wait. Remember </span>
+        <span className="text-white">Your Timer Starts Soon.</span>
+      </>
+    ),
     illustration: "/steptabs/learningtab.png",
   },
 };
@@ -62,13 +91,13 @@ export default function StepTabs() {
       </div>
 
       <div className="bg-black text-white mx-4 md:mx-10 p-4 md:p-20">
-        <div className="flex flex-col md:items-center md:flex-row">
+        <div className="flex flex-col md:items-center md:flex-row md:gap-[72px] ">
           <div className="md:w-1/2 p-4">
             <img src={tabContent[activeTab].illustration} alt={tabContent[activeTab].number} />
           </div>
           <div className="md:w-1/2 p-4">
             <div className="mb-4 lg:mb-9 border-2 border-white flex justify-center items-center rounded-full w-16 h-16 text-white ">{tabContent[activeTab].number}</div>
-            <p className="mb-4 text-[40px] ">{tabContent[activeTab].description}</p>
+            <p className="mb-4 text-2xl lg:text-[40px] leading-[60px] ">{tabContent[activeTab].description}</p>
           </div>
         </div>
       </div>
