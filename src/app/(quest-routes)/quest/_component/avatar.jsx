@@ -1,5 +1,4 @@
 
-
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 
@@ -20,7 +19,6 @@ export function Avatar(properties) {
 
 	return (
 		<group {...properties} ref={groupReference} dispose={null} scale={[3,3,3]}>
-    
       <group rotation-x={-Math.PI / 2}>
         <primitive object={nodes.Hips} />
         <skinnedMesh
