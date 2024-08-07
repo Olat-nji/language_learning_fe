@@ -21,7 +21,7 @@ export default function LoggedInFooter() {
         <a href="" className="hover:text-[#000000]">
           Contact Us
         </a>
-        <a href="" className="hover:text-[#000000]">
+        <a href="/how-it-works" className="hover:text-[#000000]">
           How It Works
         </a>
         <a href="" className="hover:text-[#000000]">
