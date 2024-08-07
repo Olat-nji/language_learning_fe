@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function LoggedInFooter() {
   return (
-    <footer className="flex h-auto w-full flex-col items-center justify-between gap-[30px] bg-white px-[20px] py-[30px] font-[400] text-black sm:h-[70px] sm:flex-row sm:gap-0 sm:p-0 sm:px-[80px]">
+    <footer className="flex w-full flex-col items-center justify-between gap-[30px] bg-white px-[20px] py-[30px] font-[400] text-black sm:flex-row sm:gap-0 sm:p-0 sm:px-[80px]">
       <div className="flex flex-col items-center gap-[20px] text-white sm:flex-row">
         <Image
           src={"/navbar/Delve-black_mobile.svg"}

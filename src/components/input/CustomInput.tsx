@@ -9,7 +9,7 @@ type Properties = {
   onChange?: (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void;
   error?: string;
   label?: string;
-  inputType?: "password" | "text" | "textarea";
+  inputType?: string;
   name?: string;
   value?: string;
   className?: string;
