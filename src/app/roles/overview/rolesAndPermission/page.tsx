@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 
+import AdminNav from "~/components/AdminNav/AdminNav";
 import DeleteInvitation from "~/components/modals/AdminRolesModals/deleteInvitationModal";
 import RolesAndPermissionUtils from "~/components/rolesAndPermission/rolesAndPermissionUtils";
+import AdminSidebar from "~/components/sidebar/admin/admin-sidebar";
 import PendingTable from "~/components/Table/pendingInvitationsTable";
 import RoleTable from "~/components/Table/theRoleListTable";
 import Overview from "../page";
@@ -21,44 +23,54 @@ const RolesAndPermission = () => {
 
   return (
     <div>
-      <Overview
-        title={viewTitle}
-        showInviteModal={showInviteModal}
-        setShowInviteModal={setShowInviteModal}
-        showSuccess={showSuccess}
-        setShowSuccess={setShowSuccess}
-        setShowPending={setShowPending}
-        showPending={showPending}
-        toViewNameOfRoles={toViewNameOfRoles}
-      >
-        {toViewNameOfRoles ? (
-          // the List of roles
+      <div>
+        <AdminNav />
+        <div className="flex">
+          <AdminSidebar />
           <div>
-            <RoleTable />
-          </div>
-        ) : (
-          <div>
-            {showPending ? (
-              <PendingTable
-                setShowDeletingInvitationModal={setShowDeletingInvitationModal}
-                openDeletedModal={openDeletedModal}
-                setOpenDeletedModal={setOpenDeletedModal}
-              />
+            <Overview
+              title={viewTitle}
+              showInviteModal={showInviteModal}
+              setShowInviteModal={setShowInviteModal}
+              showSuccess={showSuccess}
+              setShowSuccess={setShowSuccess}
+              setShowPending={setShowPending}
+              showPending={showPending}
+              toViewNameOfRoles={toViewNameOfRoles}
+            />
+            {toViewNameOfRoles ? (
+              <div>
+                <RoleTable />
+              </div>
             ) : (
-              <RolesAndPermissionUtils
-                setToViewNameOfRules={setToViewNameOfRoles}
-                setViewTitle={setViewTitle}
-              />
-            )}
-            {showDeletingInvitationModal && (
-              <DeleteInvitation
-                setShowDeletingInvitationModal={setShowDeletingInvitationModal}
-                setOpenDeletedModal={setOpenDeletedModal}
-              />
+              <div>
+                {showPending ? (
+                  <PendingTable
+                    setShowDeletingInvitationModal={
+                      setShowDeletingInvitationModal
+                    }
+                    openDeletedModal={openDeletedModal}
+                    setOpenDeletedModal={setOpenDeletedModal}
+                  />
+                ) : (
+                  <RolesAndPermissionUtils
+                    setToViewNameOfRules={setToViewNameOfRoles}
+                    setViewTitle={setViewTitle}
+                  />
+                )}
+                {showDeletingInvitationModal && (
+                  <DeleteInvitation
+                    setShowDeletingInvitationModal={
+                      setShowDeletingInvitationModal
+                    }
+                    setOpenDeletedModal={setOpenDeletedModal}
+                  />
+                )}
+              </div>
             )}
           </div>
-        )}
-      </Overview>
+        </div>
+      </div>
     </div>
   );
 };

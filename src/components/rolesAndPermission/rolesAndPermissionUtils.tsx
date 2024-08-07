@@ -72,7 +72,7 @@ const RolesAndPermissionUtils = ({
 
   return (
     <>
-      <div className="mt-[2.8rem] flex flex-col items-center rounded-[0.625rem] border border-solid border-[#E9EEF3] bg-[#fff]">
+      <div className="mx-8 mt-[2.8rem] flex w-full flex-col items-center rounded-[0.625rem] border border-solid border-[#E9EEF3] bg-[#fff]">
         <div className="mx-auto grid max-w-[63.9375rem] grid-cols-1 gap-4 px-4 py-[3rem] lg:grid-cols-2">
           {roles.map((role, index) => (
             <div key={index}>
