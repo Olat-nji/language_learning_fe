@@ -1,6 +1,6 @@
 
 
-import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import { OrbitControls, useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 
 export function Avatar(properties) {
@@ -14,14 +14,13 @@ export function Avatar(properties) {
 	const { actions } = useAnimations(idleAnimations, groupReference);
 
 
-
-
 	useEffect(() => {
 		actions.Idle.reset().play();
 	}, []);
 
 	return (
 		<group {...properties} ref={groupReference} dispose={null} scale={[3,3,3]}>
+
       <group rotation-x={-Math.PI / 2}>
         <primitive object={nodes.Hips} />
         <skinnedMesh
