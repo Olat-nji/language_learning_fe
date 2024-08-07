@@ -38,13 +38,13 @@ export default function WelcomeBackBar() {
                 />
               )}
             </div>
-            <p className="">0 days</p>
+            <p className="text-[14px]">0 days</p>
           </div>
           <div className="flex flex-row items-center gap-[10px]">
             <div className="flex items-center justify-center rounded-full bg-transparent-black-5 p-[2px]">
               <Image src={translate} height={20} width={20} alt={"Translate"} />
             </div>
-            <p className="">0 Words</p>
+            <p className="text-[14px]">0 Words</p>
           </div>
         </div>
       </div>

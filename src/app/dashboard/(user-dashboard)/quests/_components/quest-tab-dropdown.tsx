@@ -30,7 +30,7 @@ export function QuestTabDropdown() {
       <DropdownMenuTrigger asChild>
         <div className="flex w-[160px] cursor-pointer flex-row items-center justify-center rounded-[10px] bg-white px-[17px] py-[7.5px] duration-300">
           <div className="flex w-full flex-row items-center justify-between gap-[5px]">
-            <p className="">{selectedItem}</p>
+            <p className="text-[14px]">{selectedItem}</p>
             <ChevronDown />
           </div>
         </div>
