@@ -199,7 +199,7 @@ const UserDetails = () => {
           </div>
         </DashboardModal>
       )}
-      <div className="mb-[25px] flex items-center justify-between">
+      <div className="mb-[25px] mt-[25px] flex items-center justify-between md:mt-0">
         <div>
           <h3 className="font-lilita text-[17px] font-semibold text-secondary-100">
             Deactivate User
@@ -227,7 +227,7 @@ const UserDetails = () => {
         </div>
       </div>
       <section className="block items-center gap-[20px] lg:flex">
-        <UserDetailsCard className="lg:flex-1" />
+        <UserDetailsCard className="w-[100%] lg:flex-1" />
         <div className="mt-[20px] grid grid-cols-1 gap-[10px] sm:grid-cols-2 lg:mt-0 lg:flex-1">
           {metricsSchema.map((item, index) => (
             <UserMetricsCard

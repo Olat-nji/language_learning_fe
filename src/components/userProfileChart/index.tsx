@@ -42,7 +42,6 @@ const UserProfileChart = ({ className }: { className?: string }) => {
             tickLine={false}
             tickMargin={10}
             axisLine={false}
-            tickFormatter={(value) => value.slice(0, 3)}
           />
           <ChartTooltip
             cursor={false}
@@ -59,8 +58,6 @@ const UserProfileChart = ({ className }: { className?: string }) => {
         </BarChart>
       </ChartContainer>
     </div>
-    //   </CardContent>
-    // </Card>
   );
 };
 
