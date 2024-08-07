@@ -215,14 +215,14 @@ const SecurityCard: React.FC = () => {
   );
 
   return (
-    <div className="mx-auto mt-8 w-full rounded-xl border bg-white px-4 lg:px-12 py-10 font-axiforma">
-      <div className="flex md:flex-row flex-col items-center justify-between">
+    <div className="mx-auto mt-8 w-full rounded-xl border bg-white px-4 py-10 font-axiforma lg:px-12">
+      <div className="flex flex-col items-center justify-between md:flex-row">
         <div className="w-full">
           {activeSection === "password" && renderChangePassword()}
           {activeSection === "2fa" && renderEnable2FA()}
           {activeSection === "devices" && renderDevicesLoggedIn()}
           {activeSection === undefined && (
-            <div className="lg:w-3/5 w-full space-y-20">
+            <div className="w-full space-y-20 lg:w-3/5">
               <div className="block border-b border-gray-200 py-2">
                 <div className="flex items-center justify-between">
                   <div>
