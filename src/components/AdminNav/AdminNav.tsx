@@ -11,28 +11,28 @@ import {
 } from "../ui/dropdown-menu";
 import styles from "./AdminNav.module.css";
 import Logo from "./logo-component";
+import NavGradientAnimation from "./NavGradientAnimation";
 
 const AdminNav = () => {
   return (
-    <nav className="z-50 h-12 w-full text-black md:h-[100px] md:p-0">
+    <nav className="z-50 h-12 w-full max-w-[1728px] font-axiforma text-black md:h-[90px] md:p-0">
       <div
-        className={`shadow mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white px-5 ${styles.navLinkGradient}`}
+        className={`shadow mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white px-[20px] lg:px-[70px] ${styles.navLinkGradient}`}
       >
         {/* Desktop Navigation */}
-        <div className="hidden w-full items-center justify-between py-4 md:flex">
+        <div className="hidden w-full items-center justify-between pb-[15px] pt-[19px] md:flex">
           <div className="flex items-center">
             <Logo />
           </div>
 
-          <div className="flex space-x-8">
+          <div className="flex space-x-6">
             <Image
               src="/logo/search.svg"
               alt="search-icon"
-              width={40}
-              height={40}
+              width={32}
+              height={32}
+              className="cursor-pointer stroke-secondary-120"
             />
-
-            <div className="flex items-center border-l border-neutral-40"></div>
 
             <DropdownMenu>
               <DropdownMenuTrigger
@@ -41,14 +41,15 @@ const AdminNav = () => {
                 <Image
                   src="/logo/bell.svg"
                   alt="notification-icon"
-                  width={36}
-                  height={36}
+                  width={25}
+                  height={25}
+                  className="stroke-secondary-120"
                 />
                 <p className="sr-only">Notifications</p>
 
-                <span className="absolute right-[7px] top-[1px] size-[12px] rounded-full bg-primary-100 stroke-white stroke-[1px]" />
+                <span className="absolute right-[0px] top-[4px] size-[14px] rounded-full border-[2px] border-solid border-white bg-primary-100" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="shadow-sm shadow-sm w-[400px] divide-y-[1px] divide-neutral-30 rounded-xl bg-white p-0 shadow-blue-200">
+              <DropdownMenuContent className="shadow-sm shadow-sm w-[350px] divide-y-[1px] divide-neutral-30 rounded-xl bg-white p-0 shadow-blue-200">
                 <DropdownMenuLabel className="flex items-center justify-between gap-8 bg-secondary-110 px-6 py-5">
                   <p className="text-lg font-medium text-white">
                     Notifications
@@ -143,9 +144,7 @@ const AdminNav = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <div className="flex items-center border-l border-neutral-40"></div>
-
-            <div className="flex h-11 w-full items-center gap-1 rounded-[40px] border-2 border-[#E9EEF3] px-[10px] py-2">
+            <div className="flex h-11 w-full cursor-pointer flex-row items-center gap-1 rounded-full border-2 border-[#E9EEF3] pl-[4px] pr-[8px]">
               <Image
                 src="/navbar/profile-standin.svg"
                 alt="profile-icon"
@@ -154,10 +153,10 @@ const AdminNav = () => {
                 className="rounded-full"
               />
               <div className="flex flex-col">
-                <p className="text-sm font-semibold text-secondary-120">
+                <p className="text-[11.5px] font-semibold text-secondary-120">
                   John Doe
                 </p>
-                <p className="text-sm font-normal text-secondary-70">
+                <p className="text-[11.5px] font-normal text-secondary-70">
                   Super Admin
                 </p>
               </div>
@@ -172,7 +171,7 @@ const AdminNav = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="flex w-full items-center justify-between py-1 md:hidden">
+        <div className="flex w-full items-center justify-between py-2 md:hidden">
           <div className="flex items-center">
             <Image
               src="/navbar/Delve-black_mobile.svg"
@@ -202,6 +201,7 @@ const AdminNav = () => {
           </div>
         </div>
       </div>
+      <NavGradientAnimation />
     </nav>
   );
 };
