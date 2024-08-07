@@ -57,7 +57,7 @@ const ProfileSettingsTab = () => {
           {tabs[activeTab].subDescription}
         </p>
       </div>
-      <section className="mt-[25px] flex w-full items-center justify-between border-b border-t p-[10px]">
+      <section className="mt-[25px] flex w-full items-center justify-between border-b border-t py-[10px] pr-[5%]">
         {tabs.map((tab, index: number) => (
           <button
             key={index}
