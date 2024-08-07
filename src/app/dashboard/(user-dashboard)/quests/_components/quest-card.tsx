@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 
 import { Button } from "~/components/common/common-button";
 
@@ -15,6 +16,9 @@ type QuestCardProperties = {
 };
 
 export default function QuestCard({ quest }: QuestCardProperties) {
+  const router = useRouter()
+
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -38,7 +42,7 @@ export default function QuestCard({ quest }: QuestCardProperties) {
           </div>
           <div className="">
             {
-              <Button
+              <Button onClick={() => router.push('/dashboard/quests/1')}
                 variant="primary"
                 className="hidden w-[90px] group-hover:block"
               >
