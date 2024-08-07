@@ -44,6 +44,7 @@ import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
+import UserNavDropdown from "~/components/userNavDropdown/UserNavDropdown";
 import SignUpModal from "~/components/userSignUp/SignUpModal";
 
 const StyleGuide: FC = () => {
@@ -1046,6 +1047,10 @@ const StyleGuide: FC = () => {
             <SignUpModal closeModal={toggleModal} />
           </div>
         )}
+
+        <div className="mt-4">
+          <UserNavDropdown />
+        </div>
       </div>
     </main>
   );
