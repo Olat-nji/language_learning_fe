@@ -10,7 +10,7 @@ import UserDetailsCard from "~/components/userDetailCard";
 import UserMetricsCard from "~/components/userMetricsCard";
 import UserProfileChart from "~/components/userProfileChart";
 import UserProfileTable from "~/components/userProfileTable";
-import AdminLayout from "../dashboard/(admin)/layout";
+import AdminLayout from "../../../layout";
 
 const UserDetails = () => {
   const [isModalOpen, setsModalOpen] = useState(false);
