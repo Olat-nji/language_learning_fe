@@ -1,4 +1,5 @@
 import CustomButton from "../common/common-button/common-button";
+import Link from "next/link";
 
 const ReadytoStartSection = () => {
   return (
@@ -12,6 +13,7 @@ const ReadytoStartSection = () => {
                 Start Your Language Adventure?
               </b>
             </h1>
+            <Link href="/signup">
             <CustomButton
               variant="primary"
               size="lg"
@@ -19,11 +21,13 @@ const ReadytoStartSection = () => {
             >
               Delve In
             </CustomButton>
+            </Link>
           </div>
           <p className="max-w-[312px] text-center font-axiformaMedium text-sm font-normal leading-relaxed sm:text-base md:max-w-[700px] lg:w-1/2 lg:text-left">
             Dive in now and play the game to explore different quests, beat the
             clock, and master new languages with ease. Start your journey today!
           </p>
+          <Link href="/signup">
           <CustomButton
             variant="primary"
             size="default"
@@ -31,6 +35,7 @@ const ReadytoStartSection = () => {
           >
             Delve In
           </CustomButton>
+          </Link>
         </div>
       </div>
     </div>
