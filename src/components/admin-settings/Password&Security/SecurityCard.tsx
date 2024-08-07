@@ -47,7 +47,7 @@ const SecurityCard: React.FC = () => {
   ];
 
   const renderChangePassword = () => (
-    <div className="mt-6 w-2/5">
+    <div className="mt-6 w-full lg:w-2/5">
       <h3 className="mb-4 text-xl text-gray-700">Change Password</h3>
       <div className="relative mb-4">
         <label htmlFor="old-password" className="block text-sm text-gray-500">
@@ -169,21 +169,21 @@ const SecurityCard: React.FC = () => {
   );
 
   const renderDevicesLoggedIn = () => (
-    <div className="mt-4 w-4/5">
+    <div className="mt-4 w-full md:w-4/5">
       <table className="w-full bg-white">
         <thead className="h-14 rounded-t-xl bg-gray-100">
           <tr>
-            <th className="">Device you are logged in</th>
-            <th className="">Status</th>
-            <th className="">Last Seen</th>
-            <th className="">Action</th>
+            <th className="text-xs lg:text-base">Device you are logged in</th>
+            <th className="text-xs lg:text-base">Status</th>
+            <th className="text-xs lg:text-base">Last Seen</th>
+            <th className="text-xs lg:text-base">Action</th>
           </tr>
         </thead>
         <tbody>
           {devices.map((device) => (
             <tr
               key={device.id}
-              className={`border-b text-sm ${device.status === "Inactive" ? "bg-red-50" : ""}`}
+              className={`border-b text-xs md:text-sm ${device.status === "Inactive" ? "bg-red-50" : ""}`}
             >
               <td className="flex items-center space-x-3 py-2">
                 <div className="rounded-full bg-gray-100 p-2">
@@ -215,14 +215,14 @@ const SecurityCard: React.FC = () => {
   );
 
   return (
-    <div className="mx-auto mt-8 w-full rounded-xl border bg-white px-12 py-10 font-axiforma">
-      <div className="flex items-center justify-between">
+    <div className="mx-auto mt-8 w-full rounded-xl border bg-white px-4 lg:px-12 py-10 font-axiforma">
+      <div className="flex md:flex-row flex-col items-center justify-between">
         <div className="w-full">
           {activeSection === "password" && renderChangePassword()}
           {activeSection === "2fa" && renderEnable2FA()}
           {activeSection === "devices" && renderDevicesLoggedIn()}
           {activeSection === undefined && (
-            <div className="w-3/5 space-y-20">
+            <div className="lg:w-3/5 w-full space-y-20">
               <div className="block border-b border-gray-200 py-2">
                 <div className="flex items-center justify-between">
                   <div>
