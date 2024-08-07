@@ -1,4 +1,4 @@
-import ProfileSection from "~/components/ProfileSettings/ProfileSection";
+import ProfileSection from "~/components/profileSettings/ProfileSection";
 
 const ProfilePage = () => {
   return (
