@@ -7,6 +7,7 @@ import AdminNav from "~/components/AdminNav/AdminNav";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
+import UserNavDropdown from "~/components/common/dropdowns/UserNavDropdown";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
@@ -44,7 +45,6 @@ import Toasts from "~/components/toasts/Toasts";
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 import TryAgain from "~/components/TryAgain";
 import Accordion from "~/components/ui/CustomAccordion";
-import UserNavDropdown from "~/components/userNavDropdown/UserNavDropdown";
 import SignUpModal from "~/components/userSignUp/SignUpModal";
 
 const StyleGuide: FC = () => {
