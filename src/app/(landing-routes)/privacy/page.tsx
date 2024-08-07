@@ -4,11 +4,9 @@ import termsOfUse from "./data";
 const PrivacyPolicy = () => {
   return (
     <>
-      <section className="my-16 w-full bg-secondary-100 p-4 sm:p-6 md:p-10">
+      <section className="mb-16 w-full bg-secondary-100 p-4 sm:p-6 md:p-10 lg:pt-12">
         <article className="w-full bg-white px-4 py-16 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-20 lg:py-16">
-          <header
-            className="flex w-full flex-col items-center gap-[32px]"
-          >
+          <header className="flex w-full flex-col items-center gap-[32px]">
             <h1 className="font-axiformaSemiBold text-[32px] font-bold leading-[48px] tracking-[0.02em] md:text-[64px] md:leading-[96px] md:tracking-[0.06em]">
               Privacy Policy
             </h1>
