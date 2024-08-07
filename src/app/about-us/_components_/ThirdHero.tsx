@@ -1,7 +1,3 @@
-import email from "../../../../public/images/aboutAsset/email.svg";
-import note from "../../../../public/images/aboutAsset/note.svg";
-import phone from "../../../../public/images/aboutAsset/pone.svg";
-import Contact from "./Contact";
 import ContactInput from "./ContactInput";
 import Map from "./Map";
 
@@ -19,11 +15,10 @@ const ThirdHero = () => {
               team is here to help.
             </p>
           </div>
-
           {/* Input */}
-          <div className="w-full lg:flex lg:gap-[81px]">
+          <div className="flex w-full max-w-[1310px] gap-[80px]">
             {/* form */}
-            <div className="flex w-full flex-col gap-[56px] lg:w-[557px]">
+            <div className="w-full shrink-0 lg:w-[calc(50%-40px)]">
               <form className="flex flex-col gap-[45px]">
                 <div className="flex flex-col gap-[24px]">
                   <ContactInput
@@ -42,18 +37,22 @@ const ThirdHero = () => {
                   <div className="">
                     <label
                       htmlFor="message"
-                      className="font-axiformaSemiBold text-[16px] font-semibold leading-[24px] text-secondary-120"
+                      className="font-axiformaSemiBold text-[16px] font-semibold leading-[24px] text-secondary-70"
                     >
                       Your Message
                     </label>
-                    <textarea
-                      name="message"
-                      id="message"
-                      cols={30}
-                      rows={5}
-                      required
-                      className="w-full resize-none rounded-[10px] border border-solid border-neutral-40 bg-neutral-20 px-[12px] py-[10px] font-axiforma text-[18px] capitalize leading-[28px] text-neutral-80 outline-none"
-                    ></textarea>
+                    <div className="flex h-auto max-h-[78px] flex-col rounded-[10px] border border-solid border-neutral-40 bg-neutral-20 px-[12px] py-[10px] font-axiforma text-[18px] capitalize leading-[28px] text-secondary-70">
+                      <textarea
+                        name="message"
+                        id="message"
+                        required
+                        placeholder="Let us know how we can help you"
+                        className="w-full resize-none bg-transparent text-[14px] leading-[20px] outline-none"
+                      ></textarea>
+                      <p className="text-end text-[16px] leading-[24px]">
+                        0/15 words
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <button
@@ -63,20 +62,6 @@ const ThirdHero = () => {
                   SEND
                 </button>
               </form>
-              {/* contact type */}
-              <div className="flex flex-wrap gap-[44px] lg:flex-nowrap">
-                <Contact
-                  image={phone}
-                  type="phone"
-                  contactInfo="+244 906 7059 501"
-                />
-                <Contact image={note} type="fax" contactInfo="01 2345678" />
-                <Contact
-                  image={email}
-                  type="email"
-                  contactInfo=" info@delve.com"
-                />
-              </div>
             </div>
             {/* MAP */}
             <Map />

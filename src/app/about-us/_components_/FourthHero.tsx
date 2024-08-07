@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const FourthHero = () => {
   return (
     <article className="bg-white px-[20px] py-[24px] lg:p-[40px]">
@@ -7,25 +9,26 @@ const FourthHero = () => {
             <span className="text-secondary-60">Ready To </span>Start Your
             Language Adventure?
           </h2>
-          <button
-            type="button"
-            className="mt-[40px] hidden w-[213px] rounded-[59px] border-b border-solid border-primary-120 bg-primary-100 px-[32px] py-[10px] text-[18px] leading-[28px] text-white lg:block"
+          <Link
+            href="/signup"
+            className="mt-[40px] hidden w-[213px] justify-center rounded-[59px] border-b border-solid border-primary-120 bg-primary-100 px-[32px] py-[10px] text-[18px] leading-[28px] text-white lg:flex"
           >
             Delve In
-          </button>
+          </Link>
         </div>
-        {/* flex flex-col gap-[40px] h-[56px] w-[213px]*/}
+
         <div className="w-full max-w-[746px]">
           <p className="items-center text-center font-axiforma text-[14px] leading-[20px] text-white lg:text-start lg:text-[20px] lg:leading-[30px]">
             Dive in now and play the game to explore different quests, beat the
             clock, and master new languages with ease. Start your journey today!
           </p>
-          <button
-            type="button"
+
+          <Link
+            href="/signup"
             className="mt-[40px] block w-full rounded-[59px] border-b border-solid border-primary-120 bg-primary-100 px-[16px] py-[10px] text-[16px] leading-[24px] text-white lg:hidden"
           >
             Delve In
-          </button>
+          </Link>
         </div>
       </div>
     </article>
