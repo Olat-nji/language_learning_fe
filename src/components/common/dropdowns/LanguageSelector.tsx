@@ -16,7 +16,7 @@ const LanguageSelector = () => {
       <button
         type="button"
         onClick={toggleDropdown}
-        className="border-neutral shadow-lg flex w-full items-center justify-between gap-2 text-sm font-medium text-gray-700 focus:outline-none"
+        className="border-neutral flex w-full items-center justify-between gap-2 text-sm font-medium text-gray-700 focus:outline-none"
       >
         <Image
           src="/flags/french_flag.svg"
