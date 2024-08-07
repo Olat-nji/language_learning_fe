@@ -60,7 +60,7 @@ const LearningLanguage = () => {
   );
 
   return (
-    <div className="">
+    <div className="mb-10">
       <div className="rounded-t-[20px] bg-primary-10 px-5 py-8 font-axiforma text-[18px] font-[500] text-black sm:text-2xl">
         I want to learn...
       </div>
@@ -211,7 +211,7 @@ const LearningLanguage = () => {
             Discard Changes
           </button>
           <button
-            className={`rounded-[59px] border border-primary-60 bg-primary-100 px-4 py-2 font-axiforma text-sm font-semibold ${selectedLanguages.length === 0 ? "text-transparent-white-50" : "text-white"} sm:text-lg`}
+            className={`rounded-[59px] border border-secondary-30 bg-neutral-10 px-4 py-2 font-axiforma text-sm font-semibold ${selectedLanguages.length === 0 ? "text-secondary-30" : "text-secondary-120"} sm:text-lg`}
             disabled={selectedLanguages.length === 0}
           >
             Save Changes

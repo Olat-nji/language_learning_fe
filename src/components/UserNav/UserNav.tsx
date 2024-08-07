@@ -1,7 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
+import LanguageSelector from "../common/dropdowns/LanguageSelector";
+import UserNavDropdown from "../common/dropdowns/UserNavDropdown";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,31 +12,66 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import styles from "./AdminNav.module.css";
 import Logo from "./logo-component";
-import NavGradientAnimation from "./NavGradientAnimation";
+import styles from "./UserNav.module.css";
 
-const AdminNav = () => {
+const UserNav = () => {
   return (
-    <nav className="z-50 h-12 w-full max-w-[1728px] font-axiforma text-black md:h-[90px] md:p-0">
+    <nav className="sticky top-0 z-50 h-12 w-full text-black md:h-[96px] md:p-0">
       <div
-        className={`shadow mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white px-[20px] lg:px-[70px] ${styles.navLinkGradient}`}
+        className={`shadow mx-auto flex items-center justify-between border-b border-b-neutral-40 bg-white ${styles.navLinkGradient}`}
       >
         {/* Desktop Navigation */}
-        <div className="hidden w-full items-center justify-between pb-[15px] pt-[19px] md:flex">
+        <div className="hidden w-full items-center justify-between py-4 pl-[52px] pr-20 lg:flex">
           <div className="flex items-center">
             <Logo />
           </div>
 
-          <div className="flex space-x-6">
-            <Image
-              src="/logo/search.svg"
-              alt="search-icon"
-              width={32}
-              height={32}
-              className="cursor-pointer stroke-secondary-120"
-            />
+          <div className="flex space-x-3 lg:space-x-9">
+            <Link
+              href="/dashboard/quests"
+              className="group flex w-[124px] items-center justify-center gap-[6px] rounded-[40px] px-2 py-3 text-secondary-100 duration-200 focus:bg-secondary-120 focus:text-white active:scale-95"
+            >
+              <Image
+                src="/navbar/quest-icon-light.svg"
+                alt="quest-icon-1"
+                width={22}
+                height={22}
+                className="block group-focus:hidden"
+              />
+              <Image
+                src="/navbar/quest-icon.svg"
+                alt="quest-icon-2"
+                width={22}
+                height={22}
+                className="hidden group-focus:block"
+              />
+              Quests
+            </Link>
 
+            <Link
+              href="/dashboard/progress"
+              className="group flex w-[124px] items-center justify-center gap-[6px] rounded-[40px] px-2 py-3 text-secondary-100 duration-200 focus:bg-secondary-120 focus:text-white active:scale-95"
+            >
+              <Image
+                src="/navbar/progress-icon-light.svg"
+                alt="progress-icon-1"
+                width={22}
+                height={22}
+                className="block group-focus:hidden"
+              />
+              <Image
+                src="/navbar/progress-icon.svg"
+                alt="progress-icon-2"
+                width={22}
+                height={22}
+                className="hidden group-focus:block"
+              />
+              Progress
+            </Link>
+          </div>
+
+          <div className="flex space-x-8">
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={`relative flex w-full max-w-max select-none items-center duration-300 ease-in focus:outline-none active:scale-95`}
@@ -41,15 +79,14 @@ const AdminNav = () => {
                 <Image
                   src="/logo/bell.svg"
                   alt="notification-icon"
-                  width={25}
-                  height={25}
-                  className="stroke-secondary-120"
+                  width={38}
+                  height={38}
                 />
                 <p className="sr-only">Notifications</p>
 
-                <span className="absolute right-[0px] top-[4px] size-[14px] rounded-full border-[2px] border-solid border-white bg-primary-100" />
+                <span className="absolute right-[7px] top-[1px] size-[12px] rounded-full bg-primary-100 stroke-white stroke-[1px]" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="shadow-sm shadow-sm w-[350px] divide-y-[1px] divide-neutral-30 rounded-xl bg-white p-0 shadow-blue-200">
+              <DropdownMenuContent className="shadow-sm shadow-sm w-[400px] divide-y-[1px] divide-neutral-30 rounded-xl bg-white p-0 shadow-blue-200">
                 <DropdownMenuLabel className="flex items-center justify-between gap-8 bg-secondary-110 px-6 py-5">
                   <p className="text-lg font-medium text-white">
                     Notifications
@@ -131,6 +168,7 @@ const AdminNav = () => {
                           alt="notification-icon"
                           width={16}
                           height={16}
+                          className=""
                         />
                       </span>
                     </div>
@@ -144,51 +182,26 @@ const AdminNav = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <div className="flex h-11 w-full cursor-pointer flex-row items-center gap-1 rounded-full border-2 border-[#E9EEF3] pl-[4px] pr-[8px]">
-              <Image
-                src="/navbar/profile-standin.svg"
-                alt="profile-icon"
-                width={36}
-                height={36}
-                className="rounded-full"
-              />
-              <div className="flex flex-col">
-                <p className="text-[11.5px] font-semibold text-secondary-120">
-                  John Doe
-                </p>
-                <p className="text-[11.5px] font-normal text-secondary-70">
-                  Super Admin
-                </p>
-              </div>
-              <Image
-                src="/logo/about-down.svg"
-                alt="profile-arrow"
-                width={16}
-                height={16}
-              />
-            </div>
+            <LanguageSelector />
+
+            <UserNavDropdown />
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        <div className="flex w-full items-center justify-between py-2 md:hidden">
+        <div className="flex w-full items-center justify-between px-5 py-2 lg:hidden">
           <div className="flex items-center">
             <Image
               src="/navbar/Delve-black_mobile.svg"
               alt="mobile-logo"
               width={48}
               height={48}
-              className="block md:hidden"
+              className="block lg:hidden"
             />
           </div>
+
           <div className="flex items-center space-x-4">
-            <Image
-              src="/navbar/profile-standin.svg"
-              alt="profile-icon"
-              width={48}
-              height={48}
-              className="rounded-full"
-            />
+            <UserNavDropdown />
             <button className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-40 bg-white p-[10px]">
               <p className="sr-only">Menu</p>
               <Image
@@ -201,9 +214,8 @@ const AdminNav = () => {
           </div>
         </div>
       </div>
-      <NavGradientAnimation />
     </nav>
   );
 };
 
-export default AdminNav;
+export default UserNav;
