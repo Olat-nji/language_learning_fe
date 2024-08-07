@@ -206,17 +206,17 @@ const View = () => {
                     <div>
                       {category.newWords.includes(word.local) ? (
                         <Image
-                            alt="pass"
-                            src="/progress-images/check.png"
-                            width={25}
-                            height={25} 
+                          alt="pass"
+                          src="/progress-images/check.png"
+                          width={25}
+                          height={25}
                         />
                       ) : (
                         <Image
-                            alt="pass"
-                            src="/progress-images/blur-check.png"
-                            width={25}
-                            height={25}  
+                          alt="pass"
+                          src="/progress-images/blur-check.png"
+                          width={25}
+                          height={25}
                         />
                       )}
                     </div>
