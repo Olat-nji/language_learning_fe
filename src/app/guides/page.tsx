@@ -6,6 +6,7 @@ import { FC, useState } from "react";
 import AdminNav from "~/components/AdminNav/AdminNav";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
+import AdminNavDropdown from "~/components/common/dropdowns/AdminNavDropdown";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
 import UserNavDropdown from "~/components/common/dropdowns/UserNavDropdown";
 import SearchBar from "~/components/common/searchbar/Searchbar";
@@ -1050,6 +1051,10 @@ const StyleGuide: FC = () => {
 
         <div className="mt-4">
           <UserNavDropdown />
+        </div>
+
+        <div className="mt-4">
+          <AdminNavDropdown />
         </div>
       </div>
     </main>
