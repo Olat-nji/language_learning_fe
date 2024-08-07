@@ -12,6 +12,7 @@ import {
 import styles from "./AdminNav.module.css";
 import Logo from "./logo-component";
 import NavGradientAnimation from "./NavGradientAnimation";
+import AdminNavDropdown from "../common/dropdowns/AdminNavDropdown";
 
 const AdminNav = () => {
   return (
@@ -143,8 +144,8 @@ const AdminNav = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-
-            <div className="flex h-11 w-full cursor-pointer flex-row items-center gap-1 rounded-full border-2 border-[#E9EEF3] pl-[4px] pr-[8px]">
+            <AdminNavDropdown />
+            {/* <div className="flex h-11 w-full cursor-pointer flex-row items-center gap-1 rounded-full border-2 border-[#E9EEF3] pl-[4px] pr-[8px]">
               <Image
                 src="/navbar/profile-standin.svg"
                 alt="profile-icon"
@@ -166,7 +167,7 @@ const AdminNav = () => {
                 width={16}
                 height={16}
               />
-            </div>
+            </div> */}
           </div>
         </div>
 
