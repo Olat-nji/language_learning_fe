@@ -17,7 +17,11 @@ import {
 import styles from "./LightNav.module.css";
 import Logo from "./logo-component";
 
-const LightNav = () => {
+type LightNavProperties = {
+  className?: string;
+};
+
+const LightNav: React.FC<LightNavProperties> = ({ className }) => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -33,7 +37,9 @@ const LightNav = () => {
 
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-50 mx-auto w-screen bg-white px-0">
+      <nav
+        className={`${className || "fixed left-0 right-0 top-0 z-50 mx-auto w-screen max-w-[1728px] px-0"}`}
+      >
         {isSignedIn ? (
           <div
             className={`shadow-md md:shadow mx-auto hidden w-full flex-row items-center bg-white px-20 py-6 md:flex md:justify-between ${styles.navLinkGradient}`}
@@ -121,7 +127,9 @@ const LightNav = () => {
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="shadow-sm w-[200px] rounded-xl border border-blue-200 bg-white">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuLabel>
+                    <Link href={"/account"}>My Account</Link>
+                  </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>Billing</DropdownMenuItem>
