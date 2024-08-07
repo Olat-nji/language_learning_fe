@@ -5,8 +5,6 @@ export function AvatarTwo(properties) {
 	const { nodes, materials } = useGLTF("/models/66b22ea0183d0249c98fbd8b.glb");
 	const groupReference = useRef();
 
-
-
 	return (
 		<group {...properties} ref={groupReference} dispose={null} scale={[2.2,2.2,2.2]}>
       <group rotation-x={-Math.PI / 2}>
