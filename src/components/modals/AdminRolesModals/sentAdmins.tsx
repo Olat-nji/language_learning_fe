@@ -30,7 +30,7 @@ const AdminsInviteSent = ({
       ></div>
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-[50%] backdrop-blur-sm">
         <div
-          className={`shadow-4xl max-w-[30.5rem]" relative rounded-[1rem] bg-white px-[1.2rem] py-4 sm:px-[2.25rem] sm:py-8`}
+          className={`shadow-4xl relative max-w-[30.5rem] rounded-[1rem] bg-white px-[1.2rem] py-4 sm:px-[2.25rem] sm:py-8`}
         >
           <div className="absolute right-3 top-3">
             <Image
