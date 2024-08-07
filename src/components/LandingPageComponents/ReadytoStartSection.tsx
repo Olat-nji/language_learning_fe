@@ -1,5 +1,6 @@
-import CustomButton from "../common/common-button/common-button";
 import Link from "next/link";
+
+import CustomButton from "../common/common-button/common-button";
 
 const ReadytoStartSection = () => {
   return (
@@ -14,13 +15,13 @@ const ReadytoStartSection = () => {
               </b>
             </h1>
             <Link href="/signup">
-            <CustomButton
-              variant="primary"
-              size="lg"
-              className="hidden sm:flex"
-            >
-              Delve In
-            </CustomButton>
+              <CustomButton
+                variant="primary"
+                size="lg"
+                className="hidden sm:flex"
+              >
+                Delve In
+              </CustomButton>
             </Link>
           </div>
           <p className="max-w-[312px] text-center font-axiformaMedium text-sm font-normal leading-relaxed sm:text-base md:max-w-[700px] lg:w-1/2 lg:text-left">
@@ -28,13 +29,13 @@ const ReadytoStartSection = () => {
             clock, and master new languages with ease. Start your journey today!
           </p>
           <Link href="/signup">
-          <CustomButton
-            variant="primary"
-            size="default"
-            className="flex w-[90%] sm:hidden"
-          >
-            Delve In
-          </CustomButton>
+            <CustomButton
+              variant="primary"
+              size="default"
+              className="flex w-[90%] sm:hidden"
+            >
+              Delve In
+            </CustomButton>
           </Link>
         </div>
       </div>
