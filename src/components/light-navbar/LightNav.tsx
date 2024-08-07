@@ -31,7 +31,7 @@ const LightNav: React.FC<LightNavProperties> = ({ className }) => {
   return (
     <>
       <nav
-        className={`${className || "fixed left-0 right-0 top-0 z-50 mx-auto w-screen max-w-[1728px] px-0"}`}
+        className={`${className || "fixed left-0 right-0 top-0 z-50 mx-auto w-screen px-0"}`}
       >
         {isSignedIn ? (
           <div

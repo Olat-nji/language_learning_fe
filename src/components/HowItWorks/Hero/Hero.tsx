@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="border-secondary-120 bg-white px-4 lg:px-20">
+    <section className="w-full border-secondary-120 bg-white px-4 lg:px-20">
       <h1 className="mb-12 mt-24 text-center text-[32px] font-bold leading-[12px] text-secondary-120 lg:mb-16 lg:mt-32 lg:text-[64px] lg:leading-[96px]">
         How It Works
       </h1>
-      <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+      <div className="flex flex-col justify-between gap-4 md:flex-row">
         <div className="flex-1">
           <Image
             src="/howitworks/hero-1.png"
