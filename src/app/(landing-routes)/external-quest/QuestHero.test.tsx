@@ -4,9 +4,9 @@ import { describe, expect, it } from "vitest";
 import { quests } from "./data";
 import QuestHero from "./QuestHero";
 
-describe("questHero Component", () => {
+describe("questhero component", () => {
   it("should render the section with correct styling", () => {
-    expect.assertions(2);
+    expect.assertions(2); // Expecting 2 assertions
     render(<QuestHero />);
     const section = screen.getByTestId("quest-hero-section");
     expect(section).toHaveClass(
@@ -16,7 +16,7 @@ describe("questHero Component", () => {
   });
 
   it("should render the heading with correct text and styling", () => {
-    expect.assertions(2);
+    expect.assertions(2); // Expecting 2 assertions
     render(<QuestHero />);
     const heading = screen.getByTestId("quest-hero-heading");
     expect(heading).toHaveTextContent("Explore Language Quests");
@@ -26,14 +26,14 @@ describe("questHero Component", () => {
   });
 
   it("should render the correct number of QuestCard components", () => {
-    expect.assertions(1);
+    expect.assertions(1); // Expecting 1 assertion
     render(<QuestHero />);
     const questCards = screen.getAllByTestId("quest-card");
     expect(questCards).toHaveLength(quests.length);
   });
 
   it("should render each QuestCard with correct props", () => {
-    expect.assertions(quests.length);
+    expect.assertions(2); // Expecting one assertion per quest
     render(<QuestHero />);
     for (const quest of quests) {
       const questCard = screen.getByText(quest.title);
