@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                 <h3 className="mb-2 text-gray-400">Company</h3>
                 <ul>
                   <li>
-                    <a href="#" className="text-white">
+                    <a href="/about-us" className="text-white">
                       About Us
                     </a>
                   </li>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                 <h3 className="mb-2 text-gray-400">Legal</h3>
                 <ul>
                   <li>
-                    <a href="#" className="text-white">
+                    <a href="/terms-of-use" className="text-white">
                       Terms of Use
                     </a>
                   </li>
