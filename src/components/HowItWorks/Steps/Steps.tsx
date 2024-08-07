@@ -1,70 +1,77 @@
-// import { Button } from "@/components/ui/button"
-import { Button } from "~/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "~/components/ui/card"
+'use client'
 
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "~/components/ui/tabs"
+import { useState } from "react";
 
-export function StepTabs() {
+type TabKey = "profile" | "difficulty" | "quest" | "learning";
+
+interface TabContent {
+  number: string;
+  description: string;
+  illustration: string;
+}
+
+// Define the tabs with their labels
+const tabs: { id: TabKey; label: string }[] = [
+  { id: "profile", label: "Profile Setup" },
+  { id: "difficulty", label: "Difficulty Selection" },
+  { id: "quest", label: "Quest Selection" },
+  { id: "learning", label: "Learning Begins" },
+];
+
+// Define the content for each tab
+const tabContent: Record<TabKey, TabContent> = {
+  profile: {
+    number: "01.",
+    description: "Begin Your Learning Journey By Setting Up Your Profile And Picking Languages You Are Interested In",
+    illustration: "/steptabs/profiletab.png",
+  },
+  difficulty: {
+    number: "02.",
+    description: "Before You Play, Set Your Difficulty Level So You Get The Best Experience For You",
+    illustration: "/steptabs/difficultytab.png",
+  },
+  quest: {
+    number: "03.",
+    description: "Now, You’re Ready To Explore. Select A Quest And Preview It To Get A Better Idea.",
+    illustration: "/steptabs/questtab.png",
+  },
+  learning: {
+    number: "04.",
+    description: "Your Game Awaits. Read The Game Tips While You Wait. Remember Your Timer Starts Soon.",
+    illustration: "/steptabs/learningtab.png",
+  },
+};
+
+export default function StepTabs() {
+  const [activeTab, setActiveTab] = useState<TabKey>("profile");
+  
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger value="password">Password</TabsTrigger>
-      </TabsList>
-      <TabsContent value="account">
-        <Card>
-          <CardHeader>
-            <CardTitle>Account</CardTitle>
-            <CardDescription>
-              Make changes to your account here. Click save when you're done.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <p>tab1</p>
-            </div>
-            <div className="space-y-1">
-              <p>tab2</p>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save changes</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="password">
-        <Card>
-          <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <p>tab4</p>
-            </div>
-            <div className="space-y-1">
-              <p>tab3</p>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-    </Tabs>
-  )
+    <div className="w-full p-4 my-10 md:my-20 ">
+      <div className="w-full lg:w-[977px] mx-auto flex md:flex-row flex-col justify-center md:border border-neutral-40 md:h-[65px] rounded-[62px] h-auto bg-white mb-4 md:mb-14 ">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={` py-3 lg::py-[21px] px-[60px] rounded-[61px] text-secondary-60 ${
+              activeTab === tab.id ? "bg-neutral-30 border-neutral-10 text-secondary-120 " : "bg-white "
+            }`}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="bg-black text-white mx-4 md:mx-10 p-4 md:p-20">
+        <div className="flex flex-col md:items-center md:flex-row">
+          <div className="md:w-1/2 p-4">
+            <img src={tabContent[activeTab].illustration} alt={tabContent[activeTab].number} />
+          </div>
+          <div className="md:w-1/2 p-4">
+            <div className="mb-4 lg:mb-9 border-2 border-white flex justify-center items-center rounded-full w-16 h-16 text-white ">{tabContent[activeTab].number}</div>
+            <p className="mb-4 text-[40px] ">{tabContent[activeTab].description}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

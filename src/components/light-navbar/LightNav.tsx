@@ -33,7 +33,7 @@ const LightNav = () => {
 
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-50 mx-auto w-screen max-w-[1728px] bg-white px-0">
+      <nav className="fixed left-0 right-0 top-0 z-50 mx-auto w-screen bg-white px-0">
         {isSignedIn ? (
           <div
             className={`shadow-md md:shadow mx-auto hidden w-full flex-row items-center bg-white px-20 py-6 md:flex md:justify-between ${styles.navLinkGradient}`}
