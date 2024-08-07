@@ -1,7 +1,7 @@
 import React from "react";
 
 import CustomButton from "../common/common-button/common-button";
-import Logo from "../light-navbar/logo-component";
+import LogoFooter from "../light-navbar/logo-component-footer";
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="w-full">
         <div className="flex w-full flex-wrap justify-between px-[5%] pb-16">
           <div className="mb-6 w-full md:mb-0 md:w-[30%]">
-            <Logo />
+            <LogoFooter />
             <p className="ml-4 mt-3">Your go-to language learning app.</p>
           </div>
           <div className="gap=5 flex justify-between md:w-[60%]">
