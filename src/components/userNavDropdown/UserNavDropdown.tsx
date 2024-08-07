@@ -61,7 +61,10 @@ const UserNavDropdown = ({
               {username && username}
               {!username && "John Doe"}
             </h3>
-            <div className="text-xs text-secondary-50">
+            <div
+              className="text-xs text-secondary-50"
+              style={{ fontFamily: "Axiforma" }}
+            >
               {email && email}
               {!email && "johndoe@gmail.com"}
             </div>
