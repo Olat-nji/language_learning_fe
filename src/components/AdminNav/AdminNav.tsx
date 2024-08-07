@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 
+import AdminNavDropdown from "../common/dropdowns/AdminNavDropdown";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +13,6 @@ import {
 import styles from "./AdminNav.module.css";
 import Logo from "./logo-component";
 import NavGradientAnimation from "./NavGradientAnimation";
-import AdminNavDropdown from "../common/dropdowns/AdminNavDropdown";
 
 const AdminNav = () => {
   return (
