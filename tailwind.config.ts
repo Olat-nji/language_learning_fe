@@ -212,7 +212,7 @@ const config = {
         heroImageFour: "url('/images/_Hero_Image_4.png')",
         card: "url('/images/Cards.png')",
         "nav-gradient":
-        "linear-gradient(90deg, rgba(254, 89, 0, 0.8) 0%, rgba(255, 165, 0, 0.6) 26.29%, rgba(254, 89, 0, 0.6) 62.41%, rgba(255, 165, 0, 0.8) 100%)",
+          "linear-gradient(90deg, rgba(254, 89, 0, 0.8) 0%, rgba(255, 165, 0, 0.6) 26.29%, rgba(254, 89, 0, 0.6) 62.41%, rgba(255, 165, 0, 0.8) 100%)",
       },
       keyframes: {
         "accordion-down": {
