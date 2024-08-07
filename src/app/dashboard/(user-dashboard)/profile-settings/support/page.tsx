@@ -20,7 +20,7 @@ const SupportPage = () => {
             <CustomInput
               placeholder="Email"
               label="Email"
-              inputType="text"
+              inputType="email"
               value=""
               className=""
             />
