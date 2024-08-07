@@ -1,11 +1,11 @@
-type InputProps = {
+type InputProperties = {
   label: string;
   type: string;
   name: string;
   placeholder?: string;
 };
 
-const ContactInput: React.FC<InputProps> = ({
+const ContactInput: React.FC<InputProperties> = ({
   label,
   type,
   name,

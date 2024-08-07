@@ -17,11 +17,11 @@ import {
 import styles from "./LightNav.module.css";
 import Logo from "./logo-component";
 
-type LightNavProps = {
+type LightNavProperties = {
   className?: string;
 };
 
-const LightNav: React.FC<LightNavProps> = ({ className }) => {
+const LightNav: React.FC<LightNavProperties> = ({ className }) => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -38,7 +38,7 @@ const LightNav: React.FC<LightNavProps> = ({ className }) => {
   return (
     <>
       <nav
-        className={`${className ? className : "fixed left-0 right-0 top-0 z-50 mx-auto w-screen max-w-[1728px] px-0"}`}
+        className={`${className || "fixed left-0 right-0 top-0 z-50 mx-auto w-screen max-w-[1728px] px-0"}`}
       >
         {isSignedIn ? (
           <div

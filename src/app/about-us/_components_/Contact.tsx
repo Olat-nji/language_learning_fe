@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-type ContactProps = {
+type ContactProperties = {
   image: string;
   type: string;
   contactInfo: string;
 };
-const Contact: React.FC<ContactProps> = ({ image, type, contactInfo }) => {
+const Contact: React.FC<ContactProperties> = ({ image, type, contactInfo }) => {
   return (
     <div className="flex items-center gap-[4px] md:gap-[15px]">
       <Image src={image} alt={type} />
