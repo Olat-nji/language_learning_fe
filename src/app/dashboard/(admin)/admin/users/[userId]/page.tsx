@@ -10,7 +10,6 @@ import UserDetailsCard from "~/components/userDetailCard";
 import UserMetricsCard from "~/components/userMetricsCard";
 import UserProfileChart from "~/components/userProfileChart";
 import UserProfileTable from "~/components/userProfileTable";
-import AdminLayout from "../../../layout";
 
 const UserDetails = () => {
   const [isModalOpen, setsModalOpen] = useState(false);
@@ -70,7 +69,7 @@ const UserDetails = () => {
     }
   };
   return (
-    <AdminLayout>
+    <>
       {isModalOpen && (
         <DashboardModal
           onClose={handleCloseModal}
@@ -244,7 +243,7 @@ const UserDetails = () => {
         <UserProfileChart className="flex-1" />
         <UserProfileTable className="lg:flex-1" />
       </section>
-    </AdminLayout>
+    </>
   );
 };
 
