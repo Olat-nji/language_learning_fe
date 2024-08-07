@@ -15,11 +15,10 @@ const ThirdHero = () => {
               team is here to help.
             </p>
           </div>
-
           {/* Input */}
-          <div className="contact-us__container">
+          <div className="flex w-full max-w-[1310px] gap-[80px]">
             {/* form */}
-            <div className="contact">
+            <div className="w-full shrink-0 lg:w-[calc(50%-40px)]">
               <form className="flex flex-col gap-[45px]">
                 <div className="flex flex-col gap-[24px]">
                   <ContactInput
@@ -48,7 +47,7 @@ const ThirdHero = () => {
                         id="message"
                         required
                         placeholder="Let us know how we can help you"
-                        className="w-full resize-none bg-transparent text-[18px] leading-[28px] outline-none"
+                        className="w-full resize-none bg-transparent text-[14px] leading-[20px] outline-none"
                       ></textarea>
                       <p className="text-end text-[16px] leading-[24px]">
                         0/15 words
