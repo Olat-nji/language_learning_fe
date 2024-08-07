@@ -23,7 +23,7 @@ const QuestCard = ({
         <div className="h-fit w-full overflow-hidden rounded-md ring-2 ring-transparent duration-300 ease-in group-hover:ring-primary-100 md:rounded-2xl">
           <Image
             src={image}
-            className="object-cover"
+            className="w-full object-cover"
             width={356}
             height={467}
             alt={title}
