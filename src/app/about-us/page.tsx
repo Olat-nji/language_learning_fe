@@ -6,8 +6,7 @@ import ThirdHero from "./_components_/ThirdHero";
 
 const AboutPage = () => {
   return (
-    <section className="mx-auto w-full max-w-[1734px]">
-      {/* ABOUT */}
+    <section className="w-full">
       <FirstHero />
 
       {/* MEET THE TEAM */}

@@ -4,7 +4,7 @@ import termsOfUse from "./data";
 
 const TermsOfUse = () => {
   return (
-    <section className="mx-auto flex w-full max-w-[1728px] flex-col gap-[10px] border-b border-solid bg-secondary-120 p-[12px] lg:p-[40px]">
+    <section className="flex w-full flex-col gap-[10px] border-b border-solid bg-secondary-120">
       <article className="mx-auto flex w-full max-w-[1648px] flex-col gap-[64px] bg-white pb-[40px] md:border-[8px] md:border-solid md:border-transparent-white-15">
         <LightNav className="relative mx-auto w-full max-w-[1654px] bg-white" />
         <header
@@ -22,7 +22,7 @@ const TermsOfUse = () => {
           </div>
         </header>
 
-        <div className="mx-auto flex w-full max-w-[1568px] flex-col gap-[32px] bg-white p-[15px] md:border-[8px] md:border-solid md:border-transparent-black-25 md:p-[32px] lg:gap-[64px]">
+        <div className="mx-auto flex w-full flex-col gap-[32px] bg-white p-[15px] md:border-[8px] md:border-solid md:border-transparent-black-25 md:p-[32px] lg:gap-[64px]">
           {termsOfUse.map((items) => {
             const { id, text, infoList, subBody } = items;
             return (
