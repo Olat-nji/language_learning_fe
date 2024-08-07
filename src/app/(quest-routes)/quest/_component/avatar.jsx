@@ -8,14 +8,16 @@ export function Avatar(properties) {
 	const groupReference = useRef();
 
 	const { animations: walkingAnimations } = useFBX("/animations/walking.fbx");
+	const { animations: idleAnimations } = useFBX("/animations/idle.fbx");
 	walkingAnimations[0].name = "Walking";
-	const { actions } = useAnimations(walkingAnimations, groupReference);
+  idleAnimations[0].name = "Idle";
+	const { actions } = useAnimations(idleAnimations, groupReference);
 
 
 
 
 	useEffect(() => {
-		actions.Walking.reset().play();
+		actions.Idle.reset().play();
 	}, []);
 
 	return (
