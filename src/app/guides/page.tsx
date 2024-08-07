@@ -7,6 +7,7 @@ import AdminNav from "~/components/AdminNav/AdminNav";
 import CheckboxList from "~/components/checkbox/checkbox";
 import CustomButton from "~/components/common/common-button/common-button";
 import LanguageSelector from "~/components/common/dropdowns/LanguageSelector";
+import UserNavDropdown from "~/components/common/dropdowns/UserNavDropdown";
 import SearchBar from "~/components/common/searchbar/Searchbar";
 import SearchIcon from "~/components/common/searchbar/SearchIcon";
 import Correct from "~/components/correct";
@@ -1046,6 +1047,10 @@ const StyleGuide: FC = () => {
             <SignUpModal closeModal={toggleModal} />
           </div>
         )}
+
+        <div className="mt-4">
+          <UserNavDropdown />
+        </div>
       </div>
     </main>
   );
