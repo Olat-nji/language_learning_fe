@@ -104,15 +104,15 @@ const Progress = () => {
   return (
     <div className="w-full">
       {/* This is the container to the progress page and this is where the user progress is displayed */}
-      <div className="flex w-full items-center justify-center bg-[#F9FAFA] px-[80px] py-[65px]">
-        <div className="flex h-[1586px] w-full flex-col gap-[48px]">
+      <div className="flex w-full items-center justify-center bg-[#F9FAFA] px-[20px] sm:px-[40px] lg:px-[80px] py-[65px]">
+        <div className="flex min-h-[1586px] h-full w-full flex-col gap-[48px]">
           {/* This is the container to the progress summary */}
-          <div className="flex flex-col gap-[24px] p-[65px]">
+          <div className="flex flex-col gap-[24px] p-0 xl:p-[65px]">
             <div className="font-axiforma text-[24px] font-bold">
               Game Statistics
             </div>
-            <div className="flex w-full flex-row gap-[24px]">
-              <div className="border-1px flex w-1/3 flex-col gap-[28px] rounded-[16px] bg-[#FFEDCC] p-[24px]">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-[24px]">
+              <div className="border flex flex-col gap-[28px] rounded-[16px] bg-[#FFEDCC] p-[24px]">
                 <div className="flex w-full flex-row items-center justify-between">
                   <div className="font-axiforma text-[18px] font-medium text-secondary-120">
                     Total Streak
@@ -167,7 +167,7 @@ const Progress = () => {
                 </div>
               </div>
 
-              <div className="border-1px flex w-1/3 flex-col gap-[28px] rounded-[16px] border-neutral-50 bg-[#DEE5ED] p-[24px]">
+              <div className="border flex flex-col gap-[28px] rounded-[16px] border-neutral-50 bg-[#DEE5ED] p-[24px]">
                 <div className="flex w-full flex-row items-center justify-between">
                   <div className="font-axiforma text-[18px] font-medium text-secondary-120">
                     Pronunciation Accuracy
@@ -223,7 +223,7 @@ const Progress = () => {
                 </div>
               </div>
 
-              <div className="border-1px flex w-1/3 flex-col gap-[28px] rounded-[16px] bg-[#DCDD8F] p-[24px]">
+              <div className="border flex flex-col gap-[28px] rounded-[16px] bg-[#DCDD8F] p-[24px]">
                 <div className="flex w-full flex-row items-center justify-between">
                   <div className="font-axiforma text-[18px] font-medium text-secondary-120">
                     Words Learnt
@@ -273,7 +273,7 @@ const Progress = () => {
             <div className="font-axiforma text-[24px] font-bold">
               Words Learnt
             </div>
-            <div className="grid w-full grid-cols-2 gap-[3%]">
+            <div className="grid w-full md:grid-cols-2 gap-[3%]">
               {categories.map(
                 (category: {
                   id: number;
@@ -307,7 +307,7 @@ const Progress = () => {
                           ></div>
                         </div>
                       </div>
-                      <div className="flex flex-row items-center justify-between">
+                      <div className="flex flex-col sm:flex-row gap-4 sm:items-center justify-between">
                         <div className="font-axiforma text-[20px] font-medium">
                           {category.learntWords}/
                           <span className="text-[#888888]">
