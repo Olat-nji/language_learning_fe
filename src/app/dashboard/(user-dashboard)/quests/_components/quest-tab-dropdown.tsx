@@ -28,8 +28,8 @@ export function QuestTabDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="flex w-[200px] cursor-pointer flex-row items-center justify-center rounded-[10px] bg-white px-[25px] py-[12px] duration-300">
-          <div className="flex flex-row items-center gap-[10px]">
+        <div className="flex w-[160px] cursor-pointer flex-row items-center justify-center rounded-[10px] bg-white px-[17px] py-[7.5px] duration-300">
+          <div className="flex w-full flex-row items-center justify-between gap-[5px]">
             <p className="">{selectedItem}</p>
             <ChevronDown />
           </div>
