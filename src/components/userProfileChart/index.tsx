@@ -24,7 +24,7 @@ const chartConfig = {
 
 const UserProfileChart = ({ className }: { className?: string }) => {
   return (
-    <div className="w-full rounded-[10px] border-2 p-[20px]">
+    <div className="mb-[20px] w-full rounded-[10px] border-2 p-[20px] lg:mb-0">
       <div>
         <h3 className="font-bold">Gameplay Stats</h3>
       </div>

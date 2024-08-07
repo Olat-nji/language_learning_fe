@@ -1,6 +1,7 @@
 "use client";
 
 import { Award, Gamepad, Languages, Users } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 import CustomButton from "~/components/common/common-button/common-button";
@@ -16,17 +17,46 @@ const UserDetails = () => {
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [isDeactivated, setIsDeactivated] = useState(false);
 
+  const [isReactivateModalOpen, setIsReactivateModalOpen] = useState(false);
+  const [isReactivateSuccessModalOpen, setIsReactivateSuccessModalOpen] =
+    useState(false);
+
   const metricsSchema = [
-    { title: "Languages of Interest", stat: 4, desc: "", icon: <Languages /> },
-    { title: "Total Game Play", stat: 128, desc: "", icon: <Gamepad /> },
-    { title: "overall Achievements", stat: 10, desc: "", icon: <Award /> },
-    { title: "Followers", stat: 121, desc: "", icon: <Users /> },
+    {
+      title: "Languages of Interest",
+      stat: 4,
+      desc: "plays than usual",
+      icon: <Languages />,
+    },
+    {
+      title: "Total Game Play",
+      stat: 128,
+      desc: "plays than usual",
+      icon: <Gamepad />,
+    },
+    {
+      title: "overall Achievements",
+      stat: 10,
+      desc: "plays than usual",
+      icon: <Award />,
+    },
+    {
+      title: "Followers",
+      stat: 121,
+      desc: "plays than usual",
+      icon: <Users />,
+    },
   ];
 
   const handleDeactivated = () => {
     setsModalOpen(false);
     setIsDeactivated(true);
     setIsSuccessModalOpen(true);
+  };
+  const handleReactivated = () => {
+    setIsReactivateModalOpen(false);
+    setIsReactivateSuccessModalOpen(true);
+    setIsDeactivated(false);
   };
 
   const handleCloseModal = () => {
@@ -73,12 +103,52 @@ const UserDetails = () => {
           </div>
         </DashboardModal>
       )}
+      {isReactivateModalOpen && (
+        <DashboardModal
+          onClose={handleCloseModal}
+          className="w-[480px] font-axiforma"
+        >
+          <div>
+            <h3 className="mb-[15px] text-center text-[20px] font-bold">
+              Activate User
+            </h3>
+            <p className="mb-[15px] text-wrap text-center text-[15px] text-neutral-110">
+              Activating user means this account will be restored. Are you sure
+              you want to actiate this user?
+            </p>
+          </div>
+          <div className="flex gap-3 border-t-[3px] border-t-neutral-5 py-[15px]">
+            <CustomButton
+              variant="neutral"
+              className="w-full"
+              onClick={() => setsModalOpen(false)}
+            >
+              Cancel
+            </CustomButton>
+            <CustomButton
+              variant="default"
+              onClick={handleReactivated}
+              className="w-full bg-primary-90 px-[30px] text-white"
+            >
+              Confirm
+            </CustomButton>
+          </div>
+        </DashboardModal>
+      )}
       {isSuccessModalOpen && (
         <DashboardModal
           onClose={handleCloseModal}
           className="w-[30rem] font-axiforma"
         >
           <div>
+            <div className="flex items-center justify-center">
+              <Image
+                src="/images/success.svg"
+                alt="success"
+                width={80}
+                height={80}
+              />
+            </div>
             <h3 className="mb-[15px] text-center text-[20px] font-bold">
               User Deactivated
             </h3>
@@ -90,6 +160,38 @@ const UserDetails = () => {
             <CustomButton
               variant="default"
               onClick={() => setIsSuccessModalOpen(false)}
+              className="w-full bg-primary-90 px-[30px] text-white"
+            >
+              Go Home
+            </CustomButton>
+          </div>
+        </DashboardModal>
+      )}
+      {isReactivateSuccessModalOpen && (
+        <DashboardModal
+          onClose={handleCloseModal}
+          className="w-[30rem] font-axiforma"
+        >
+          <div>
+            <div className="flex items-center justify-center">
+              <Image
+                src="/images/success.svg"
+                alt="success"
+                width={80}
+                height={80}
+              />
+            </div>
+            <h3 className="mb-[15px] text-center text-[20px] font-bold">
+              Re-activated
+            </h3>
+            <p className="mb-[15px] text-center text-[15px] text-neutral-110">
+              User has been successfully reactivated
+            </p>
+          </div>
+          <div className="flex gap-3 border-t-[3px] border-t-neutral-5 py-[15px]">
+            <CustomButton
+              variant="default"
+              onClick={() => setIsReactivateSuccessModalOpen(false)}
               className="w-full bg-primary-90 px-[30px] text-white"
             >
               Go Home
@@ -109,7 +211,7 @@ const UserDetails = () => {
             <CustomButton
               variant="default"
               className="border-2 border-success-90 bg-transparent px-[30px] text-success-90"
-              onClick={() => setsModalOpen(true)}
+              onClick={() => setIsReactivateModalOpen(true)}
             >
               Reactivate User
             </CustomButton>
@@ -140,7 +242,7 @@ const UserDetails = () => {
       </section>
       <section className="mt-[20px] block gap-[20px] lg:flex">
         <UserProfileChart className="flex-1" />
-        <UserProfileTable className="mt-[20px] lg:mt-0 lg:flex-1" />
+        <UserProfileTable className="lg:flex-1" />
       </section>
     </AdminLayout>
   );
