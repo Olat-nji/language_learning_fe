@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { Lock, Settings, Shield, User } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 
 const RolesTabs = () => {
   const menuItems = [
@@ -21,19 +20,13 @@ const RolesTabs = () => {
     },
   ];
 
-  const [activeItem, setActiveItem] = useState("/profile");
-
   return (
     <nav className="mt-[2.4rem] flex w-full flex-wrap overflow-hidden rounded-[0.625rem] bg-white sm:border md:w-fit">
       {menuItems.map((item) => (
         <Link href={item.path} key={item.title}>
           <p
-            onClick={() => setActiveItem(item.path)}
             className={clsx(
-              "flex items-center gap-3 border-r border-solid border-[#E9EEF3] px-2 py-2 font-axiforma text-[#1B1B1B] transition-all sm:px-4 sm:py-4",
-              activeItem === item.path
-                ? "border-[] bg-[#FFDECC] text-[#FE5900]"
-                : "hover:bg-[#FFDECC] hover:text-[#FE5900]",
+              "flex items-center gap-3 border-r border-solid border-[#E9EEF3] px-2 py-2 font-axiforma text-[#1B1B1B] transition-all hover:bg-[#FFDECC] hover:text-[#FE5900] sm:px-4 sm:py-4",
             )}
           >
             <item.icon className="h-5 w-5" />
