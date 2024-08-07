@@ -1,4 +1,5 @@
 import DarkNav from "~/components/DarkNav/DarkNav";
+import Footer from "~/components/footer/Footer";
 import GotoTop from "~/components/miscellaneous/goto-top";
 
 export default function LandingLayout({
@@ -11,6 +12,7 @@ export default function LandingLayout({
       <DarkNav />
       <div className="flex-1">{children}</div>
       <GotoTop />
+      <Footer />
     </div>
   );
 }
