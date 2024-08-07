@@ -9,9 +9,9 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid min-h-screen w-full grid-rows-[auto_1fr]">
+    <div className="flex min-h-screen flex-col">
       <UserNav />
-      <div className="relative w-full bg-white max-lg:overflow-hidden">
+      <div className="w-full flex-grow overflow-scroll bg-white">
         <Suspense>{children}</Suspense>
       </div>
       <LoggedInFooter />
