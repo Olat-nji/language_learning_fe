@@ -109,7 +109,7 @@ const UserNavDropdown = ({
                 className="text-sm leading-5"
                 style={{ fontFamily: "Axiforma" }}
               >
-                Support
+                Sign Out
               </div>
             </Link>
           </DropdownMenuItem>
