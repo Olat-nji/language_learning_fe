@@ -1,6 +1,3 @@
-import email from "../../../../public/images/aboutAsset/email.svg";
-import note from "../../../../public/images/aboutAsset/note.svg";
-import phone from "../../../../public/images/aboutAsset/pone.svg";
 import ContactInput from "./ContactInput";
 import Map from "./Map";
 
