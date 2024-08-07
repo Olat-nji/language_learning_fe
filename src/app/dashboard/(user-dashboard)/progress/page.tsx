@@ -33,35 +33,35 @@ const Progress = () => {
     maxWords: number;
     learntWords: number;
   }[] = [
-    {
-      id: 1,
-      imageURL: "/progress-images/jungle-survival.png",
-      categoryName: "Jungle Suvival",
-      maxWords: 24,
-      learntWords: 18,
-    },
-    {
-      id: 2,
-      imageURL: "/progress-images/save-the-cyclist.png",
-      categoryName: "Save the Cyclist",
-      maxWords: 24,
-      learntWords: 12,
-    },
-    {
-      id: 3,
-      imageURL: "/progress-images/the-burning-building.png",
-      categoryName: "The Burning building",
-      maxWords: 18,
-      learntWords: 18,
-    },
-    {
-      id: 4,
-      imageURL: "/progress-images/catch-the-flight.png",
-      categoryName: "Catch The Flight",
-      maxWords: 24,
-      learntWords: 10,
-    },
-  ];
+      {
+        id: 1,
+        imageURL: "/progress-images/jungle-survival.png",
+        categoryName: "Jungle Suvival",
+        maxWords: 24,
+        learntWords: 18,
+      },
+      {
+        id: 2,
+        imageURL: "/progress-images/save-the-cyclist.png",
+        categoryName: "Save the Cyclist",
+        maxWords: 24,
+        learntWords: 12,
+      },
+      {
+        id: 3,
+        imageURL: "/progress-images/the-burning-building.png",
+        categoryName: "The Burning building",
+        maxWords: 18,
+        learntWords: 18,
+      },
+      {
+        id: 4,
+        imageURL: "/progress-images/catch-the-flight.png",
+        categoryName: "Catch The Flight",
+        maxWords: 24,
+        learntWords: 10,
+      },
+    ];
 
   // This is an array that holds the number of days that the user has taken a lesson
   // This is to be populated from the backend
