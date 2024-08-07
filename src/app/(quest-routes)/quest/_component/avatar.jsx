@@ -1,6 +1,6 @@
 
 
-import { OrbitControls, useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 
 export function Avatar(properties) {
