@@ -12,9 +12,12 @@ export function AuthenticationModal() {
           className="h-20 w-20 rounded-xl object-contain"
         />
         <h1 className="text-center font-lilita text-3xl">
-        Authentication has been enabled
+          Authentication has been enabled
         </h1>
-        <p className="text-gray-500">Your authentication is complete! You have successfully secured your account.</p>
+        <p className="text-gray-500">
+          Your authentication is complete! You have successfully secured your
+          account.
+        </p>
       </div>
       <div className="w-full pt-6">
         <button className="w-full rounded-3xl bg-orange-500 px-8 py-3 text-white">
