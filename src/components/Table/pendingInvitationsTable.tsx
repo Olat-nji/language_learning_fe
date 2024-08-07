@@ -31,37 +31,39 @@ const PendingTable = ({
   setOpenDeletedModal,
 }: PendingTableProperties) => {
   const [admins, setAdmins] = useState<Admin[]>([]);
-  const adminsData = [
-    {
-      name: "Afolabi Olanipekun",
-      email: "AfolabiOlanipekun@gmail.com",
-      dateSent: "02/07/2024",
-      role: "Game Developer",
-      avatar: avatar1,
-    },
-    {
-      name: "Joseph Brendan",
-      email: "josephbrendan@gmail.com",
-      dateSent: "02/07/2024",
-      role: "Content Creator",
-      avatar: avatar2,
-    },
-    {
-      name: "Ifunanya Adedapo",
-      email: "ifunanya@gmail.com",
-      dateSent: "02/07/2024",
-      role: "User Manager",
-      avatar: avatar3,
-    },
-    {
-      name: "Busola Igwe",
-      email: "busolaigwe@gmail.com",
-      dateSent: "02/07/2024",
-      role: "Super Admin",
-      avatar: avatar4,
-    },
-  ];
+
   useEffect(() => {
+    const adminsData: Admin[] = [
+      {
+        name: "Afolabi Olanipekun",
+        email: "AfolabiOlanipekun@gmail.com",
+        dateSent: "02/07/2024",
+        role: "Game Developer",
+        avatar: avatar1,
+      },
+      {
+        name: "Joseph Brendan",
+        email: "josephbrendan@gmail.com",
+        dateSent: "02/07/2024",
+        role: "Content Creator",
+        avatar: avatar2,
+      },
+      {
+        name: "Ifunanya Adedapo",
+        email: "ifunanya@gmail.com",
+        dateSent: "02/07/2024",
+        role: "User Manager",
+        avatar: avatar3,
+      },
+      {
+        name: "Busola Igwe",
+        email: "busolaigwe@gmail.com",
+        dateSent: "02/07/2024",
+        role: "Super Admin",
+        avatar: avatar4,
+      },
+    ];
+
     setAdmins(adminsData);
   }, []);
 
