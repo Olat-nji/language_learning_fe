@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
@@ -7,24 +8,30 @@ const HeroSection = () => {
       </h1>
       <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
         <div className="flex-1">
-          <img
+          <Image
             src="/howitworks/hero-1.png"
             alt="Image 1"
+            width={500}
+            height={500}
             className="h-auto w-full"
           />
         </div>
         <div className="flex-1">
-          <img
+          <Image
             src="/howitworks/hero-2.png"
             alt="Image 2"
             className="h-auto w-full"
+            width={500}
+            height={500}
           />
         </div>
         <div className="flex-1">
-          <img
+          <Image
             src="/howitworks/hero-3.png"
             alt="Image 3"
             className="h-auto w-full"
+            width={500}
+            height={500}
           />
         </div>
       </div>

@@ -6,10 +6,7 @@ import { useEffect, useState } from "react";
 
 import { TransitionLink } from "../miscellaneous/transition-link";
 import Sidebar from "../sidebar/sideBar";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import styles from "./DarkNav.module.css";
 import Logo from "./logo-component";
 
@@ -110,7 +107,7 @@ const DarkNav = () => {
                 <DropdownMenuTrigger
                   className={`flex flex-row items-center font-inter text-sm text-neutral-80 no-underline outline-none duration-300 ease-in`}
                 >
-                  <Link href='/how-it-works' className="flex gap-4 text-white">
+                  <Link href="/how-it-works" className="flex gap-4 text-white">
                     <Image
                       src="/navbar/howitworks-dot.svg"
                       alt="mobile-logo"

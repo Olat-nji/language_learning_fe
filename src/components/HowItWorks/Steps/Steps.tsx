@@ -1,5 +1,6 @@
-'use client'
+"use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type TabKey = "profile" | "difficulty" | "quest" | "learning";
@@ -22,7 +23,9 @@ const tabContent: Record<TabKey, TabContent> = {
     number: "01.",
     description: (
       <>
-        <span className="text-transparent-white-65">Begin Your Learning Journey By </span>
+        <span className="text-transparent-white-65">
+          Begin Your Learning Journey By{" "}
+        </span>
         <span className="text-white">Setting Up Your Profile</span>
         <span className="text-transparent-white-65"> And </span>
         <span className="text-white">Picking Languages </span>
@@ -48,7 +51,9 @@ const tabContent: Record<TabKey, TabContent> = {
     number: "03.",
     description: (
       <>
-        <span className="text-transparent-white-65">Now, You’re Ready To Explore. </span>
+        <span className="text-transparent-white-65">
+          Now, You’re Ready To Explore.{" "}
+        </span>
         <span className="text-white">Select A Quest</span>
         <span className="text-transparent-white-65"> And </span>
         <span className="text-white">Preview It </span>
@@ -63,7 +68,9 @@ const tabContent: Record<TabKey, TabContent> = {
       <>
         <span className="text-transparent-white-65">Your Game Awaits. </span>
         <span className="text-white">Read The Game Tips </span>
-        <span className="text-transparent-white-65">While You Wait. Remember </span>
+        <span className="text-transparent-white-65">
+          While You Wait. Remember{" "}
+        </span>
         <span className="text-white">Your Timer Starts Soon.</span>
       </>
     ),
@@ -73,15 +80,17 @@ const tabContent: Record<TabKey, TabContent> = {
 
 export default function StepTabs() {
   const [activeTab, setActiveTab] = useState<TabKey>("profile");
-  
+
   return (
-    <div className="w-full p-4 my-10 md:my-20 ">
-      <div className="w-full lg:w-[977px] mx-auto flex md:flex-row flex-col justify-center md:border border-neutral-40 md:h-[65px] rounded-[62px] h-auto bg-white mb-4 md:mb-14 ">
+    <div className="my-10 w-full p-4 md:my-20">
+      <div className="mx-auto mb-4 flex h-auto w-full flex-col justify-center rounded-[62px] border-neutral-40 bg-white md:mb-14 md:h-[65px] md:flex-row md:border lg:w-[977px]">
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            className={` py-3 lg::py-[21px] px-[60px] rounded-[61px] text-secondary-60 ${
-              activeTab === tab.id ? "bg-neutral-30 border-neutral-10 text-secondary-120 " : "bg-white "
+            className={`lg::py-[21px] rounded-[61px] px-[60px] py-3 text-secondary-60 ${
+              activeTab === tab.id
+                ? "border-neutral-10 bg-neutral-30 text-secondary-120"
+                : "bg-white"
             }`}
             onClick={() => setActiveTab(tab.id)}
           >
@@ -90,14 +99,23 @@ export default function StepTabs() {
         ))}
       </div>
 
-      <div className="bg-black text-white mx-4 md:mx-10 p-4 md:p-20">
-        <div className="flex flex-col md:items-center md:flex-row md:gap-[72px] ">
-          <div className="md:w-1/2 p-4">
-            <img src={tabContent[activeTab].illustration} alt={tabContent[activeTab].number} />
+      <div className="mx-4 bg-black p-4 text-white md:mx-10 md:p-20">
+        <div className="flex flex-col md:flex-row md:items-center md:gap-[72px]">
+          <div className="p-4 md:w-1/2">
+            <Image
+              src={tabContent[activeTab].illustration}
+              alt={tabContent[activeTab].number}
+              width={500}
+              height={500}
+            />
           </div>
-          <div className="md:w-1/2 p-4">
-            <div className="mb-4 lg:mb-9 border-2 border-white flex justify-center items-center rounded-full w-16 h-16 text-white ">{tabContent[activeTab].number}</div>
-            <p className="mb-4 text-2xl lg:text-[40px] leading-[60px] ">{tabContent[activeTab].description}</p>
+          <div className="p-4 md:w-1/2">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-white text-white lg:mb-9">
+              {tabContent[activeTab].number}
+            </div>
+            <p className="mb-4 text-2xl leading-[60px] lg:text-[40px]">
+              {tabContent[activeTab].description}
+            </p>
           </div>
         </div>
       </div>

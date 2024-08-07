@@ -6,10 +6,7 @@ import { useEffect, useState } from "react";
 
 import CustomButton from "../common/common-button/common-button";
 import Sidebar from "../sidebar/sideBar";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import styles from "./LightNav.module.css";
 import Logo from "./logo-component";
 
@@ -116,7 +113,10 @@ const LightNav: React.FC<LightNavProperties> = ({ className }) => {
                 <DropdownMenuTrigger
                   className={`flex flex-row items-center font-inter text-sm text-neutral-80 no-underline outline-none duration-300 ease-in`}
                 >
-                  <Link href="/how-it-works" className="flex items-center gap-4 text-secondary-120">
+                  <Link
+                    href="/how-it-works"
+                    className="flex items-center gap-4 text-secondary-120"
+                  >
                     <div className="h-2 w-2 rounded-full bg-primary-100"></div>
                     How it works
                     <div className="h-2 w-2 rounded-full bg-primary-100"></div>
