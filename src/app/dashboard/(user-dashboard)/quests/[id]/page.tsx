@@ -2,20 +2,11 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import Link from "next/link";
 
 import Breadcrumb from "./_components/Breadcrumb";
 
 const QuestPreview = () => {
-  const router = useRouter();
-
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    setClicked(true);
-  };
-
   return (
     <section className="flex min-h-screen flex-col gap-6 bg-neutral-5 px-[20px] pb-[74px] pt-[50px] font-axiforma sm:px-[74px]">
       <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center lg:gap-8">
@@ -92,21 +83,17 @@ const QuestPreview = () => {
             </div>
 
             <span className="flex justify-between gap-5">
-              <button
-                onClick={() => router.back()}
-                type="button"
-                className="w-full rounded-full border-b border-secondary-30 bg-primary-10 px-8 py-[10px] text-lg font-semibold text-primary-100 duration-200 hover:border hover:bg-primary-10/90 active:scale-95"
+              <Link
+                href="/dashboard/quests"
+                className="w-full text-center rounded-full border-b border-secondary-30 bg-primary-10 px-8 py-[10px] text-lg font-semibold text-primary-100 duration-200 hover:border hover:bg-primary-10/90 active:scale-95"
               >
                 Back
-              </button>
+              </Link>
               <button
                 type="button"
-                className={`w-full rounded-full border-b border-primary-120 bg-primary-100 px-8 py-[10px] text-lg font-semibold text-white duration-200 hover:border hover:bg-primary-100/90 active:scale-95 ${
-                  clicked ? "bg-primary-100" : ""
-                }`}
-                onClick={handleClick}
+                className="w-full rounded-full border-b border-primary-120 bg-primary-100 px-8 py-[10px] text-lg font-semibold text-white duration-200 hover:border hover:bg-primary-100/90 active:scale-95"
               >
-                {clicked ? "Continue Quest" : "Start Quest"}
+                Start Quest
               </button>
             </span>
           </div>
