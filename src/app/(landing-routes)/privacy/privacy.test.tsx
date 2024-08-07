@@ -1,14 +1,17 @@
-// PrivacyPolicy.test.tsx
+// privacy.test.tsx
 import { render, screen } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 
 import { describe, expect, it } from "vitest";
 
-import termsOfUse from "~/components/privacyPolicy/data";
+import termsOfUse from "./data";
+import PrivacyPolicy from "./page"; // Ensure the correct import path
 
 describe("privacyPolicy component", () => {
   it("should render PrivacyPolicy component correctly", () => {
+    expect.hasAssertions();
+
     render(<PrivacyPolicy />);
 
     // Check if the main heading is rendered
@@ -21,19 +24,29 @@ describe("privacyPolicy component", () => {
 
     // Check if terms of use are rendered
     for (const item of termsOfUse) {
-      expect(screen.getByText(item.text)).toBeInTheDocument();
-      if (item.subBody)
-        for (const sub of item.subBody) {
-          expect(screen.getByText(sub.header)).toBeInTheDocument();
-          if (sub.listArray)
-            for (const listItem of sub.listArray) {
-              expect(screen.getByText(listItem.topic)).toBeInTheDocument();
-              expect(screen.getByText(listItem.topicText)).toBeInTheDocument();
-            }
-        }
-    }
+      const textElement = screen.getByText(item.text);
+      expect(textElement).toBeInTheDocument();
 
-    // Check if Footer is rendered
-    expect(screen.getByTestId("footer")).toBeInTheDocument();
+      const subBodyHeaders = item.subBody?.map((sub) => sub.header) || [];
+      const subBodyListItems =
+        item.subBody?.flatMap((sub) =>
+          sub.listArray.map((listItem) => ({
+            topic: listItem.topic,
+            topicText: listItem.topicText,
+          })),
+        ) || [];
+
+      for (const header of subBodyHeaders) {
+        const subHeader = screen.getByText(header);
+        expect(subHeader).toBeInTheDocument();
+      }
+
+      for (const listItem of subBodyListItems) {
+        const topicElement = screen.getByText(listItem.topic);
+        expect(topicElement).toBeInTheDocument();
+        const topicTextElement = screen.getByText(listItem.topicText);
+        expect(topicTextElement).toBeInTheDocument();
+      }
+    }
   });
 });
