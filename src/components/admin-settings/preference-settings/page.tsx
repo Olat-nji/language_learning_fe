@@ -1,3 +1,6 @@
+import { Apple, Facebook, Instagram, Mail } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
 import ToggleSwitch from "~/components/toggle/ToggleSwitch";
 
 const AdminPreferenceSettings: React.FC = () => {
@@ -46,7 +49,43 @@ const LanguageSelectionDiv: React.FC = () => {
 };
 
 const SocialsDiv: React.FC = () => {
-  const socialPlatforms = ["Facebook", "Google", "Instagram", "Apple"];
+  const [activeDropdown, setActiveDropdown] = useState<string | undefined>();
+  const dropdownReference = useRef<HTMLDivElement>(null);
+
+  const socialPlatforms = [
+    { name: "Facebook", icon: Facebook, color: "#1877F2" },
+    { name: "Google", icon: Mail, color: "#DB4437" },
+    { name: "Instagram", icon: Instagram, color: "#E4405F" },
+    { name: "Apple", icon: Apple, color: "#000000" },
+  ];
+
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? undefined : name);
+  };
+
+  const handleButtonClick = (action: string) => {
+    // Perform the action (Remove or Unlink)
+    // eslint-disable-next-line no-console
+    console.log(`${action} clicked`);
+    // Close the dropdown
+    setActiveDropdown(undefined);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownReference.current &&
+        !dropdownReference.current.contains(event.target as Node)
+      ) {
+        setActiveDropdown(undefined);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="w-full bg-[#F8FAFB] p-5">
@@ -57,22 +96,76 @@ const SocialsDiv: React.FC = () => {
         Link social media accounts to share game-related content directly, like
         achievements, milestones, or custom content.
       </p>
-      <div className="flex flex-col space-y-3">
-        {socialPlatforms.map((platform) => (
-          <div key={platform} className="flex items-center justify-between">
+      <div className="flex flex-col space-y-10">
+        {socialPlatforms.map(({ name, icon: Icon, color }) => (
+          <div
+            key={name}
+            className="relative flex items-center justify-between"
+          >
             <div className="flex items-center">
-              <span className="ml-2">{platform}</span>
+              <Icon className="mr-2 h-5 w-5" style={{ color }} />
+              <span>{name}</span>
             </div>
-            <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-              </svg>
-            </button>
+            <div className="relative" ref={dropdownReference}>
+              <button onClick={() => toggleDropdown(name)}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                </svg>
+              </button>
+              {activeDropdown === name && (
+                <div
+                  className="shadow-lg absolute right-0 z-10 rounded-md border border-[#E9EEF3] bg-white"
+                  style={{
+                    width: "112px",
+                    borderRadius: "var(--radiusrounded-md)",
+                    background: "#FFFFFF",
+                    boxShadow: "0px 5px 22px 4px rgba(0, 0, 0, 0.12)",
+                    top: "-22px",
+                    right: "-22px",
+                  }}
+                >
+                  <div className="flex flex-col space-y-1 p-1">
+                    <button
+                      className="w-full rounded-sm text-left text-sm transition-colors duration-150"
+                      style={{
+                        padding: "6px 8px",
+                        background: "#FFFFFF",
+                      }}
+                      onClick={() => handleButtonClick("Remove")}
+                      onMouseEnter={(event) =>
+                        (event.currentTarget.style.backgroundColor = "#F3F4F6")
+                      }
+                      onMouseLeave={(event) =>
+                        (event.currentTarget.style.backgroundColor = "#FFFFFF")
+                      }
+                    >
+                      Remove
+                    </button>
+                    <button
+                      className="w-full rounded-sm text-left text-sm transition-colors duration-150"
+                      style={{
+                        padding: "6px 8px",
+                        background: "#FFFFFF",
+                      }}
+                      onClick={() => handleButtonClick("Unlink")}
+                      onMouseEnter={(event) =>
+                        (event.currentTarget.style.backgroundColor = "#F3F4F6")
+                      }
+                      onMouseLeave={(event) =>
+                        (event.currentTarget.style.backgroundColor = "#FFFFFF")
+                      }
+                    >
+                      Unlink
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
