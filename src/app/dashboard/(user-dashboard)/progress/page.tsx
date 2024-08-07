@@ -103,9 +103,6 @@ const Progress = () => {
 
   return (
     <div className="w-full">
-      {/* This is the nav and is the proper one is displayed only if the user is logged in */}
-      <DarkNav />
-
       {/* This is the container to the progress page and this is where the user progress is displayed */}
       <div className="flex w-full items-center justify-center bg-[#F9FAFA] px-[80px] py-[65px]">
         <div className="flex h-[1586px] w-full flex-col gap-[48px]">
@@ -330,9 +327,6 @@ const Progress = () => {
           </div>
         </div>
       </div>
-
-      {/* This is the footer that is displayed when the user is logged in.   */}
-      <LoggedInFooter />
     </div>
   );
 };
