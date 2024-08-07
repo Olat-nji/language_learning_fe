@@ -1,15 +1,13 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 import { animatePageIn } from "~/lib/animations";
 
 const Template = ({ children }: { children: React.ReactNode }) => {
-  const pathname = usePathname();
   useEffect(() => {
     animatePageIn();
-  }, [pathname]);
+  }, []);
 
   return (
     <div>
