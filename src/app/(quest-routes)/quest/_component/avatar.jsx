@@ -1,5 +1,3 @@
-
-
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 
@@ -12,8 +10,6 @@ export function Avatar(properties) {
 	walkingAnimations[0].name = "Walking";
   idleAnimations[0].name = "Idle";
 	const { actions } = useAnimations(idleAnimations, groupReference);
-
-
 
 
 	useEffect(() => {
