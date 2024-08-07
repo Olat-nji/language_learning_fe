@@ -1,5 +1,3 @@
-import React from "react";
-
 import CustomButton from "../common/common-button/common-button";
 import LogoFooter from "../light-navbar/logo-component-footer";
 
@@ -12,66 +10,72 @@ const Footer: React.FC = () => {
             <LogoFooter />
             <p className="ml-4 mt-3">Your go-to language learning app.</p>
           </div>
-          <div className="gap=5 flex justify-between md:w-[60%]">
-            <div className="mb-6 w-full md:mb-0 md:w-1/3">
-              <h3 className="mb-2 text-gray-400">Product</h3>
-              <ul>
-                <li>
-                  <a href="#" className="text-white">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white">
-                    How It Works
-                  </a>
-                </li>
-              </ul>
+          <div className="flex justify-between gap-5 md:w-[60%]">
+            <div className="mb-6 flex w-full justify-end md:mb-0 md:w-1/3">
+              <div>
+                <h3 className="mb-2 text-gray-400">Product</h3>
+                <ul>
+                  <li>
+                    <a href="#" className="text-white">
+                      Features
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white">
+                      How It Works
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="mb-6 w-full md:mb-0 md:w-1/3">
-              <h3 className="mb-2 text-gray-400">Company</h3>
-              <ul>
-                <li>
-                  <a href="#" className="text-white">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white">
-                    FAQs
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white">
-                    Blog
-                  </a>
-                </li>
-              </ul>
+            <div className="mb-6 flex w-full justify-end md:mb-0 md:w-1/3">
+              <div>
+                <h3 className="mb-2 text-gray-400">Company</h3>
+                <ul>
+                  <li>
+                    <a href="#" className="text-white">
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white">
+                      Contact Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/faqs" className="text-white">
+                      FAQs
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white">
+                      Blog
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="mb-6 w-full md:mb-0 md:w-1/3">
-              <h3 className="mb-2 text-gray-400">Legal</h3>
-              <ul>
-                <li>
-                  <a href="#" className="text-white">
-                    Terms of Use
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white">
-                    Legal Centre
-                  </a>
-                </li>
-              </ul>
+            <div className="mb-6 flex w-full justify-end md:mb-0 md:w-1/3">
+              <div>
+                <h3 className="mb-2 text-gray-400">Legal</h3>
+                <ul>
+                  <li>
+                    <a href="#" className="text-white">
+                      Terms of Use
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-white">
+                      Legal Centre
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
