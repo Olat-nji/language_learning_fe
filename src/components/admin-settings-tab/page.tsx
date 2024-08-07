@@ -5,6 +5,7 @@ import { ReactNode, useState } from "react";
 
 import AdminPreferenceSettings from "~/components/admin-settings/preference-settings/page";
 import AdminProfile from "~/components/admin-settings/profileSettings/page";
+import RolesAndPermission from "../admin-settings/roles/overview/rolesAndPermission/page";
 
 interface TabProperties {
   label: string;
@@ -38,7 +39,7 @@ const tabs: TabProperties[] = [
   },
   {
     label: "Roles & Permission",
-    children: <>Nothing yet!</>,
+    children: <RolesAndPermission />,
     title: "Roles & Permissions",
     subDescription: "Creating and assign various roles to admins",
     icon: <ShieldCheck className="h-5 w-5" />,
