@@ -16,8 +16,7 @@ type QuestCardProperties = {
 };
 
 export default function QuestCard({ quest }: QuestCardProperties) {
-  const router = useRouter()
-
+  const router = useRouter();
 
   return (
     <motion.div
@@ -42,7 +41,8 @@ export default function QuestCard({ quest }: QuestCardProperties) {
           </div>
           <div className="">
             {
-              <Button onClick={() => router.push('/dashboard/quests/1')}
+              <Button
+                onClick={() => router.push("/dashboard/quests/1")}
                 variant="primary"
                 className="hidden w-[90px] group-hover:block"
               >

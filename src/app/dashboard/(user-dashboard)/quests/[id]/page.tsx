@@ -85,7 +85,7 @@ const QuestPreview = () => {
             <span className="flex justify-between gap-5">
               <Link
                 href="/dashboard/quests"
-                className="w-full text-center rounded-full border-b border-secondary-30 bg-primary-10 px-8 py-[10px] text-lg font-semibold text-primary-100 duration-200 hover:border hover:bg-primary-10/90 active:scale-95"
+                className="w-full rounded-full border-b border-secondary-30 bg-primary-10 px-8 py-[10px] text-center text-lg font-semibold text-primary-100 duration-200 hover:border hover:bg-primary-10/90 active:scale-95"
               >
                 Back
               </Link>
