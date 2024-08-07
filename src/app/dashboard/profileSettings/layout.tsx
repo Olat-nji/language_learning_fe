@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import UserNav from "~/components/common/Navbars/UserNav";
+import AdminNav from "~/components/AdminNav/AdminNav";
 import AdminSidebar from "~/components/sidebar/admin/admin-sidebar";
 
 export default function AdminLayout({
@@ -10,7 +10,7 @@ export default function AdminLayout({
 }) {
   return (
     <div className="flex min-h-screen w-full flex-col">
-      <UserNav />
+      <AdminNav />
       <div className="flex flex-1">
         <AdminSidebar />
         <main className="flex-1 bg-neutral-10 p-3 md:p-8">
