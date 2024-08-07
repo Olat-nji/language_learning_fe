@@ -56,7 +56,7 @@ const InviteAdminModal = ({
         className="fixed inset-0 flex items-center justify-center bg-black opacity-[50%] backdrop-blur-sm"
         onClick={setOpen}
       ></div>
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-[50%] backdrop-blur-sm">
+      <div className="fixed inset-0 z-50 flex items-center justify-center">
         <div
           className={`shadow-4xl relative max-w-[37.5rem] rounded-[1rem] bg-white px-[1.2rem] py-4 sm:px-[2.25rem] sm:py-8`}
         >

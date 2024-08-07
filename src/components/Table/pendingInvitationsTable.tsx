@@ -70,7 +70,7 @@ const PendingTable = ({
   const [indexPick, setIndexPick] = useState(0);
 
   return (
-    <div className="mt-[2.8rem] overflow-x-auto">
+    <div className="ml-4 mt-[2.8rem] w-[90%] overflow-x-auto sm:ml-[2.5rem]">
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white">
           <thead>

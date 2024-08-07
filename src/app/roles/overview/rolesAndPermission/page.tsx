@@ -5,10 +5,10 @@ import { useState } from "react";
 import AdminNav from "~/components/AdminNav/AdminNav";
 import DeleteInvitation from "~/components/modals/AdminRolesModals/deleteInvitationModal";
 import RolesAndPermissionUtils from "~/components/rolesAndPermission/rolesAndPermissionUtils";
+import Overview from "~/components/rolesComponents/overview";
 import AdminSidebar from "~/components/sidebar/admin/admin-sidebar";
 import PendingTable from "~/components/Table/pendingInvitationsTable";
 import RoleTable from "~/components/Table/theRoleListTable";
-import Overview from "../page";
 
 const RolesAndPermission = () => {
   const [showPending, setShowPending] = useState(false);
@@ -27,7 +27,7 @@ const RolesAndPermission = () => {
         <AdminNav />
         <div className="flex">
           <AdminSidebar />
-          <div>
+          <div className="w-full">
             <Overview
               title={viewTitle}
               showInviteModal={showInviteModal}
