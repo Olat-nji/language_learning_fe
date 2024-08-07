@@ -20,16 +20,71 @@ const AdminPreferenceSettings: React.FC = () => {
 };
 
 const LanguageSelectionDiv: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [canOpen, setCanOpen] = useState(true);
+  const dropdownReference = useRef<HTMLDivElement | null>(null);
+  const containerReference = useRef<HTMLDivElement | null>(null);
+
+  const toggleDropdown = () => {
+    if (isOpen) {
+      setIsOpen(false);
+      setCanOpen(false);
+    } else if (canOpen) {
+      setIsOpen(true);
+    } else {
+      setCanOpen(true);
+    }
+  };
+
+  const closeDropdown = () => {
+    setIsOpen(false);
+    setCanOpen(true);
+  };
+
+  const languages = [
+    "English",
+    "Spanish",
+    "French",
+    "German",
+    "Italian",
+    "Portuguese",
+    "Russian",
+    "Chinese",
+    "Japanese",
+    "Korean",
+    "Arabic",
+    "Hindi",
+    "Dutch",
+    "Swedish",
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownReference.current &&
+        !(dropdownReference.current as Node).contains(event.target as Node)
+      ) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <div className="mb-8 w-full rounded-tl-xl bg-[#F8FAFB] p-5">
+    <div
+      ref={containerReference}
+      className="relative mb-8 w-full rounded-tl-xl bg-[#F8FAFB] p-5"
+    >
       <div className="mb-4 flex items-center justify-between">
         <h2 className="font-axiforma text-base font-semibold text-[#2A2A2A]">
           Language selection
         </h2>
-        <button>
+        <button onClick={toggleDropdown}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className={`h-5 w-5 transform transition-transform ${isOpen ? "rotate-180" : ""}`}
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -44,6 +99,31 @@ const LanguageSelectionDiv: React.FC = () => {
       <p className="font-axiforma text-xs font-normal text-[#717171]">
         Choose which languages are available for learners to study.
       </p>
+
+      {isOpen && (
+        <div
+          ref={dropdownReference}
+          className="shadow-lg absolute left-0 top-full z-10 w-full rounded-b-xl bg-white"
+          style={{
+            boxShadow: "12px 12px 24px 0px rgba(0, 0, 0, 0.12)",
+            maxWidth: containerReference.current
+              ? containerReference.current.offsetWidth
+              : "100%",
+          }}
+        >
+          <div className="max-h-[340px] overflow-y-auto p-2">
+            {languages.map((language, index) => (
+              <div
+                key={index}
+                className="cursor-pointer p-2 transition-all duration-200 hover:border-b-2 hover:border-[#FF7B31] hover:bg-gray-100 hover:text-[#FF7B31]"
+                onClick={closeDropdown}
+              >
+                {language}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
