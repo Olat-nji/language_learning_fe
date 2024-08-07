@@ -85,6 +85,13 @@ const AdminProfile = () => {
     setIsSuccessModalOpen(true);
   };
 
+  const handleCloseModal = () => {
+    if (isModalOpen || isSuccessModalOpen) {
+      setIsSuccessModalOpen(false);
+      setIsModalOpen(false);
+    }
+  };
+
   //handles update profile button click
   const handleUpdateProfileClick = () => {
     setIsEditing(!isEditing);
@@ -98,7 +105,10 @@ const AdminProfile = () => {
     <main data-testid="profile-settings" className="font-inter">
       {/* upload image modal ***********/}
       {isModalOpen && (
-        <DashboardModal className="flex w-full flex-col items-center justify-center space-y-[20px] md:w-[40rem]">
+        <DashboardModal
+          onClose={handleCloseModal}
+          className="flex w-full flex-col items-center justify-center space-y-[20px] md:w-[40rem]"
+        >
           <section className="flex w-full flex-col items-center justify-center space-y-[20px] border-[3px] border-dashed py-[20px] md:w-[25rem]">
             <div
               className="drag-drop-area"
@@ -138,7 +148,10 @@ const AdminProfile = () => {
 
       {/* success modal ***********/}
       {isSuccessModalOpen && (
-        <DashboardModal className="flex w-[25rem] flex-col items-center justify-center space-y-[20px]">
+        <DashboardModal
+          onClose={handleCloseModal}
+          className="flex w-[25rem] flex-col items-center justify-center space-y-[20px]"
+        >
           <div>
             <Image src="/images/ok.svg" alt="ok" width={50} height={50} />
           </div>
