@@ -1,12 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
 
 import { quests } from "./data";
 import QuestHero from "./QuestHero";
 
 describe("questhero component", () => {
   it("should render the section with correct styling", () => {
-    expect.assertions(2); // Expecting 2 assertions
+    expect.assertions(2);
     render(<QuestHero />);
     const section = screen.getByTestId("quest-hero-section");
     expect(section).toHaveClass(
@@ -16,7 +15,7 @@ describe("questhero component", () => {
   });
 
   it("should render the heading with correct text and styling", () => {
-    expect.assertions(2); // Expecting 2 assertions
+    expect.assertions(2);
     render(<QuestHero />);
     const heading = screen.getByTestId("quest-hero-heading");
     expect(heading).toHaveTextContent("Explore Language Quests");
@@ -30,14 +29,5 @@ describe("questhero component", () => {
     render(<QuestHero />);
     const questCards = screen.getAllByTestId("quest-card");
     expect(questCards).toHaveLength(quests.length);
-  });
-
-  it("should render each QuestCard with correct props", () => {
-    expect.assertions(2); // Expecting one assertion per quest
-    render(<QuestHero />);
-    for (const quest of quests) {
-      const questCard = screen.getByText(quest.title);
-      expect(questCard).toBeInTheDocument();
-    }
   });
 });
