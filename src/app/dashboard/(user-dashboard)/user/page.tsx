@@ -1,5 +1,6 @@
 "use client";
 
+import { Gamepad } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Tabs, TabsContent } from "~/components/ui/tabs";
@@ -83,86 +84,159 @@ const UserDashboard = () => {
         </div>
         <div className="mt-5 rounded-3xl bg-white p-4 ring-1 ring-neutral-40">
           <TabsContent className="h-full" value="allQuests">
-            <div className="grid grid-cols-4 gap-4">
-              {questData ? (
-                questData.map((data, index) => {
-                  const { id, image, numberOfWord, title } = data;
-
+            {questData ? (
+              (() => {
+                if (questData.length === 0) {
                   return (
-                    <QuestCard
-                      id={id}
-                      image={image}
-                      numberOfWords={numberOfWord}
-                      title={title}
-                      key={index}
-                    />
+                    <>
+                      <div className="flex h-[400px] w-full flex-col items-center justify-center space-y-3 text-transparent-black-35">
+                        <Gamepad strokeWidth={0.5} size={120} />
+
+                        <h3
+                          className="text-center text-base leading-10 md:text-xl"
+                          style={{ fontFamily: "Axiforma" }}
+                        >
+                          You currently have no quests.
+                        </h3>
+                      </div>
+                    </>
                   );
-                })
-              ) : (
-                <>
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                </>
-              )}
-            </div>
+                }
+
+                return (
+                  <>
+                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                      {questData.map((data, index) => {
+                        const { id, image, numberOfWord, title } = data;
+
+                        return (
+                          <QuestCard
+                            id={id}
+                            image={image}
+                            numberOfWords={numberOfWord}
+                            title={title}
+                            key={index}
+                          />
+                        );
+                      })}
+                    </div>
+                  </>
+                );
+              })()
+            ) : (
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+              </div>
+            )}
           </TabsContent>
           <TabsContent className="h-full" value="inProgress">
-            <div className="grid grid-cols-4 gap-4">
-              {questData ? (
-                questData
-                  .filter((data) => data.status.completed)
-                  .map((data, index) => {
-                    const { id, image, numberOfWord, title } = data;
+            {questData ? (
+              (() => {
+                const filteredQuestData = questData.filter(
+                  (data) => data.status.inprogress,
+                );
 
-                    return (
-                      <QuestCard
-                        id={id}
-                        image={image}
-                        numberOfWords={numberOfWord}
-                        title={title}
-                        key={index}
-                      />
-                    );
-                  })
-              ) : (
-                <>
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                </>
-              )}
-            </div>
+                if (filteredQuestData.length === 0) {
+                  return (
+                    <>
+                      <div className="flex h-[400px] w-full flex-col items-center justify-center space-y-3 text-transparent-black-35">
+                        <Gamepad strokeWidth={0.5} size={120} />
+
+                        <h3
+                          className="text-center text-base leading-10 md:text-xl"
+                          style={{ fontFamily: "Axiforma" }}
+                        >
+                          You currently have no quest in progress.
+                        </h3>
+                      </div>
+                    </>
+                  );
+                }
+
+                return (
+                  <>
+                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                      {filteredQuestData.map((data, index) => {
+                        const { id, image, numberOfWord, title } = data;
+
+                        return (
+                          <QuestCard
+                            id={id}
+                            image={image}
+                            numberOfWords={numberOfWord}
+                            title={title}
+                            key={index}
+                          />
+                        );
+                      })}
+                    </div>
+                  </>
+                );
+              })()
+            ) : (
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+              </div>
+            )}
           </TabsContent>
           <TabsContent className="h-full" value="completed">
-            <div className="grid grid-cols-4 gap-4">
-              {questData ? (
-                questData
-                  .filter((data) => data.status.completed)
-                  .map((data, index) => {
-                    const { id, image, numberOfWord, title } = data;
+            {questData ? (
+              (() => {
+                const filteredQuestData = questData.filter(
+                  (data) => data.status.completed,
+                );
 
-                    return (
-                      <QuestCard
-                        id={id}
-                        image={image}
-                        numberOfWords={numberOfWord}
-                        title={title}
-                        key={index}
-                      />
-                    );
-                  })
-              ) : (
-                <>
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                  <LoadingQuestCard />
-                </>
-              )}
-            </div>
+                if (filteredQuestData.length === 0) {
+                  return (
+                    <>
+                      <div className="flex h-[400px] w-full flex-col items-center justify-center space-y-3 text-transparent-black-35">
+                        <Gamepad strokeWidth={0.5} size={120} />
+
+                        <h3
+                          className="text-center text-base leading-10 md:text-xl"
+                          style={{ fontFamily: "Axiforma" }}
+                        >
+                          You currently have no quest completed.
+                        </h3>
+                      </div>
+                    </>
+                  );
+                }
+
+                return (
+                  <>
+                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                      {filteredQuestData.map((data, index) => {
+                        const { id, image, numberOfWord, title } = data;
+
+                        return (
+                          <QuestCard
+                            id={id}
+                            image={image}
+                            numberOfWords={numberOfWord}
+                            title={title}
+                            key={index}
+                          />
+                        );
+                      })}
+                    </div>
+                  </>
+                );
+              })()
+            ) : (
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+                <LoadingQuestCard />
+              </div>
+            )}
           </TabsContent>
         </div>
       </Tabs>

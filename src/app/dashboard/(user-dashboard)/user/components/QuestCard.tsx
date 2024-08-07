@@ -20,7 +20,7 @@ const QuestCard = ({
   return (
     <>
       <Card className="group border-0 bg-transparent">
-        <div className="h-fit w-full overflow-hidden rounded-2xl ring-2 ring-transparent duration-300 ease-in group-hover:ring-primary-100">
+        <div className="h-fit w-full overflow-hidden rounded-md ring-2 ring-transparent duration-300 ease-in group-hover:ring-primary-100 md:rounded-2xl">
           <Image
             src={image}
             className="object-cover"
@@ -33,7 +33,7 @@ const QuestCard = ({
           <div className="flex flex-row items-center">
             <div className="mr-auto">
               <CardTitle
-                className="text-sm font-semibold capitalize leading-6 tracking-wide text-secondary-120"
+                className="whitespace-nowrap text-xs font-semibold capitalize leading-6 tracking-wide text-secondary-120 md:text-sm"
                 style={{ fontFamily: "Axiforma" }}
               >
                 {title}
