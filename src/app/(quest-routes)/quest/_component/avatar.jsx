@@ -84,4 +84,4 @@ export function Avatar(properties) {
   );
 }
 
-useGLTF.preload("/model/66b22ea0183d0249c98fbd8b.glb");
+useGLTF.preload("/models/66b22ea0183d0249c98fbd8b.glb");
