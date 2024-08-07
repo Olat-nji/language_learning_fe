@@ -46,7 +46,7 @@ const links = [
 const ProfileSettingsMenu = () => {
   const pathname = usePathname();
   return (
-    <ul className="flex h-fit w-full max-w-[240px] flex-col gap-[12px] rounded-[18px] border bg-[#FFFFFF] p-[12px]">
+    <ul className="hidden sm:flex h-fit w-full max-w-[240px] flex-col gap-[12px] rounded-[18px] border bg-[#FFFFFF] p-[12px]">
       {links.map((link) => (
         <Link key={link.href} href={link.href}>
           <li

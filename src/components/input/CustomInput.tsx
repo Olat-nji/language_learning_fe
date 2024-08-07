@@ -1,14 +1,14 @@
 "use client";
 
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, ChangeEventHandler, useState } from "react";
 
 type Properties = {
   placeholder?: string;
   Icon?: string | React.ElementType;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> | undefined;
   error?: string;
   label?: string;
-  inputType?: string;
+  inputType?: "password" | "text" | "textarea";
   name?: string;
   value?: string;
   className?: string;
@@ -25,10 +25,6 @@ const CustomInput: React.FC<Properties> = ({
   value,
   className,
 }) => {
-  const [type] = useState<"password" | "text">(
-    inputType === "password" ? "password" : "text",
-  );
-
   return (
     <>
       <div className="flex w-full flex-col items-start">
@@ -40,14 +36,23 @@ const CustomInput: React.FC<Properties> = ({
         >
           {Icon && <Icon data-testid="custom-icon" className="text-grey-500" />}
 
+          {inputType === "textarea" ? 
+          <textarea
+            name={name}
+            value={value}
+            placeholder={placeholder}
+            onChange={onChange}
+            className={`${className} placeholder:text-seconday-40 min-h-[100px] flex-1 text-[14px] outline-none`}
+          />
+          :
           <input
             name={name}
-            type={type}
+            type={inputType}
             value={value}
             placeholder={placeholder}
             onChange={onChange}
             className={`${className} placeholder:text-seconday-40 h-[18px] flex-1 text-[14px] outline-none`}
-          />
+          />}
 
           <p className="text-body-s text-red mt-[16px]">{error}</p>
         </div>
