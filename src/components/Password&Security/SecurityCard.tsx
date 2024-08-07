@@ -1,6 +1,13 @@
 "use client";
 
-import { ChevronRight, Eye, EyeOff } from "lucide-react";
+import {
+  ChevronRight,
+  Eye,
+  EyeOff,
+  Laptop,
+  Smartphone,
+  Trash,
+} from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -20,6 +27,24 @@ const SecurityCard: React.FC = () => {
     setShowOldPassword(false);
     setShowNewPassword(false);
   };
+
+  const devices = [
+    {
+      id: 1,
+      name: "Device 1",
+      status: "Active",
+      lastSeen: "2024-08-01",
+      icon: <Smartphone />,
+    },
+    {
+      id: 2,
+      name: "Device 2",
+      status: "Inactive",
+      lastSeen: "2024-08-02",
+      icon: <Laptop />,
+    },
+    // Add more devices as needed
+  ];
 
   const renderChangePassword = () => (
     <div className="mt-6 w-2/5">
@@ -144,25 +169,41 @@ const SecurityCard: React.FC = () => {
   );
 
   const renderDevicesLoggedIn = () => (
-    <div className="mt-6 w-2/5">
-      <h3 className="mb-4 text-xl text-gray-700">
-        Devices You&apos;re Logged In
-      </h3>
-      {/* Add your devices list here */}
-      <ul className="text-sm text-gray-500">
-        <li>Device 1 - Last active: 2023-08-01</li>
-        <li>Device 2 - Last active: 2023-08-02</li>
-        {/* Add more devices as needed */}
-      </ul>
+    <div className="mt-4 w-4/5">
+      <table className="w-full bg-white">
+        <thead className="h-14 rounded-t-xl bg-gray-100">
+          <tr>
+            <th className="">Device you are logged in</th>
+            <th className="">Status</th>
+            <th className="">Last Seen</th>
+            <th className="">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {devices.map((device) => (
+            <tr
+              key={device.id}
+              className={`border-b text-sm ${device.status === "Inactive" ? "bg-red-50" : ""}`}
+            >
+              <td className="flex items-center space-x-3 py-2">
+                <div className="rounded-full bg-gray-100 p-2">
+                  {device.icon}
+                </div>
+                <div>{device.name}</div>
+              </td>
+              <td className="py-2">{device.status}</td>
+              <td className="py-2">{device.lastSeen}</td>
+              <td className="py-2">
+                <button>
+                  <Trash size={16} className="text-red-500" />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <div className="mt-4 flex justify-between">
-        <button
-          className="rounded-3xl bg-orange-500 p-3 px-6 text-xs text-white"
-          onClick={() => {
-            /* Implement device management functionality */
-          }}
-        >
-          Manage Devices
-        </button>
+        <div></div>
         <button
           className="rounded-3xl border p-3 px-6 text-xs"
           onClick={handleCancelClick}

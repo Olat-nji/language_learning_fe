@@ -5,6 +5,7 @@ import { ReactNode, useState } from "react";
 
 import AdminPreferenceSettings from "~/components/admin-settings/preference-settings/page";
 import AdminProfile from "~/components/admin-settings/profileSettings/page";
+import SecurityCard from "../Password&Security/SecurityCard";
 
 interface TabProperties {
   label: string;
@@ -24,7 +25,7 @@ const tabs: TabProperties[] = [
   },
   {
     label: "Password & Security",
-    children: <>Nothing yet!</>,
+    children: <SecurityCard />,
     title: "Password & Security",
     subDescription: "Change password",
     icon: <Lock className="h-5 w-5" />,
