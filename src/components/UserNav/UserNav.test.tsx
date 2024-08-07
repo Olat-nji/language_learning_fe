@@ -1,22 +1,35 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
-
-import UserNav from "./UserNav";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 
-describe("adminNav", () => {
-  it("renders desktop logo", () => {
-    expect.assertions(1);
+import UserNav from "./UserNav";
+
+describe("UserNav", () => {
+  it("renders the UserNav component", () => {
     render(<UserNav />);
-    const desktopLogo = screen.getByAltText("desktop-logo");
-    expect(desktopLogo).toBeInTheDocument();
+    expect(screen.getByAltText("notification-icon")).toBeInTheDocument();
+    expect(screen.getByAltText("quest-icon-1")).toBeInTheDocument();
+    expect(screen.getByAltText("quest-icon-2")).toBeInTheDocument();
+    expect(screen.getByAltText("progress-icon-1")).toBeInTheDocument();
+    expect(screen.getByAltText("progress-icon-2")).toBeInTheDocument();
+    expect(screen.getByText("Quests")).toBeInTheDocument();
+    expect(screen.getByText("Progress")).toBeInTheDocument();
   });
 
-  it("renders mobile navigation with correct elements", () => {
-    expect.assertions(2);
+  it("toggles the notifications dropdown", () => {
     render(<UserNav />);
-    expect(screen.getAllByAltText("profile-icon")[1]).toBeInTheDocument();
-    expect(screen.getByAltText("menu-icon")).toBeInTheDocument();
+    const notificationIcon = screen.getByAltText("notification-icon");
+    fireEvent.click(notificationIcon);
+    expect(screen.getByText("Notifications")).toBeInTheDocument();
+  });
+
+  it("renders the LanguageSelector", () => {
+    render(<UserNav />);
+    expect(screen.getByAltText("flag")).toBeInTheDocument();
+  });
+
+  it("renders the UserNavDropdown", () => {
+    render(<UserNav />);
+    expect(screen.getByRole("button", { name: /menu/i })).toBeInTheDocument();
   });
 });

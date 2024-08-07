@@ -34,14 +34,14 @@ const UserNav = () => {
             >
               <Image
                 src="/navbar/quest-icon-light.svg"
-                alt="quest-icon"
+                alt="quest-icon-1"
                 width={22}
                 height={22}
                 className="block group-focus:hidden"
               />
               <Image
                 src="/navbar/quest-icon.svg"
-                alt="quest-icon"
+                alt="quest-icon-2"
                 width={22}
                 height={22}
                 className="hidden group-focus:block"
@@ -55,14 +55,14 @@ const UserNav = () => {
             >
               <Image
                 src="/navbar/progress-icon-light.svg"
-                alt="progress-icon"
+                alt="progress-icon-1"
                 width={22}
                 height={22}
                 className="block group-focus:hidden"
               />
               <Image
                 src="/navbar/progress-icon.svg"
-                alt="progress-icon"
+                alt="progress-icon-2"
                 width={22}
                 height={22}
                 className="hidden group-focus:block"
