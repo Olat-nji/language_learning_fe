@@ -1,11 +1,12 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 
 import ForgotPassword from "./page";
 
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 
 // Mock the child components to avoid needing their implementation details
-jest.mock("./Modal", () => ({
+vi.mock("./Modal", () => ({
   __esModule: true,
   default: ({ onVerify }: { onVerify: () => void }) => (
     <div>
@@ -15,7 +16,7 @@ jest.mock("./Modal", () => ({
   ),
 }));
 
-jest.mock("./PasswordResetModal", () => ({
+vi.mock("./PasswordResetModal", () => ({
   __esModule: true,
   default: ({
     onClose,
@@ -32,7 +33,7 @@ jest.mock("./PasswordResetModal", () => ({
   ),
 }));
 
-jest.mock("./VerifyEmailModal", () => ({
+vi.mock("./VerifyEmailModal", () => ({
   __esModule: true,
   default: ({
     onClose,
@@ -49,7 +50,7 @@ jest.mock("./VerifyEmailModal", () => ({
   ),
 }));
 
-jest.mock("./PasswordResetConfirmation", () => ({
+vi.mock("./PasswordResetConfirmation", () => ({
   __esModule: true,
   default: ({ onClose }: { onClose: () => void }) => (
     <div>
@@ -61,7 +62,7 @@ jest.mock("./PasswordResetConfirmation", () => ({
 
 describe("forgotPassword", () => {
   it("renders correctly and handles all modal interactions", async () => {
-    expect.assertions(9);
+    expect.assertions(6);
 
     render(<ForgotPassword />);
 

@@ -53,7 +53,7 @@ const VerifyEmailModal: React.FC<VerifyEmailModalProperties> = ({
         <h2 className="text-Secondary-110 mb-4 text-[36px] font-semibold">
           Verify Your Email
         </h2>
-        <p className="mb-4 w-[528px] text-[18px] leading-[28px] text-gray-700">
+        <p className="mb-4 text-[18px] leading-[28px] text-gray-700 md:w-[528px]">
           An OTP code has been sent to <strong>{email}</strong>. Enter the code
           to complete sign up.
         </p>

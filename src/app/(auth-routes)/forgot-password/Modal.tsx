@@ -24,7 +24,7 @@ const Modal: React.FC<ModalProperties> = ({ email, onVerify }) => {
           className="mx-auto mb-4 h-16 w-16"
         />
         <h2 className="mb-2 text-2xl font-semibold">Email Sent</h2>
-        <p className="mb-4 w-[528px] text-[18px] leading-[28px] text-gray-700">
+        <p className="mb-4 text-[18px] leading-[28px] text-gray-700 md:w-[528px]">
           We&apos;ve sent a confirmation email to <strong>{email}</strong>.
           Follow its instructions to reset your password. If you don&apos;t see
           the email, please check your spam folder.
