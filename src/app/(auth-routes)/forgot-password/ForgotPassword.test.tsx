@@ -1,11 +1,13 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+
 import ForgotPassword from "./page";
-import '@testing-library/jest-dom/extend-expect';
+
+import "@testing-library/jest-dom/extend-expect";
 
 // Mock the child components to avoid needing their implementation details
-jest.mock('./Modal', () => ({
+jest.mock("./Modal", () => ({
   __esModule: true,
-  default: ({ email, onVerify }: { email: string; onVerify: () => void }) => (
+  default: ({ onVerify }: { onVerify: () => void }) => (
     <div>
       Mock Modal
       <button onClick={onVerify}>Verify</button>
@@ -13,9 +15,15 @@ jest.mock('./Modal', () => ({
   ),
 }));
 
-jest.mock('./PasswordResetModal', () => ({
+jest.mock("./PasswordResetModal", () => ({
   __esModule: true,
-  default: ({ onClose, onReset }: { onClose: () => void; onReset: () => void }) => (
+  default: ({
+    onClose,
+    onReset,
+  }: {
+    onClose: () => void;
+    onReset: () => void;
+  }) => (
     <div>
       Mock Password Reset Modal
       <button onClick={onClose}>Close</button>
@@ -24,9 +32,15 @@ jest.mock('./PasswordResetModal', () => ({
   ),
 }));
 
-jest.mock('./VerifyEmailModal', () => ({
+jest.mock("./VerifyEmailModal", () => ({
   __esModule: true,
-  default: ({ email, onClose, onVerifyComplete }: { email: string; onClose: () => void; onVerifyComplete: () => void }) => (
+  default: ({
+    onClose,
+    onVerifyComplete,
+  }: {
+    onClose: () => void;
+    onVerifyComplete: () => void;
+  }) => (
     <div>
       Mock Verify Email Modal
       <button onClick={onClose}>Close</button>
@@ -35,7 +49,7 @@ jest.mock('./VerifyEmailModal', () => ({
   ),
 }));
 
-jest.mock('./PasswordResetConfirmation', () => ({
+jest.mock("./PasswordResetConfirmation", () => ({
   __esModule: true,
   default: ({ onClose }: { onClose: () => void }) => (
     <div>
@@ -45,38 +59,52 @@ jest.mock('./PasswordResetConfirmation', () => ({
   ),
 }));
 
-describe("ForgotPassword", () => {
-  test("renders correctly and handles all modal interactions", async () => {
+describe("forgotPassword", () => {
+  it("renders correctly and handles all modal interactions", async () => {
+    expect.assertions(9);
+
     render(<ForgotPassword />);
 
     // Check initial render
-    expect(screen.getByText(/Forgot Password\?/i)).toBeInTheDocument();
-    expect(screen.getByText(/Enter the email address/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/johndoe@gmail.com/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Send Instructions/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Return to Sign In/i })).toBeInTheDocument();
+    expect(screen.getByText(/forgot password\?/i)).toBeInTheDocument();
+    expect(screen.getByText(/enter the email address/i)).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(/johndoe@gmail.com/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /send instructions/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /return to sign in/i }),
+    ).toBeInTheDocument();
 
     // Submit the email form
-    fireEvent.change(screen.getByPlaceholderText(/johndoe@gmail.com/i), { target: { value: 'test@example.com' } });
-    fireEvent.click(screen.getByRole('button', { name: /Send Instructions/i }));
+    fireEvent.change(screen.getByPlaceholderText(/johndoe@gmail.com/i), {
+      target: { value: "test@example.com" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /send instructions/i }));
 
     // Expect the email sent modal to be rendered
-    await waitFor(() => expect(screen.getByText(/Mock Modal/i)).toBeInTheDocument());
-    fireEvent.click(screen.getByRole('button', { name: /Verify/i }));
+    await screen.findByText(/mock modal/i);
+    fireEvent.click(screen.getByRole("button", { name: /verify/i }));
 
     // Expect the verify email modal to be rendered
-    await waitFor(() => expect(screen.getByText(/Mock Verify Email Modal/i)).toBeInTheDocument());
-    fireEvent.click(screen.getByRole('button', { name: /Verify Complete/i }));
+    await screen.findByText(/mock verify email modal/i);
+    fireEvent.click(screen.getByRole("button", { name: /verify complete/i }));
 
     // Expect the password reset modal to be rendered
-    await waitFor(() => expect(screen.getByText(/Mock Password Reset Modal/i)).toBeInTheDocument());
-    fireEvent.click(screen.getByRole('button', { name: /Reset/i }));
+    await screen.findByText(/mock password reset modal/i);
+    fireEvent.click(screen.getByRole("button", { name: /reset/i }));
 
     // Expect the password reset confirmation modal to be rendered
-    await waitFor(() => expect(screen.getByText(/Mock Password Reset Confirmation/i)).toBeInTheDocument());
-    fireEvent.click(screen.getByRole('button', { name: /Close/i }));
+    await screen.findByText(/mock password reset confirmation/i);
+    fireEvent.click(screen.getByRole("button", { name: /close/i }));
 
     // Ensure modals close correctly
-    await waitFor(() => expect(screen.queryByText(/Mock Password Reset Confirmation/i)).not.toBeInTheDocument());
+    await waitFor(() =>
+      expect(
+        screen.queryByText(/mock password reset confirmation/i),
+      ).not.toBeInTheDocument(),
+    );
   });
 });
