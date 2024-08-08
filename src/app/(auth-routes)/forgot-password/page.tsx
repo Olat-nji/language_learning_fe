@@ -13,7 +13,7 @@ const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isEmailSentModalOpen, setIsEmailSentModalOpen] = useState(false);
   const [isVerifyEmailModalOpen, setIsVerifyEmailModalOpen] = useState(false);
-  const [isResetModalOpen, setIsResetModalOpen] = useState(true);
+  const [isResetModalOpen, setIsResetModalOpen] = useState(false);
   const [isConfirmationOpen, setIsConfirmationOpen] = useState(false);
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -47,7 +47,7 @@ const ForgotPassword: React.FC = () => {
   return (
     <div className="flex min-h-screen items-center justify-center">
       <div className="shadow-md mt-12 w-[600px] rounded-[16px] bg-white p-8">
-        {!isEmailSentModalOpen && !isVerifyEmailModalOpen && (
+        {!isEmailSentModalOpen && !isVerifyEmailModalOpen && !isResetModalOpen && (
           <>
             <h2 className="mb-4 text-center text-[36px] font-semibold">
               Forgot Password?

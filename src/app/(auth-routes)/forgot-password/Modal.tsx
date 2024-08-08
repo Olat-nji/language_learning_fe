@@ -33,7 +33,7 @@ const Modal: React.FC<ModalProperties> = ({ email, onVerify }) => {
           className="w-full rounded-[59px] bg-gray-200 py-[10px] text-gray-700 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
           onClick={onVerify}
         >
-          OK
+          Resend Email
         </button>
       </div>
     </div>
